@@ -1,0 +1,138 @@
+import { json } from '@sveltejs/kit'
+import { fetchData } from '$lib/utils';
+import {base} from '$app/paths'
+import {persons} from "$lib/biblRep/persons.json"
+import {persons_es} from "$lib/biblRep/persons_es.json"
+import { fr_es } from '$lib/fr_es';
+
+export const GET = async (params) => {
+    const dataLetter = await fetchData();
+	let lang = params.params.lang;
+	let t = fr_es[lang] || fr_es.fr;
+ if (lang === "fr"){
+	const chronologique = Object.keys(dataLetter.lettersData).map(d =>dataLetter.lettersData[d]);
+	chronologique.sort((a, b) => {
+		return new Date(a.date) - new Date(b.date);
+	});
+
+	const dataLetters = [];
+
+	for (let letter of chronologique){
+		Object.keys(dataLetter.lettersData).map(d =>{
+			if (dataLetter.lettersData[d] === letter){
+				letter["slug"] = "fr/lettres/" + d
+		dataLetters.push(letter)
+	}})}
+	
+
+	const files = Object.entries(import.meta.glob('$lib/data/md/*.md'));
+
+	const result = await Promise.all(
+		files.map(async ([path, resolver]) => {
+			const md = await resolver();
+
+			let newslug = path.split('/');
+			let slug = "fr/" + newslug[newslug.length - 1].replace('.md', '');
+			const { title } = md.metadata;
+			const content = md.default.render();
+			const text = content.html.replaceAll(/<\W\w*>|<\w*\W*\s*\S*>|<[\w*\W*\s*\S*]{0,}>/gm, "")
+			
+
+	return {
+		slug,
+		title,
+		text
+	};
+})
+	);
+	for (let post of result){
+		dataLetters.push(post)
+	}
+	let arr = [];
+	for (let person of persons_es){
+		let name = person.name;
+		let desc = person.desc;
+		arr.push(`${name} ${desc}`)
+	}
+	const text = arr.join(" \n")
+	const persIndex = {
+		slug : `${base}fr/index_noms`,
+		title : t.name_index,
+		text : text
+	}
+	const timeline = {
+		slug: `${base}fr/frise`,
+		title : t.timeline_text,
+		text : t.timeline_text
+	}
+	dataLetters.push(persIndex)
+	dataLetters.push(timeline)
+	//console.log(params.params.lang)
+	return json(dataLetters)
+	
+};
+// For Spanish interface
+if (lang === "es"){
+	const chronologique = Object.keys(dataLetter.lettersDataEs).map(d =>dataLetter.lettersDataEs[d]);
+	//console.log(chronologique)
+	chronologique.sort((a, b) => {
+		return new Date(a.date) - new Date(b.date);
+	});
+
+	const dataLettersEs = [];
+
+	for (let letter of chronologique){
+		Object.keys(dataLetter.lettersDataEs).map(d =>{
+			if (dataLetter.lettersDataEs[d] === letter){
+				letter["slug"] = "es/cartas/" + dataLetter.lettersDataEs[d]["slug"]
+				dataLettersEs.push(letter)
+	}})}
+	
+
+	const files = Object.entries(import.meta.glob('$lib/data/mdes/*.md'));
+
+	const result = await Promise.all(
+		files.map(async ([path, resolver]) => {
+			const md = await resolver();
+
+			let newslug = path.split('/');
+			let slug = "es/" + newslug[newslug.length - 1].replace('.md', '');
+			const { title } = md.metadata;
+			const content = md.default.render();
+			const text = content.html.replaceAll(/<\W\w*>|<\w*\W*\s*\S*>|<[\w*\W*\s*\S*]{0,}>/gm, "")
+			
+
+	return {
+		slug,
+		title,
+		text
+	};
+})
+	);
+	for (let post of result){
+		dataLettersEs.push(post)
+	}
+	let arr = [];
+	for (let person of persons){
+		let name = person.name;
+		let desc = person.desc;
+		arr.push(`${name} ${desc}`)
+	}
+	const text = arr.join(" \n")
+	const persIndex = {
+		slug : `${base}es/index_noms`,
+		title : t.name_index,
+		text : text
+	}
+	const timeline = {
+		slug: `${base}es/frise`,
+		title : t.timeline_text,
+		text : t.timeline_text
+	}
+	dataLettersEs.push(persIndex)
+	dataLettersEs.push(timeline)
+	//console.log(params.params.lang)
+	return json(dataLettersEs)
+	
+};
+}
