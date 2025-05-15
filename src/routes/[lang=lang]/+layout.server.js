@@ -2,7 +2,7 @@
 
 //const knownLanguages = ["fr", "es"];
 
-export const prerender = true;
+export const prerender = 'auto';
 export const ssr = true;
 
 export const load = async ({ fetch, params, url }) => {
