@@ -9,7 +9,6 @@
      export let data;
 	 export const letters = data.lettres;
 	//export const cartas = data.lettres.cartas;
-    
 	export let slug_list = [];
    Object.keys(letters).map(key => {
         let pair = [];
@@ -30,12 +29,12 @@
   $: oppositeLang = lang === 'fr' ? 'es' : 'fr';
   export function switchLanguage() {
     let newPath = ""
-    if (/*lang === "es" && */$page.url.pathname.includes(`cartas`)){
+    if ($page.url.pathname.includes(`cartas`)){ //lang === "es" && 
     for (let i of slug_list){
     if ($page.url.pathname.includes(`${i[1]}`)){
      newPath = `${base}/fr/lettres/${i[0]}`; 
         }}}
-   else  if (/*lang === "fr" && */$page.url.pathname.includes(`lettres`)){
+   else  if ($page.url.pathname.includes(`lettres`)){ //lang === "fr" && 
     for (let i of slug_list){
     if ($page.url.pathname.includes(`${i[0]}`)){
      newPath = `${base}/es/cartas/${i[1]}`; 
@@ -96,7 +95,6 @@ https://www.wikidata.org/wiki/Q97578531  -->
 .bbody {
     display: flex !important;
     min-width: 260px !important;
-    /*height: auto;*/
 }
 .fondoImg{
     height: 300px;

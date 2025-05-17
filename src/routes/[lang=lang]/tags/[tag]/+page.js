@@ -1,8 +1,10 @@
+//import { fetchData } from '$lib/utils/index.js';
 export const load = async ({ fetch, params }) => {
 	const { tag } = params;
     const lang = params.lang;
-	const response = await fetch(`/api`);
-	const lettres = await response.json();
+    const response = await fetch(`/api/data`);
+        const lettres = await response.json();
+   
     // Info needed for the Spanish side to make it easier on routing when switching languages
   function forEs(tag) {
     let taglist;
@@ -50,6 +52,7 @@ return letters_id
     } })
    tagname['letters'] = letters;
     const l = lettres
+    //console.log(l, tagname);
 	return {
 		tagname,
         l
@@ -82,7 +85,7 @@ if (lang === "es"){
      lettres["cartas"].map(obj => {
         l[obj.slug] = obj
      })
-    //console.log(l);
+    //console.log(l, tagname);
 	return {
 		tagname,
         l

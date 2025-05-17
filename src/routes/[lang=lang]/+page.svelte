@@ -14,7 +14,9 @@
   	const t = fr_es[lang] || fr_es.fr;
 	//$: rightSlug = lang === "fr" ? "lettres" : "cartas";
 	export const letters = data.lettres;
+	//console.log(letters)
 	export const cartas = data.lettres["cartas"];
+	//console.log(cartas)
 	export let slugs = [];
 	Object.keys(letters).map(key => {
 		if (key !== "cartas"){

@@ -2,32 +2,25 @@
 import fs from 'node:fs';
 import * as jsdom from 'jsdom'
 const { JSDOM } = jsdom;
-//import {base} from '$app/paths'
-export const fetchData = async () => {
-// getFiles function from 'Get all files in a folder using Node Js' from the 'Learn with Param' blog
-  // Recursive function to get files
-function getFiles(dir, files = []) {
-  // Get an array of all files and directories in the passed directory using fs.readdirSync
-  const fileList = fs.readdirSync(dir)
-// Create the full path of the file/directory by concatenating the passed directory and file/directory name
-  for (const file of fileList) {
-    const name = `${dir}/${file}`
-// Check if the current file/directory is a directory using fs.statSync
-    if (fs.statSync(name).isDirectory()) {
-      // If it is a directory, recursively call the getFiles function with the directory path and the files array
-      getFiles(name, files)
-    } else {
-      // If it is a file, push the full path to the files array
-      files.push(name)
-    }
-  }
-  return files
+//import { json } from '@sveltejs/kit';
+
+export async function fetchData(fetch) {
+	const fileList = await Promise.all([
+		fetch('/api').then(r => r.json()),
+	]);
+  const xmlfr = fileList[0].xmlFiles
+  const xmles = fileList[0].esFiles
+	// You can return the lists directly or process them here
+ /*return {xmlfr, xmles}
 }
-let xmlFiles = getFiles('static/xml');
+export async function servedata(){
+  const list = await fetchData(fetch)
+  const xmlfr = list.xmlfr
+  const xmles = list.xmles */
 let files = [];
 let lettersData = [];
 //let docs = [];
-for (let file of xmlFiles){
+for (let file of xmlfr){
     //let path = file.replace('static',`${base}`);
     if (file.includes(".xml")){
     files.push(file)
@@ -132,11 +125,11 @@ for (let file of xmlFiles){
 
 
 // For the Spanish translations
-let esFiles = getFiles('static/xmles');
+//let esFiles = getFiles('static/xmles');
 let filesEs = [];
 let lettersDataEs = [];
 //let docs = [];
-for (let file of esFiles){
+for (let file of xmles){
     //let path = file.replace('static',`${base}`);
     if (file.includes(".xml")){
     filesEs.push(file)
@@ -144,7 +137,7 @@ for (let file of esFiles){
     let slugEs = file.replace('static/xmles/','').replace('.xml','');
     let parser = new JSDOM(d).window.document;
     //let srcMss = parser.querySelector('msDesc')?.getElementsByTagName('facsimile')[0].getElementsByTagName('graphic');
-    /* let tilesrcMs = [];
+   /*  let tilesrcMs = [];
     if(srcMss !== undefined){
     for (let srcMs of srcMss){
         let src = srcMs.getAttribute('url');
@@ -240,7 +233,27 @@ for (let file of esFiles){
     lettersDataEs.push(carta);
 }}
 
-  const data = {lettersDataEs, lettersData}
+const data = {lettersDataEs, lettersData}
+const chronologique = Object.keys(data.lettersData).map(d=>data.lettersData[d]);
+	chronologique.sort((a, b) => {
+		return new Date(a.date) - new Date(b.date);
+	});
+
+	const dataLetters ={};
+
+	for (let letter of chronologique){
+		Object.keys(data.lettersData).map(d =>{
+            //console.log(d)
+			if (data.lettersData[d] === letter){
+		dataLetters[d] = letter
+	}})}
+	//console.log(dataLetters)
+	const cartas = data.lettersDataEs;
+	dataLetters["cartas"] = cartas
+	//console.log(dataLetters)
+	
+    return dataLetters;
+
   //console.log(data)
-	return data;
+	//return data;
 };

@@ -1,8 +1,14 @@
+//import { fetchData } from '$lib/utils/index.js';
 export const load = async ({ fetch, params }) => {
 	const { category } = params;
     const lang = params.lang;
-	const response = await fetch(`/api`);
-	const lettres = await response.json();
+    //console.log(lang)
+    const response = await fetch(`/api/data`);
+        const lettres = await response.json();
+	
+    //console.log("lettres keys:", Object.keys(lettres));
+    //console.log("lettres['cartas'] length:", lettres["cartas"].length);
+    
     // Info needed for the Spanish side to make it easier on routing when switching languages
   function forEs(categ) {
     let catlist;

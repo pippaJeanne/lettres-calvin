@@ -5,12 +5,21 @@ import {persons} from "$lib/biblRep/persons.json"
 import {persons_es} from "$lib/biblRep/persons_es.json"
 import { fr_es } from '$lib/fr_es';
 
-export const GET = async (params) => {
-    const dataLetter = await fetchData();
-	let lang = params.params.lang;
+export const GET = async ({params,fetch}) => {
+    const dataLetter = await fetchData(fetch);
+	let lang = params.lang;
 	let t = fr_es[lang] || fr_es.fr;
  if (lang === "fr"){
-	const chronologique = Object.keys(dataLetter.lettersData).map(d =>dataLetter.lettersData[d]);
+	const dataLetters = [];
+	Object.keys(dataLetter).map(key => {
+		if (key !== "cartas"){
+		let letter = dataLetter[key]
+		 letter["slug"] = "fr/lettres/" + key
+		dataLetters.push(letter)
+
+	}});
+
+	/*const chronologique = Object.keys(dataLetter.lettersData).map(d =>dataLetter.lettersData[d]);
 	chronologique.sort((a, b) => {
 		return new Date(a.date) - new Date(b.date);
 	});
@@ -22,7 +31,7 @@ export const GET = async (params) => {
 			if (dataLetter.lettersData[d] === letter){
 				letter["slug"] = "fr/lettres/" + d
 		dataLetters.push(letter)
-	}})}
+	}})}*/
 	
 
 	const files = Object.entries(import.meta.glob('$lib/data/md/*.md'));
@@ -67,26 +76,35 @@ export const GET = async (params) => {
 	}
 	dataLetters.push(persIndex)
 	dataLetters.push(timeline)
-	//console.log(params.params.lang)
+	//console.log(dataLetters)
 	return json(dataLetters)
 	
 };
 // For Spanish interface
 if (lang === "es"){
-	const chronologique = Object.keys(dataLetter.lettersDataEs).map(d =>dataLetter.lettersDataEs[d]);
+
+	const dataLettersEs = [];
+
+	Object.keys(dataLetter["cartas"]).map(key => {
+		let carta = dataLetter["cartas"][key]
+		carta["slug"] = "es/cartas/" + dataLetter["cartas"][key]["slug"]
+		dataLettersEs.push(carta)
+
+	});
+
+	/*const chronologique = Object.keys(dataLetter.lettersDataEs).map(d =>dataLetter.lettersDataEs[d]);
 	//console.log(chronologique)
 	chronologique.sort((a, b) => {
 		return new Date(a.date) - new Date(b.date);
 	});
-
-	const dataLettersEs = [];
-
 	for (let letter of chronologique){
 		Object.keys(dataLetter.lettersDataEs).map(d =>{
 			if (dataLetter.lettersDataEs[d] === letter){
 				letter["slug"] = "es/cartas/" + dataLetter.lettersDataEs[d]["slug"]
 				dataLettersEs.push(letter)
-	}})}
+	}})}*/
+
+
 	
 
 	const files = Object.entries(import.meta.glob('$lib/data/mdes/*.md'));
@@ -131,8 +149,7 @@ if (lang === "es"){
 	}
 	dataLettersEs.push(persIndex)
 	dataLettersEs.push(timeline)
-	//console.log(params.params.lang)
+	//console.log(dataLettersEs)
 	return json(dataLettersEs)
-	
 };
 }
