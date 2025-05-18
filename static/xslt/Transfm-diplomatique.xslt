@@ -290,9 +290,9 @@
     </em>
     </xsl:when>
     <xsl:otherwise>-->
-      <em>
+      <span style="font-style:italic;">
       <xsl:apply-templates/>
-    </em>
+    </span>
    <!-- </xsl:otherwise>
    </xsl:choose>-->
   </xsl:template>

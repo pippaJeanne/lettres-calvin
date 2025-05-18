@@ -1,12 +1,13 @@
 import { json } from '@sveltejs/kit'
-import { fetchData } from '$lib/utils';
+//import { fetchData } from '$lib/utils';
 import {base} from '$app/paths'
 import {persons} from "$lib/biblRep/persons.json"
 import {persons_es} from "$lib/biblRep/persons_es.json"
 import { fr_es } from '$lib/fr_es';
 
 export const GET = async ({params,fetch}) => {
-    const dataLetter = await fetchData(fetch);
+	const res = await fetch('/api');
+    const dataLetter = await res.json()
 	let lang = params.lang;
 	let t = fr_es[lang] || fr_es.fr;
  if (lang === "fr"){

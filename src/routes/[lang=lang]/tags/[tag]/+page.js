@@ -2,7 +2,7 @@
 export const load = async ({ fetch, params }) => {
 	const { tag } = params;
     const lang = params.lang;
-    const response = await fetch(`/api/data`);
+    const response = await fetch(`/api`);
         const lettres = await response.json();
    
     // Info needed for the Spanish side to make it easier on routing when switching languages

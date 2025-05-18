@@ -1,5 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
-import fs from 'node:fs';
+/*import fs from 'node:fs';
 import * as jsdom from 'jsdom'
 const { JSDOM } = jsdom;
 //import { json } from '@sveltejs/kit';
@@ -16,7 +16,7 @@ export async function fetchData(fetch) {
 export async function servedata(){
   const list = await fetchData(fetch)
   const xmlfr = list.xmlfr
-  const xmles = list.xmles */
+  const xmles = list.xmles *//*
 let files = [];
 let lettersData = [];
 //let docs = [];
@@ -149,7 +149,7 @@ for (let file of xmles){
     for (let srcB of srcBs){
         let src = srcB.getAttribute('url');
         tilesrcB.push(src)
-    }}*/
+    }}*//*
     let signaturesEs = parser.getElementsByTagName('signed');
     let signedEs = []
     if(signaturesEs !== undefined){
@@ -256,4 +256,4 @@ const chronologique = Object.keys(data.lettersData).map(d=>data.lettersData[d]);
 
   //console.log(data)
 	//return data;
-};
+};*/

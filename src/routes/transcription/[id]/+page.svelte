@@ -217,9 +217,6 @@ for ( let p of transc_pages){
   <header class="bgim mdc-top-app-bar mdc-top-app-bar-estilo" id="app-bar" style="background-image: linear-gradient(rgb(243, 231, 214) 75%, rgb(255, 255, 255) 100%); min-width: 300px !important; top: 0px;">
       <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start ajuste1">
-              <span class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button button1 mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Menu" title="Menu" style="color: rgb(103, 103, 103) !important; --mdc-ripple-fg-size: 28px; --mdc-ripple-fg-scale: 1.7142857142857142; --mdc-ripple-left: 10px; --mdc-ripple-top: 10px;">menu
-                  <div class="mdc-icon-button__ripple"></div>
-              </span>
               <span class="mdc-top-app-bar__title ajuste2" style="display: flex;">
                   <a id="siteTitle" href='{base}/{lang}'>
                       <h3 class=tit1>

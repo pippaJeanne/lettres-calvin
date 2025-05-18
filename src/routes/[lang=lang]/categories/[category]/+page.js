@@ -3,7 +3,7 @@ export const load = async ({ fetch, params }) => {
 	const { category } = params;
     const lang = params.lang;
     //console.log(lang)
-    const response = await fetch(`/api/data`);
+    const response = await fetch(`/api`);
         const lettres = await response.json();
 	
     //console.log("lettres keys:", Object.keys(lettres));

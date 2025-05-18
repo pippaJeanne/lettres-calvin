@@ -4,7 +4,6 @@
     import '$lib/style.css';
 	import { onMount } from 'svelte'
 	import { createPostsIndex, searchPostsIndex } from '$lib/search'
-  
 // Ckeck letters' url
      export let data;
 	 export const letters = data.lettres;
@@ -53,19 +52,100 @@
 	let results = [];
 
 	onMount(async () => {
+        //await loadassets();
+
 		const posts = await fetch(`/${lang}/search`).then((res) => res.json())
 		createPostsIndex(posts)
 		search = 'ready'
+
+        /** Initialize MDC Web components. */
+// Instantiation
+window.mdc.autoInit();
+
+var buttons = document.querySelectorAll('.mdc-button, .mdc-fab');
+for (var i = 0, button; button = buttons[i]; i++) {
+  mdc.ripple.MDCRipple.attachTo(button);
+}
+
+var nodes = document.querySelectorAll('.mdc-icon-toggle');
+for (var i = 0, node; node = nodes[i]; i++) {
+  mdc.iconToggle.MDCIconToggle.attachTo(node);
+}
+
+var interactiveListItems = document.querySelectorAll('.mdc-list-item');
+for (var i = 0, li; li = interactiveListItems[i]; i++) {
+  mdc.ripple.MDCRipple.attachTo(li);
+  // Prevent link clicks from jumping demo to the top of the page
+  //.addEventListener('click', function(evt) {
+    //evt.preventDefault();
+  //});
+}
+
+//const drawerElement = document.querySelector('.mdc-drawer');
+const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarElement);
+/*topAppBar.setScrollTarget(document.getElementById('main-content'));*/
+topAppBar.listen('MDCTopAppBar:nav', () => {
+    drawer.open = !drawer.open;
+});
+
+const bCerrar = document.querySelector('.bcerrar');
+bCerrar.addEventListener('click', () => {
+    drawer.open = !drawer.open;
+});
+
+const submenu1BotEl = document.querySelector('.submenu1');
+const submenu1Bot = mdc.iconButton.MDCIconButtonToggle.attachTo(submenu1BotEl);
+const submenu1GrupoEl = document.querySelector('.submenu1grupo');
+submenu1BotEl.addEventListener('click', () => {
+    if (submenu1GrupoEl.style.display == 'block') {
+        submenu1GrupoEl.style.display = 'none';
+        //Hay que simular un click en submenu2
+        //submenu2GrupoEl.style.display = 'none';
+        if (submenu2GrupoEl.style.display == 'block') {
+            submenu2BotEl.click();
+        }
+    }
+    else {
+        submenu1GrupoEl.style.display = 'block';
+    }
+});
+
+const submenu2BotEl = document.querySelector('.submenu2');
+const submenu2Bot = mdc.iconButton.MDCIconButtonToggle.attachTo(submenu2BotEl);
+const submenu2GrupoEl = document.querySelector('.submenu2grupo');
+submenu2BotEl.addEventListener('click', () => {
+    if (submenu2GrupoEl.style.display == 'block') {
+        submenu2GrupoEl.style.display = 'none';
+    }
+    else {
+        submenu2GrupoEl.style.display = 'block';
+    }
+});
+
+const menuIdiomaEl = document.querySelector('.menu-idioma');
+const menuIdioma = new mdc.menu.MDCMenu(menuIdiomaEl);
+const idiomaSelectEl = document.querySelector('.idioma-select');        
+idiomaSelectEl.addEventListener('click', (event) => {
+    menuIdioma.open = !menuIdioma.open;
+});
+
 	})
 
 	$: if (search === 'ready') {
 		results = searchPostsIndex(searchTerm)
 	}
 
+
 </script>
 
 <svelte:head>
 <title>{t.site_title}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js"></script>
+<link href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"  rel="stylesheet">
 </svelte:head>
 
 
@@ -75,10 +155,10 @@ License:
 Courtesy of Wikimedia Commons
 For more:
 https://www.wikidata.org/wiki/Q97578531  -->
-<div>
-<link href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"  rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js"></script>
+
+<div id="maindiv">
+<!--<link href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"  rel="stylesheet">-->
+
 <style>
 
 .bgim {
@@ -129,16 +209,6 @@ https://www.wikidata.org/wiki/Q97578531  -->
     position: fixed;
     top: 45px;
     left: 3px !important;
-    /*width: 256px !important;
-    /*z-index: 10000;*/
-    /* --mdc-theme-primary: #FEDBD0 !important;*/
-    /*  --mdc-theme-on-primary: #442C2E !important;*/
-    /*  --mdc-theme-secondary: #FEEAE6 !important;*/
-    /*  --mdc-theme-on-secondary: #442C2E !important;*/
-    /*  --mdc-theme-surface: #FFFBFA !important;*/
-    /*  --mdc-theme-on-surface: #442C2E !important;*/
-    /*  --mdc-theme-background: #FFFFFF !important;*/
-    /*  --mdc-theme-on-background: #442C2E !important;*/
 }
 
 .main-content {
@@ -183,36 +253,7 @@ https://www.wikidata.org/wiki/Q97578531  -->
     background-color: none !important;
     padding: 8px 20px !important;
 }
-/*
-@media screen and (max-width: 259px) {
-    .texto-idioma {
-        display: none !important;
-    }
-    .ajuste1 {
-        padding-right: 3px !important;
-        padding-left: 3px !important;         
-    }
-    .ajuste2 {
-        padding-right: 3px !important;
-        padding-left: 3px !important;         
-    }
-    .ajuste3 {
-        padding-left: 0px !important;
-        padding-right: 20px !important; 
-    }
-}
 
-@media screen and (min-width: 350px) {
-    .icono-idioma {
-        display: none !important;
-    }
-}
-
-@media screen and (min-width: 260px) and (max-width: 349px) {
-    .texto-idioma {
-        display: none !important;
-    }
-}*/
 #Layer_1 path{fill:black;}
 /*:root {}*/
 
@@ -408,100 +449,12 @@ https://www.wikidata.org/wiki/Q97578531  -->
     </div>
 </aside>
 </div>
-<script>
-    /*function openSearch (){
-        let field = document.querySelector(".ekit_search-field");
-        if (field.style.display === "none"){
-        field.style.display = "block"
-    }else{field.style.display = "none"}
-    }*/
-    </script>
-<script src="https://unpkg.com/material-components-web@13.0.0/dist/material-components-web.min.js">
-</script>
-<script type="text/javascript">
-/** Initialize MDC Web components. */
-// Instantiation
-window.mdc.autoInit();
 
-var buttons = document.querySelectorAll('.mdc-button, .mdc-fab');
-for (var i = 0, button; button = buttons[i]; i++) {
-  mdc.ripple.MDCRipple.attachTo(button);
-}
+<script src="https://unpkg.com/material-components-web@13.0.0/dist/material-components-web.min.js"></script>
 
-var nodes = document.querySelectorAll('.mdc-icon-toggle');
-for (var i = 0, node; node = nodes[i]; i++) {
-  mdc.iconToggle.MDCIconToggle.attachTo(node);
-}
 
-var interactiveListItems = document.querySelectorAll('.mdc-list-item');
-for (var i = 0, li; li = interactiveListItems[i]; i++) {
-  mdc.ripple.MDCRipple.attachTo(li);
-  // Prevent link clicks from jumping demo to the top of the page
-  //.addEventListener('click', function(evt) {
-    //evt.preventDefault();
-  //});
-}
-
-//const submenu2BotRippleEl = document.querySelector('.submenu2');
-//const submenu2BotRipple = mdc.ripple.MDCRipple.attachTo(submenu2BotRippleEl);
-//submenu2BotRipple.unbounded = true;
-
-//const submenu1BotRippleEl = document.querySelector('.submenu1');
-//const submenu1BotRipple = mdc.ripple.MDCRipple.attachTo(submenu1BotRippleEl);
-//submenu1BotRipple.unbounded = true;
-
-const drawerElement = document.querySelector('.mdc-drawer');
-const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
-
-const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarElement);
-/*topAppBar.setScrollTarget(document.getElementById('main-content'));*/
-topAppBar.listen('MDCTopAppBar:nav', () => {
-    drawer.open = !drawer.open;
-});
-
-const bCerrar = document.querySelector('.bcerrar');
-bCerrar.addEventListener('click', () => {
-    drawer.open = !drawer.open;
-});
-
-const submenu1BotEl = document.querySelector('.submenu1');
-const submenu1Bot = mdc.iconButton.MDCIconButtonToggle.attachTo(submenu1BotEl);
-const submenu1GrupoEl = document.querySelector('.submenu1grupo');
-submenu1BotEl.addEventListener('click', () => {
-    if (submenu1GrupoEl.style.display == 'block') {
-        submenu1GrupoEl.style.display = 'none';
-        //Hay que simular un click en submenu2
-        //submenu2GrupoEl.style.display = 'none';
-        if (submenu2GrupoEl.style.display == 'block') {
-            submenu2BotEl.click();
-        }
-    }
-    else {
-        submenu1GrupoEl.style.display = 'block';
-    }
-});
-
-const submenu2BotEl = document.querySelector('.submenu2');
-const submenu2Bot = mdc.iconButton.MDCIconButtonToggle.attachTo(submenu2BotEl);
-const submenu2GrupoEl = document.querySelector('.submenu2grupo');
-submenu2BotEl.addEventListener('click', () => {
-    if (submenu2GrupoEl.style.display == 'block') {
-        submenu2GrupoEl.style.display = 'none';
-    }
-    else {
-        submenu2GrupoEl.style.display = 'block';
-    }
-});
-
-const menuIdiomaEl = document.querySelector('.menu-idioma');
-const menuIdioma = new mdc.menu.MDCMenu(menuIdiomaEl);
-const idiomaSelectEl = document.querySelector('.idioma-select');        
-idiomaSelectEl.addEventListener('click', (event) => {
-    menuIdioma.open = !menuIdioma.open;
-});
-</script>
 </div>
+
 <div style="min-height: 80vh;">
 <slot/>
 </div>
