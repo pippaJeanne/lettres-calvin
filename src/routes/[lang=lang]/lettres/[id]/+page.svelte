@@ -46,8 +46,8 @@ let coteok = split[0];
 export let biblMsInfo = biblMs[bibliothequeMs][coteok];
 biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 //serving xml files and transformation stylesheets
-	export const xmlfile = base + url;
-	export const xmlfileEs = base + xmlEs; 
+	export const xmlfile = base + '/api/xml/' + url;
+	export const xmlfileEs = base + '/api/xml/' + xmlEs; 
 	//export const xmlfileMme = base + "/xmles/SeñoradeFalais-14-oct-1543.xml";
 	export const xsltfile =  `${base}/xslt/Transfm-fr.xslt`;
 	export const xsltchng =  `${base}/xslt/Transfm-Fr-voir-changements.xslt`;
@@ -623,7 +623,7 @@ for (var note of notes){
 			style="width:100%;margin:0.5rem 1rem .5rem 5%;float:right;display:flex;justify-content: flex-end;flex-wrap: wrap;">
 
 				<a id="dwl-xml2" style="color:black;"
-					href={xmlEs}
+					href={xmlfileEs}
 					download><button class="btn-row" type="button"><i class="fa fa-download"></i><span> XML-TEI
 						</span></button></a>
 				<button id="agrandirES" title="agrandir pour imprimer" onclick="fullES()"

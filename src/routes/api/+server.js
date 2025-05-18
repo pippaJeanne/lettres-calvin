@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-//import path from 'path';
+import path from 'path';
 import { json } from '@sveltejs/kit';
 import * as jsdom from 'jsdom'
 const { JSDOM } = jsdom;
@@ -25,18 +25,13 @@ export const GET = () => {
 	  return files
 	}
 	
-	//const pathdirfr = path.resolve('static/xml');
-	//const pathdires = path.resolve('static/xmles');
+	const pathdirfr = path.resolve('src/lib/xml');
+	const pathdires = path.resolve('src/lib/xmles');
+  //console.log(pathdirfr, pathdires)
 
-
-	let xmlfr = getFiles("static/xml");
-	let xmles = getFiles("static/xmles");
-	/*const fileList = {xmlFiles, esFiles}
-	//console.log({xmlFiles, esFiles})
-	return new Response(JSON.stringify(fileList), {
-		headers: { 'Content-Type': 'application/json' }
-	});*/
-
+	let xmlfr = getFiles(pathdirfr);
+	let xmles = getFiles(pathdires);
+  //console.log(xmles, xmlfr)
 
 	// You can return the lists directly or process them here
  /*return {xmlfr, xmles}
@@ -53,7 +48,7 @@ for (let file of xmlfr){
     if (file.includes(".xml")){
     files.push(file)
     let d = fs.readFileSync(file, 'utf-8');
-    let slug = file.replace('static/xml/','').replace('.xml','');
+    let slug = file.replace(`${pathdirfr}/`,'').replace('.xml','');
     let parser = new JSDOM(d).window.document;
     let srcMss = parser.querySelector('msDesc')?.getElementsByTagName('facsimile')[0].getElementsByTagName('graphic');
     let tilesrcMs = [];
@@ -113,7 +108,7 @@ for (let file of xmlfr){
     //console.log(persons)
     lettersData[slug] = {
         id: parser.getElementsByTagName('TEI')[0]?.getAttribute('xml:id'),
-        url: file.replace('static',''),
+        url: file.replace(`${pathdirfr}/`,''),
         lang : parser.getElementsByTagName('TEI')[0]?.getAttribute('xml:lang'),
         title : parser.querySelectorAll('title')[0]?.textContent,
         desc : parser.querySelector('desc')?.textContent,
@@ -162,7 +157,7 @@ for (let file of xmles){
     if (file.includes(".xml")){
     filesEs.push(file)
     let d = fs.readFileSync(file, 'utf-8');
-    let slugEs = file.replace('static/xmles/','').replace('.xml','');
+    let slugEs = file.replace(`${pathdires}/`,'').replace('.xml','');
     let parser = new JSDOM(d).window.document;
     //let srcMss = parser.querySelector('msDesc')?.getElementsByTagName('facsimile')[0].getElementsByTagName('graphic');
    /*  let tilesrcMs = [];
@@ -222,7 +217,7 @@ for (let file of xmles){
     //console.log(persons)
     let carta = {
         slug: slugEs,
-        url: file.replace('static',''),
+        url: file.replace(`${pathdires}/`,''),
         lang : parser.getElementsByTagName('TEI')[0]?.getAttribute('xml:lang'),
         title : parser.querySelectorAll('title')[0]?.textContent,
         desc : parser.querySelector('desc')?.textContent,
