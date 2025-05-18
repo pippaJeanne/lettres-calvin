@@ -146,6 +146,7 @@ idiomaSelectEl.addEventListener('click', (event) => {
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js"></script>
 <link href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"  rel="stylesheet">
+<script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/c5dbcb092fa776506abeab3350aeacd7.js"></script>
 </svelte:head>
 
 
@@ -460,7 +461,15 @@ https://www.wikidata.org/wiki/Q97578531  -->
 </div>
 
 
-<footer>    <div class="flex-container-pie">
+<footer>    
+    <div class="flex-container-reseaux">
+        <div class="elevado">
+            <a href="https://github.com/pippaJeanne/lettres-calvin">
+                <img alt="logo de GitHub" class="logoestilo" src="{base}/pngimg.com_github_logo.png">
+            </a>
+    </div>
+    </div> 
+    <div class="flex-container-pie">
     <div class="enlaces-sitio">
         <div class="elevado">
             <a href="{base}/{lang}/a_propos">
@@ -526,7 +535,8 @@ https://www.wikidata.org/wiki/Q97578531  -->
             </a>
     </div>
 
-</div>    
+</div> 
+  
 <div class="flex-container-pie1">
     <div class="letra2 titulo" style="margin-bottom:0;"><a href="{base}/{lang}/mentionsLegales">{t.policies}</a></div>
     <div class="letra2 titulo" style="width: 50%; height: 100%;">

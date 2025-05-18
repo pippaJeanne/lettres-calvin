@@ -337,22 +337,25 @@ a {
 }
 
 .flex-container-pie {
-
 	/*width: 1500px;*/
-
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
 	align-content: space-around;
-
-	/*background: rgb(227, 176, 75);*/
-	/*background: linear-gradient(90deg, rgba(227, 176, 75, 1) 0%, rgba(247, 224, 163, 1) 90%);*/
-	/*background: #f3e7d6;*/
-	
 	background: rgb(243,231,214);
 	background: linear-gradient(180deg, rgba(243,231,214,1) 50%, rgba(255,255,255,1) 100%);
+}
 
+.flex-container-reseaux {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content:space-around;
+	background: #FFFFFF;
+	/*background: linear-gradient(180deg, rgba(243,231,214,1) 50%, rgba(255,255,255,1) 100%);*/
 }
 
 .flex-container-pie1 {
