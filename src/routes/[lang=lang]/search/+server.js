@@ -59,7 +59,7 @@ export const GET = async ({params,fetch}) => {
 		dataLetters.push(post)
 	}
 	let arr = [];
-	for (let person of persons_es){
+	for (let person of persons){
 		let name = person.name;
 		let desc = person.desc;
 		arr.push(`${name} ${desc}`)
@@ -70,13 +70,13 @@ export const GET = async ({params,fetch}) => {
 		title : t.name_index,
 		text : text
 	}
-	const timeline = {
-		slug: `${base}fr/frise`,
-		title : t.timeline_text,
-		text : t.timeline_text
+	const carte = {
+		slug: `${base}fr/carte`,
+		title : t.name_carte,
+		text : "Carte interactive"
 	}
 	dataLetters.push(persIndex)
-	dataLetters.push(timeline)
+	dataLetters.push(carte)
 	//console.log(dataLetters)
 	return json(dataLetters)
 	
@@ -132,7 +132,7 @@ if (lang === "es"){
 		dataLettersEs.push(post)
 	}
 	let arr = [];
-	for (let person of persons){
+	for (let person of persons_es){
 		let name = person.name;
 		let desc = person.desc;
 		arr.push(`${name} ${desc}`)
@@ -143,13 +143,13 @@ if (lang === "es"){
 		title : t.name_index,
 		text : text
 	}
-	const timeline = {
-		slug: `${base}es/frise`,
-		title : t.timeline_text,
-		text : t.timeline_text
+	const carte = {
+		slug: `${base}es/carte`,
+		title : t.name_carte,
+		text : "Mapa interactivo"
 	}
 	dataLettersEs.push(persIndex)
-	dataLettersEs.push(timeline)
+	dataLettersEs.push(carte)
 	//console.log(dataLettersEs)
 	return json(dataLettersEs)
 };

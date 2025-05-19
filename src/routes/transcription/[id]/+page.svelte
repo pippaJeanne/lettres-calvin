@@ -24,8 +24,8 @@ import {page} from '$app/stores'
   })
 
   // To place content in slides
-export const thisTransc = transc[trans_slug]
-export const transc_pages = Object.keys(thisTransc)
+export const thisTransc = transc[trans_slug];
+export const transc_pages = thisTransc !== undefined ? Object.keys(thisTransc): null;
 // To create the right amount of "dots" elements for the slide
 export const num_dots = transc_pages.length
 
@@ -49,7 +49,7 @@ let coteok = split[0];
 export let biblMsInfo = biblMs[bibliothequeMs][coteok];
 biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 //serving xml files and transformation stylesheets
-	export const xmlfile = base + url;
+	export const xmlfile = base + "/api/xml/" + url;
 	//export const xmlfileMme = base + "/xmles/SeñoradeFalais-14-oct-1543.xml";
 	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.xslt`;
 //declaring transfromation functions (executed on client-site)
@@ -314,6 +314,7 @@ for ( let p of transc_pages){
       menuIdioma.open = !menuIdioma.open;
   });
   </script>
+ 
   </div>
 <article style="margin-left:2rem; margin-right:2rem;">
   <h1>{title}</h1>
@@ -455,9 +456,9 @@ function opendiv2(evt, tabname) {
   <div class="tab_right sec-container">
       <div class="tabs_buttons">
         <button class="tablinks1" onclick="opendiv2(event, 'transcription1')" id="defaultOpen1">Transcription</button>
-        <button class="tablinks1" onclick="opendiv2(event, 'Bonnet')">Version de Jules Bonnet</button>
+        <button class="tablinks1" onclick="opendiv2(event, 'Bonnet')" onmouseover="syncNotes()">Version de Jules Bonnet</button>
       </div>
-      
+  
       <!-- Tab content -->
       <div id="transcription1" class="tabcontent1">
         <div class="slideshow-container">
@@ -478,13 +479,47 @@ function opendiv2(evt, tabname) {
         <div id="diplomatic">
         </div>
       </div>
+
   </div>
+ 
 </div>
 <div style="margin-top:3rem; font-size:.5rem">
   <p>Transcription faite sur la plateforme <a href="https://escriptorium.inria.fr/">eScriptorium</a> avec Kraken et à l'aide d'un modèle entraîné sur l'écriture de Jean Calvin à partir du model <a href="https://zenodo.org/records/6657809">HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)</a>. Vous pouvez consulter le protocole de transcription <a href="{base}/fr/recherche#protocole_transcription">ici</a>.</p>
 </div>
-</article>
 
+ <!-- Bonnet's edition syncNotes-->
+ <script>
+	function syncNotes(){
+		let notes = document.querySelectorAll('.diplomatic');
+let singleNotes = document.querySelectorAll('sup.diplo');
+for (var note of notes){
+	var textOk = "";
+	var txt = [];
+	var text = note.querySelectorAll('span:last-child p span');
+	for (var t of text){
+		t.textContent.replaceAll("\n", "")
+		txt.push(t.textContent);
+		textOk = txt.join("");
+	}
+	var href =note.querySelector('span:first-child > a.sup')?.getAttribute('href');
+	var name =note.querySelector('span:first-child > a.sup')?.getAttribute('name');
+	var n = note.querySelector('span:first-child > a.sup')?.textContent;
+	for (var snote of singleNotes){
+		var txt = snote.querySelector('a.sup')?.getAttribute('title');
+		var link = snote.querySelector('a.sup');
+		var num = snote.querySelector('a.sup').textContent;
+		if(txt==textOk){
+			link.setAttribute("href",`#${name}`);
+			var string = href?.split('#');
+			var nom = string[1];
+			link?.setAttribute("name", nom);
+			link.textContent = n;
+		}
+	}
+}};
+</script>
+</article>
+ 
 <footer>    
   <div class="flex-container-pie">
     <div class="enlaces-sitio">
