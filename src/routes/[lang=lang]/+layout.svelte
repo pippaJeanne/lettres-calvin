@@ -92,9 +92,14 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
 });
 
 const bCerrar = document.querySelector('.bcerrar');
+const option = document.querySelectorAll("a.mdc-list-item");
 bCerrar.addEventListener('click', () => {
     drawer.open = !drawer.open;
 });
+for (let d of option){
+    d.addEventListener('click', () => {
+    drawer.open = !drawer.open;
+})};
 
 const submenu1BotEl = document.querySelector('.submenu1');
 const submenu1Bot = mdc.iconButton.MDCIconButtonToggle.attachTo(submenu1BotEl);
