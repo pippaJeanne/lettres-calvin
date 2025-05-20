@@ -259,8 +259,27 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 <!-- Transversal Indexes-->
 <div class="mainIndex">
 	<ul><h3>{t.ppt_index}</h3>
-	<li><a href="/{lang}/index_noms">{t.names}</a></li>
-	<li><a href="/{lang}/carte">{t.places}</a></li>
+	<div id="vizIndex">
+	<div>
+		{#if lang === "fr"}
+		<div><img class="pics" src="/perscartes.png" alt="Rangée de trois cartes contenant l'information de la personne et la liste de lettres où ce nom apparaît."/></div>
+		{/if}
+		{#if lang === "es"}
+		<div><img class="pics" src="/tarjetas.png" alt="Fila de tres tarjetas que contienen la información de la persona y una lista de las cartas donde su nombre aparece."/></div>
+		{/if}
+		<li><a href="/{lang}/index_noms">{t.names}</a></li>
+	</div>
+	<div>
+		<div>
+			<video class="pics" autoplay loop>
+				<source src="/mapa.mov" type="video/mp4">
+					<track kind="captions">
+				Your browser does not support the video tag.
+			  </video>
+		</div>
+		<li><a href="/{lang}/carte">{t.places}</a></li>
+	</div>
+	</div>
 	</ul>
 </div>
 
@@ -384,5 +403,18 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 		.mainIndex{
 	margin:1rem 2rem;
 }
+	}
+	img.pics, video.pics {
+		width:100%!important;
+		height: 20vh;
+	}
+	#vizIndex{
+		display:flex;
+		align-items: center;
+		align-content:center;
+		justify-content: space-around;
+	}
+	#vizIndex ul h3, #vizIndex li{
+		text-align: center !important;
 	}
 </style>
