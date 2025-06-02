@@ -80,7 +80,7 @@ let tags_es = {};
 })
 //console.log(tags_es.length, tags_es )
 
-// Arranging tags (themes) so the right one matches the right slug
+// Arranging categories so the right one matches the right slug
 let cats_es = []
 	cartas.map(d =>{
 			let obj;
@@ -124,9 +124,11 @@ if (lang==="fr"){
 		let catobj = {};
 	  for (let slug of slugs){
 		if (letters[slug].categories.indexOf(cat)!== -1){
+			let slug = cat.toLowerCase().replaceAll(' ', '-').replaceAll("é",'e').replaceAll('è','e').replaceAll('.', '').replaceAll('î', 'i').replaceAll('û', 'u').replaceAll('à', 'a')
 			n += 1 ;
 			catobj = {
 				name : cat,
+				slug : slug,
 				n : n
 			};
 		}
@@ -169,7 +171,7 @@ if (lang==="es"){
 	}	
 } 
 //console.log(tagsL)	
-//console.log(catsL)
+console.log(catsL)
 
 export function tline_data(){
     if (lang === "fr"){
