@@ -67,7 +67,7 @@ let tags_es = {};
 		if (d.source === letters[s].id){
 		letters[s].tags.map((w, index) =>{
 			let slug = w.toLowerCase().replaceAll(' ', '-').replaceAll("é",'e').replaceAll('è','e').replaceAll('.', '').replaceAll('î', 'i').replaceAll('û', 'u').replaceAll('à', 'a')
-			
+
 			d.tags.map((tag, i) => {
 			if (letters[s].tags.length === d.tags.length && i === index){
 				obj = {slug : slug, tag: tag}
@@ -81,22 +81,24 @@ let tags_es = {};
 //console.log(tags_es.length, tags_es )
 
 // Arranging categories so the right one matches the right slug
-let cats_es = []
+let cats_es = {}
 	cartas.map(d =>{
-			let obj;
+			let obj = {};
 		slugs.map(s => {
 		if (d.source === letters[s].id){
 		letters[s].categories.map((c, index) =>{
 			let slug = c.toLowerCase().replaceAll(' ', '-').replaceAll("é",'e').replaceAll('è','e').replaceAll('.', '').replaceAll('î', 'i').replaceAll('û', 'u').replaceAll('à', 'a')
 			
 			d.categories.map((cat, i) => {
+
 			if (letters[s].categories.length === d.categories.length && i === index){
-				obj = {slug : slug, cat : cat }
+				 obj = {slug : slug, cat: cat}
+				 cats_es[slug]= obj
 		}
 		})
-		if(cats_es.indexOf(obj)=== -1){cats_es.push(obj)}
 		})
-	  }	})
+	  }	
+	})
 	})
 
 export const tagsL = [];
@@ -127,11 +129,21 @@ if (lang==="fr"){
 			let slug = cat.toLowerCase().replaceAll(' ', '-').replaceAll("é",'e').replaceAll('è','e').replaceAll('.', '').replaceAll('î', 'i').replaceAll('û', 'u').replaceAll('à', 'a')
 			n += 1 ;
 			catobj = {
-				name : cat,
+				name: cat,
 				slug : slug,
-				n : n
-			};
+				n  :  n
+			}
 		}
+		let index = letters[slug].categories.indexOf(cat)
+		if (letters[slug].categories.length === 3){
+			if (index === 0){catobj["recipient"] = cat}
+			if (index === 1){catobj["source"] = cat}
+			if (index === 2){catobj["sign"] = cat}
+			}
+			if (letters[slug].categories.length === 2){
+			if (index === 0){catobj["recipient"] = cat}
+			if (index === 1){catobj["source"] = cat}
+			}
 	  }
 	  catsL.push(catobj)
 	}
@@ -153,25 +165,36 @@ if (lang==="es"){
 	  }
 	 if (!tagsL.includes(tagobj)){tagsL.push(tagobj)}
 	})
-
-	for (let cat of cats_es){
+	//console.log(cats_es)
+	Object.keys(cats_es).map(cat => {
 		let n = 0;
 		let catobj = {};
 		cartas.map(slug =>{
-		if (slug.categories.indexOf(cat.cat)!== -1){
+		if (slug.categories.indexOf(cats_es[cat].cat)!== -1){
 			n += 1 ;
 			catobj = {
-				name : cat.cat,
-				slug : cat.slug,
+				name : cats_es[cat].cat,
+				slug : cats_es[cat].slug,
 				n : n
 			};
 		}
+		let index = slug.categories.indexOf(cats_es[cat].cat)
+		
+		if (slug.categories.length === 3){
+			if (index === 0){catobj["recipient"] = cats_es[cat].cat}
+			if (index === 1){catobj["source"] = cats_es[cat].cat}
+			if (index === 2){catobj["sign"] = cats_es[cat].cat}
+			}
+		if (slug.categories.length === 2){
+			if (index === 0){catobj["recipient"] = cats_es[cat].cat}
+			if (index === 1){catobj["source"] = cats_es[cat].cat}
+			}
 	  })
 	  catsL.push(catobj)
-	}	
+	})	
 } 
 //console.log(tagsL)	
-console.log(catsL)
+//console.log(catsL)
 
 export function tline_data(){
     if (lang === "fr"){
@@ -229,13 +252,13 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 			}
 		}
 	}
-	for (let c of categ){
+	/*for (let c of categ){
 		for (let cat of catsL){
 			if(c.textContent === cat.name){
 				c.innerHTML += ` <span class="n">[${cat.n}]</span>`  
 			}
 		}
-	}
+	}*/
 	
 })
 </script> 
@@ -302,7 +325,14 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 	<div class="nuage">
 		<h2>{t.categories}</h2>
 		<ul class="cats"> <p>{t.cat_nature} :</p>
-				<li><a class="categ" href="./{lang}/categories/copie">{t.copy} 
+			{#each catsL as cat}
+				{#if cat["source"]}
+				<li><a class="categ" href="./{lang}/categories/{cat.slug}">{cat.name} 
+					<span class="n"> [{cat.n}]</span></a> 
+			</li>	
+				{/if}
+			{/each}
+			<!--	<li><a class="categ" href="./{lang}/categories/copie">{t.copy} 
 					</a>
 				</li>
 				<li><a class="categ" href="./{lang}/categories/orig-autographe">{t.orig_autograph} 
@@ -316,18 +346,32 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 			</li>
 				<li><a class="categ" href="./{lang}/categories/original">{t.orig}
 					</a>
-				</li>
+				</li>-->
 		</ul> 
 		<ul class="cats"> <p>{t.cat_recipient} :</p>
-			<li><a class="categ" href="./{lang}/categories/individu">{t.individual} 
+			{#each catsL as cat}
+				{#if cat["recipient"]}
+				<li><a class="categ" href="./{lang}/categories/{cat.slug}">{cat.name} 
+					<span class="n"> [{cat.n}]</span></a> 
+			</li>	
+				{/if}
+			{/each}
+		<!--	<li><a class="categ" href="./{lang}/categories/individu">{t.individual} 
 				</a>
 			</li>
 			<li><a class="categ" href="./{lang}/categories/collectivite">{t.group} 
 				</a>
-			</li>
+			</li>-->
 	</ul> 
 	<ul class="cats"><p>{t.cat_signature} :</p>
-		<li><a class="categ" href="./{lang}/categories/signee-par-plusieurs">{t.signed_many} 
+		{#each catsL as cat}
+				{#if cat["sign"]}
+				<li><a class="categ" href="./{lang}/categories/{cat.slug}">{cat.name} 
+					<span class="n"> [{cat.n}]</span></a> 
+			</li>	
+				{/if}
+			{/each}
+	<!--	<li><a class="categ" href="./{lang}/categories/signee-par-plusieurs">{t.signed_many} 
 			</a>
 		</li>
 		<li><a class="categ" href="./{lang}/categories/sous-pseudonyme">{t.pseudonym} 
@@ -336,7 +380,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 		<li>
 			<a class="categ" href="./{lang}/categories/sans-signature">{t.no_signature}
 			</a>
-		</li>
+		</li>-->
 	</ul> 
 		</div>
 </div>
