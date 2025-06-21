@@ -399,6 +399,11 @@ a {
 
 }
 
+.tl-timeline a{
+	color:#fff !important;
+}
+
+
 /*.logo-maestria {
 	margin: 2px;		
 	max-height: 40px;
