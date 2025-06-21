@@ -391,7 +391,7 @@ for (var note of notes){
 		<div class="content" id="bonnet" style="display:block;border:none;">
 			<div id="btnsfr"
 				style="width:100%;margin:0.5rem 1rem .5rem 5%;float:right;display:flex;justify-content: flex-end;flex-wrap: wrap;">
-				<button id="voirdiplo" class="btn-row" onclick="seediplo()">Voir la transcription diplomatique</button>
+				<button id="voirdiplo" class="btn-row" onclick="seediplo()">Voir version texte</button>
 			</div>
 			<div id="openseadragon2"
 			style="width: 98%; height: 500px;background-color: #fcfcfc; display: block; margin-left: auto; margin-right: auto;">
@@ -435,7 +435,7 @@ for (var note of notes){
 		<div class="content" style="border:none;" id="diplomatic">
 			<div id="btnsfr"
 			style="width:100%;margin:0.5rem 1rem .5rem 5%;float:right;display:flex;justify-content: flex-end;flex-wrap: wrap;">
-				<button class="btn-row" id="voir0" onclick="seediplo()">Cacher la transcription diplomatique</button>
+				<button class="btn-row" id="voir0" onclick="seediplo()">Cacher la version texte</button>
 				<a id="dwl-xml1" 
 					href={xmlfile}
 					download><button class="btn-row" type="button"><i class="fa fa-download"></i><span> XML-TEI

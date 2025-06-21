@@ -138,8 +138,9 @@ for (let file of xmlfr){
       }else if(signed[0] === ""){
         let pseudonym = 'SANS SIGNATURE';
         categories = [lettersData[slug].destType?.toUpperCase(),lettersData[slug].nature?.toUpperCase(), pseudonym]
-      }else{
-        categories = [lettersData[slug].destType?.toUpperCase(),lettersData[slug].nature?.toUpperCase()]
+      }else if(signed[0]?.toLowerCase().includes('calvin') && signed[0] !== "" ){
+        let pseudonym = 'SIGNÉE JEAN CALVIN';
+        categories = [lettersData[slug].destType?.toUpperCase(),lettersData[slug].nature?.toUpperCase(), pseudonym]
       }
     }
 
@@ -248,8 +249,9 @@ for (let file of xmles){
       }else if(signedEs[0] === ""){
         let pseudonym = 'SIN FIRMA';
         categories = [carta.destType?.toUpperCase(),carta.nature?.toUpperCase(), pseudonym]
-      }else{
-        categories = [carta.destType?.toUpperCase(),carta.nature?.toUpperCase()]
+      }else if(signedEs[0]?.toLowerCase().includes('calvin') && signedEs[0] !== "" ){
+        let pseudonym = 'FIRMADA JUAN CALVINO';
+        categories = [carta.destType?.toUpperCase(),carta.nature?.toUpperCase(), pseudonym]
       }
     }
       carta.categories = categories;

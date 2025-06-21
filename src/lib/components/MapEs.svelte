@@ -16,7 +16,7 @@
 <h3>Leyenda</h3>
 <p>Los círculos azules indican el lugar de envío y los marcadores azules indican el lugar de destinación.</p>
 
-<p>Una lista detallada de las cartas enviadas a este lugar aparecerá al clicar sobre los marcadores.</p>
+<p>Una lista detallada de las cartas enviadas a este lugar aparecerá al clicar sobre los marcadores. Puede acceder a la carta deseada en la lista clicando sobre esta.</p>
 
 <p><em>Las informaciones entre corchetes no son certeras.</em></p>
 </div>

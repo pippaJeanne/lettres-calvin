@@ -185,10 +185,10 @@ if (lang==="es"){
 			if (index === 1){catobj["source"] = cats_es[cat].cat}
 			if (index === 2){catobj["sign"] = cats_es[cat].cat}
 			}
-		if (slug.categories.length === 2){
+		/*if (slug.categories.length === 2){
 			if (index === 0){catobj["recipient"] = cats_es[cat].cat}
 			if (index === 1){catobj["source"] = cats_es[cat].cat}
-			}
+			}*/
 	  })
 	  catsL.push(catobj)
 	})	

@@ -15,7 +15,7 @@
 <h3>Legende</h3>
 <p>Les circles bleus indiquent le lieu d'envoi et le marqueurs bleus indiquent le lieu de destination.</p>
 
-<p>Une liste plus détaillée des lettres envoyées à cet endroit apparaitra si on clique sur les marqueurs.</p>
+<p>Une liste plus détaillée des lettres envoyées à cet endroit apparaitra si vous cliquez sur les marqueurs. Vous pouvez accéder à la lettre choisie en cliquant dessus.</p>
 
 <p><em>Les informations entre crochets ne sont pas certaines.</em></p>
 </div>
