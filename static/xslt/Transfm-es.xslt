@@ -102,6 +102,22 @@
     </h5>
   </xsl:template>
   
+  <xsl:template match="tei:hi[@xml:id='editorNote']/tei:hi">
+    <span><xsl:apply-templates/></span>
+    <br/>
+  </xsl:template>
+  
+  <xsl:template match="tei:ref">
+    <span>
+      <a style="text-decoration: underline; color:green !important;">
+        <xsl:attribute name="href">
+          <xsl:value-of select="./@target"/>      
+        </xsl:attribute>
+        <xsl:apply-templates/>
+      </a>
+    </span>
+  </xsl:template>
+  
   <xsl:template match="tei:body//tei:p">
     <p>
       <xsl:apply-templates/>
