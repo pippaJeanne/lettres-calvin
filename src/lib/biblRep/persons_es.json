@@ -376,20 +376,6 @@
                      "id": "#vendome"
               },
               {
-                     "name": "Virgen María ( - 0100)",
-                     "wikiurl": "http://www.wikidata.org/entity/Q345",
-                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Duccio%20The-Madonna-and-Child-128.jpg",
-                     "desc": "madre de Jesús de Nazaret",
-                     "letters": [
-                            {
-                                   "slug": "1542_05_Al_senor_cura",
-                                   "date": "[mayo de 1542]",
-                                   "headline": "Párroco anónimo"
-                            }
-                     ],
-                     "id": "#vierge_marie"
-              },
-              {
                      "name": "Felipe Melanchthon (1497 - 1560)",
                      "wikiurl": "http://www.wikidata.org/entity/Q76325",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/PhilippMelanchthon.jpg",
