@@ -138,6 +138,7 @@ export const createLinkTransc = () =>{
       if(slug === slugOk){
 		link2transc = document.createElement("p")
 		let a = document.createElement("a");
+		a.id = "linkTransc";
 		a.style.textDecoration = "underline"
 		a.href = `${base}/transcription/${slugOk}`;
 		a.textContent = "Voir transcription diplomatique des fueillets manuscrits de cette lettre";
