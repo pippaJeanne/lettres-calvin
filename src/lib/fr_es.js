@@ -56,7 +56,7 @@ export const fr_es = {
         href_letters : "fr/lettres",
         ppt_index: "Vous pouvez également explorer la correspondance par :",
         savoirplus: "En savoir plus",
-        misajour: "Dernière mise à jour : 20 juin 2025"
+        misajour: "Dernière mise à jour : 23 août 2025"
     },
     es: {
         site_title: "Cartas de Calvino",
@@ -115,6 +115,6 @@ export const fr_es = {
         href_letters : "es/cartas",
         ppt_index: "También puede explorar la correspondencia por:",
         savoirplus: "Más información",
-        misajour: "Última actualización : 20 junio de 2025"
+        misajour: "Última actualización : 23 de agosto de 2025"
     }
 }
