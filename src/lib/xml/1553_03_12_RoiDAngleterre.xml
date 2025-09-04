@@ -66,7 +66,7 @@
   <date when="1553-03-12">12 de mars 1553</date>
  </correspAction>
  <correspAction type="received">
-  <name type="individu" key="Édouard VI d'Angleterre"  ref="https://www.wikidata.org/wiki/Q83229" corresp="#edouard-VI">roi d'Angleterre</name>
+  <name type="individu" key="Édouard VI d'Angleterre"  ref="https://www.wikidata.org/wiki/Q83229" corresp="#edouard-VI">Roi d'Angleterre</name>
   <settlement cert="medium" key="Londres" ref="https://www.wikidata.org/wiki/Q84" corresp="#londres">Londres</settlement>
  </correspAction>
  <correspContext>
@@ -98,7 +98,7 @@
   <hi rend="bold">Copie. Bibl. imp. Coll. Dupuy, vol. 102. </hi>
   <hi xml:id="editorNote"> 
   <hi rend="italic">Maintenant à la BNF [Gallica] sous la côte <ref target="https://gallica.bnf.fr/ark:/12148/btv1b100342104/f20.item">Recueil de lettres de Calvin et d'autres théologiens du XVI siècle (f. 20)</ref></hi>
-  <hi>[<label type='nature'>Original</label> dans le Ms. lat. 107 (f. 35). Bibl. de Genève] </hi>
+  <hi>[<label type='nature'>Orig. autographe</label> dans le Ms. lat. 107 (f. 35). Bibl. de Genève] </hi>
   <hi rend="italic"><hi rend="superscript">*</hi> Le dernier paragraphe et la signature manquent dans l'original ; le fueillet suivant contenant la fin manque.
   </hi></hi>
 <salute>Sire,</salute>
