@@ -153,6 +153,12 @@
     </span>
   </xsl:template>
 
+  <xsl:template match="tei:del">
+    <span style="text-decoration: line-through; text-decoration-color: red;">
+      <xsl:value-of select="."/>
+    </span>
+  </xsl:template>
+
   <xsl:template match="tei:add">
     <span style="text-decoration: underline; text-decoration-color: lightgreen; text-decoration-style:dotted;">
     <xsl:value-of select="."/>

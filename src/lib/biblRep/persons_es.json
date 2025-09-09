@@ -177,6 +177,20 @@
                      "id": "#jacques-bourgogne"
               },
               {
+                     "name": "Jean Trolliet",
+                     "wikiurl": "",
+                     "thumbnail": "",
+                     "desc": "",
+                     "letters": [
+                            {
+                                   "slug": "1552_10_06_SenoresDeGinebra",
+                                   "date": "(6 de octubre de 1552)",
+                                   "headline": "Señores de Ginebra"
+                            }
+                     ],
+                     "id": "#trolliet"
+              },
+              {
                      "name": "Jean de Tillet",
                      "wikiurl": "http://www.wikidata.org/entity/Q3175826",
                      "thumbnail": "",
@@ -193,7 +207,7 @@
                                    "headline": "Louis de Tillet"
                             }
                      ],
-                     "id": "#jehan"
+                     "id": "#jean_tillet"
               },
               {
                      "name": "Jeremías ( - )",
@@ -266,6 +280,11 @@
                                    "slug": "1542_05_Al_senor_cura",
                                    "date": "[mayo de 1542]",
                                    "headline": "Párroco anónimo"
+                            },
+                            {
+                                   "slug": "1552_10_06_SenoresDeGinebra",
+                                   "date": "(6 de octubre de 1552)",
+                                   "headline": "Señores de Ginebra"
                             }
                      ],
                      "id": "#paul"

@@ -133,6 +133,8 @@
 
    <xsl:template match="tei:choice/tei:sic">
   </xsl:template>
+  <xsl:template match="tei:del">
+  </xsl:template>
 
    <xsl:template match="tei:add">
     <span>

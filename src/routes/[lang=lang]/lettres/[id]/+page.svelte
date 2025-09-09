@@ -314,7 +314,7 @@ for (var note of notes){
 		var txt = snote.querySelector('a.sup')?.getAttribute('title');
 		var link = snote.querySelector('a.sup');
 		var num = snote.querySelector('a.sup').textContent;
-		if(txt==textOk){
+		if(txt.substring(0,30)==textOk.substring(0,30)){
 			link.setAttribute("href",`#${name}`);
 			var string = href?.split('#');
 			var nom = string[1];

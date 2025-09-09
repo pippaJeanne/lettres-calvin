@@ -136,11 +136,22 @@
     <xsl:value-of select="."/>
     </span>
   </xsl:template>
+  
+  <xsl:template match="tei:choice/tei:del">
+    <span>
+      <xsl:value-of select="."/>
+    </span>
+  </xsl:template>
 
    <xsl:template match="tei:choice/tei:corr">
   </xsl:template>
 
    <xsl:template match="tei:add">
+  </xsl:template>
+  <xsl:template match="tei:del">
+    <span>
+      <xsl:value-of select="."/>
+    </span>
   </xsl:template>
 
 <xsl:template match="tei:hi[@xml:lang='trad']">
@@ -204,62 +215,21 @@
   
 <xsl:template match="tei:orgName">
     <span>
-      <!--<a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:value-of select="./@ref"/>
-    </xsl:attribute>-->
       <xsl:apply-templates/>
-   <!-- </a> -->
     </span>
   </xsl:template>
-
-  <xsl:template match="tei:dateline/tei:placeName">
-    <span>
-     <!-- <a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:value-of select="$map"/>
-    </xsl:attribute> -->
-      <xsl:apply-templates/>
-    <!--</a>-->
-    </span>
-  </xsl:template>
+  
 
   <xsl:template match="tei:placeName">
     <span>
-      <!--<a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:value-of select="./@ref"/>
-    </xsl:attribute>-->
       <xsl:apply-templates/>
-    <!--</a>-->
     </span>
   </xsl:template>
 
  <xsl:template match="tei:persName">
     <span>
-      <!--<a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:value-of select="./@ref"/>
-    </xsl:attribute>-->
       <xsl:apply-templates/>
-    <!--</a>-->
     </span>
-  </xsl:template>
-  
-
-  <xsl:template match="tei:persName">
-   <!--<xsl:choose>
-  <xsl:when  test="@corresp"> -->
-    <span>
-    <!-- <a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:copy-of select="$persIndex"/><xsl:value-of select="./@corresp"/>
-    </xsl:attribute> -->
-      <xsl:apply-templates/>
-   <!-- </a> -->
-    </span>
-    <!-- </xsl:when>
-    <xsl:otherwise>
-      <strong>
-      <xsl:apply-templates/>
-    </strong>
-    </xsl:otherwise>
-   </xsl:choose>-->
   </xsl:template>
 
 
@@ -279,22 +249,9 @@
   </xsl:template>
 
 <xsl:template match="tei:p//tei:title">
-  <!-- <xsl:choose>
-  <xsl:when  test="@ref">
-    <em>
-    <a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:value-of select="./@ref"/>
-    </xsl:attribute>
-      <xsl:apply-templates/>
-    </a>
-    </em>
-    </xsl:when>
-    <xsl:otherwise>-->
       <span style="font-style:italic;">
       <xsl:apply-templates/>
     </span>
-   <!-- </xsl:otherwise>
-   </xsl:choose>-->
   </xsl:template>
 
   <xsl:template match="tei:p//tei:bibl">
