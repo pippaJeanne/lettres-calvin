@@ -170,9 +170,9 @@
   </xsl:template>
 
   <xsl:template match="tei:dateline[@xml:id='opener']">
-    <h6 class="toRight">
+    <!--<h6 class="toRight">
     <xsl:apply-templates/>
-    </h6>
+    </h6>-->
   </xsl:template>
 
   <xsl:template match="tei:dateline/text()">
