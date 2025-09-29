@@ -78,7 +78,7 @@ sauf indication contraire. Les passages en latin ont été traduits par l'auteur
  <correspAction type="sent">
  <persName>Jean Calvin</persName>
  <settlement cert="low" key="Genève" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">[Genève]</settlement>
- <date when="1542-05">[mai 1542]</date>
+ <date when="1542">[1542]</date>
  </correspAction>
  <correspAction type="received">
  <name type="individu" key="Curé anonyme" ref="#" corresp="#cure">Monsieur le curé</name>
@@ -124,7 +124,7 @@ sauf indication contraire. Les passages en latin ont été traduits par l'auteur
 
 <p>Or <choice><orig>nostre</orig><reg>notre</reg></choice> Seigneur Jésus vous veuille ouvrir les <choice><orig>yeulx</orig><reg>yeux</reg></choice> pour <choice><orig>veoir</orig><reg>voir</reg></choice> que c'est qu'il <choice><orig>veult</orig><reg>veut</reg></choice> dire, <choice><orig>quant</orig><reg>quand</reg></choice> il se nomme le seul salut, la seule vie, la seule sanctification, la seule sagesse, la seule <choice><orig>fiance</orig><reg>assurance</reg></choice> des hommes <choice><orig>affin</orig><reg>afin</reg></choice> que nous tous ensemble le <choice><orig>congnoissant</orig><reg>connaissant</reg></choice> tel, d'un bon accord le glorifions, tant de <choice><orig>cueur</orig><reg>cœur</reg></choice> que de bouche, et pareillement en toutes nos œuvres, <choice><orig>affin</orig><reg>afin</reg></choice> que comme nous avons tous <choice><orig>receu</orig><reg>reçu</reg></choice> un <choice><orig>baptesme</orig><reg>baptême</reg></choice> en son nom, nous <choice><orig>aions</orig><reg>ayons</reg></choice> une <choice><orig>mesme</orig><reg>même</reg></choice> confession de <choice><orig>nostre</orig><reg>notre</reg></choice> <choice><orig>chrestienté</orig><reg>chrétienté</reg></choice>.</p>
  <closer>
-   <dateline><placeName></placeName><date from="1542" to="1543" when="1542-05">(1542-43.)</date>
+   <dateline><placeName></placeName><date from="1542" to="1543" when="1542">(1542-43.)</date>
    </dateline> 
    <salute></salute>
    <signed></signed>

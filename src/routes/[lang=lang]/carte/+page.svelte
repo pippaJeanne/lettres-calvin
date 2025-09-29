@@ -36,8 +36,22 @@
 	const script = document.createElement("script");
 	script.type = "module";
 	// change text when updating the map
-	script.textContent = fr ? `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";import define from "https://api.observablehq.com/d/1956978c14deb22b@2604.js?v=4";new Runtime().module(define, name => {if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-8946d812"));if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-8946d812"));if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-8946d812"));return ["mapViz","arrow"].includes(name);});` 
-    : `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js"; import define from "https://api.observablehq.com/d/de8c36a8a2970791@2617.js?v=4"; new Runtime().module(define, name => {   if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-d1495a01"));   if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-d1495a01"));   if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-d1495a01"));   return ["mapViz","arrow"].includes(name); });`
+	script.textContent = fr ? `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/1956978c14deb22b@2621.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-d7463a1e"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-d7463a1e"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-d7463a1e"));
+  return ["mapViz","arrow"].includes(name);
+});` 
+    : `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/de8c36a8a2970791@2634.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-9d4052d2"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-9d4052d2"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-9d4052d2"));
+  return ["mapViz","arrow"].includes(name);
+});`
 	mapcontainer.appendChild(script)
 	}
   }

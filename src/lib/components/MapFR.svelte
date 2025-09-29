@@ -12,18 +12,19 @@
 <div>
 <h1>{title}</h1>
 <div>
-<h3>Legende</h3>
-<p>Les circles bleus indiquent le lieu d'envoi et le marqueurs bleus indiquent le lieu de destination.</p>
-
-<p>Une liste plus détaillée des lettres envoyées à cet endroit apparaitra si vous cliquez sur les marqueurs. Vous pouvez accéder à la lettre choisie en cliquant dessus.</p>
-
-<p><em>Les informations entre crochets ne sont pas certaines.</em></p>
+<h3>Légende</h3>
+<ul><li>Cercles bleus : lieux d'envoi</li>
+<li>Marqueurs bleus : destinations</li>
+<li>Cercles rouges : lieux mentionnés</li>
+<li>Couleur foncée = plus de lettres liées au lieu</li>
+<li>Clic sur un marqueur = liste et liens vers les lettres</li>
+ <li>[] = information incertaine</li></ul>
 </div>
 
 <div style="width:100%" id="observableCarte"> <!-- Only change the number in the next 3 divs' ids when updating along with what's inside the script type="module" tag-->
-<div id="observablehq-viewof-date-8946d812"></div>
-<div id="observablehq-carte-8946d812"></div>
-<div id="observablehq-activate-8946d812" class="cacher"></div>
+<div id="observablehq-viewof-date-d7463a1e"></div>
+<div id="observablehq-carte-d7463a1e"></div>
+<div id="observablehq-activate-d7463a1e" class="cacher"></div>
 <p>Crédit: <a href="https://observablehq.com/d/1956978c14deb22b">Réseau de la correspondance de Calvin par <em>visualiser</em></a></p>
   </div>
 

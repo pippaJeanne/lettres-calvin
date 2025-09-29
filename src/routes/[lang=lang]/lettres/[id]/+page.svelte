@@ -26,7 +26,6 @@
 			xmlEs = carta.url ;
 		} 
 	}
-	
 	//Checking library name. If 'bibliothèque de genève' rearrange array of image urls. Geneva's library facs not iiiF compatible
    export const biblMsCheck = () => { 
     let newarray = [];
