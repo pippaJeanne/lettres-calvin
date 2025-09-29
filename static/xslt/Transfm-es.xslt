@@ -13,8 +13,7 @@
 <xsl:template match="tei:TEI">
 <xsl:apply-templates select="tei:text"/>
 <hr width="40%" style="margin-top:1rem;margin-bottom:1rem;margin-left:30% ;border-top:1px solid #4d596b;"/>
-<text><h2>Bibliografía</h2>
-  </text>
+<h3>Bibliografía</h3>
 <xsl:apply-templates select="tei:teiHeader"/>
 </xsl:template>
 
