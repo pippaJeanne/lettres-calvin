@@ -31,7 +31,7 @@
                </editor>, <pubPlace>
                Paris</pubPlace>, <publisher>Librarie de Ch. Meyrueis et compagnie</publisher>, <date when="1854">1854</date>. <affiliation>Provenance : Bibliothèque nationale de
                   France</affiliation>
-               <facsimile xml:id="92-102">
+               <facsimile corresp="92-102">
                   <graphic url="https://gallica.bnf.fr/iiif/ark:/12148/bpt6k209248w/f92/info.json"/>
                   <graphic url="https://gallica.bnf.fr/iiif/ark:/12148/bpt6k209248w/f93/info.json"/>
                   <graphic url="https://gallica.bnf.fr/iiif/ark:/12148/bpt6k209248w/f94/info.json"/>
