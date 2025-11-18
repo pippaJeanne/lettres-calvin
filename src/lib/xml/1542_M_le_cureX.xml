@@ -67,10 +67,10 @@
 <graphic url="https://archives.bge-geneve.ch/archive/fullSizeImage?file=https%3A%2F%2Farchives.bge-geneve.ch%2Fcgi-bin%2Fiipsrv.fcgi%3FPY%3D1%26CVT%3DJPG%26FIF%3D%252Fhome%252Fhttpd%252Fbge%252Fdiffusion%252Fprod%252Fapp%252Fwebroot%252Fdata%252Ffiles%252Fbge.diffusion%252Fimages%252Fms_lat_1_376ead%252Fms_lat_107a_volume_2%252Fms_lat_107a_02_f372v.jpg"/>
 </facsimile>
 </msDesc>
- <notesStmt>
-   <note>Les notes proviennent de l'édition de Jules Bonnet de 1854 
-sauf indication contraire. Les passages en latin ont été traduits par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
- </notesStmt>
+        <notesStmt>
+          <note>Les notes proviennent de l'édition de Jules Bonnet de 1854
+            sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
+        </notesStmt>
 </sourceDesc>
 </fileDesc>
 <profileDesc>
