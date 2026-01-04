@@ -16,8 +16,6 @@ title: Recherche
 
 * Garder les s long ( ʃ )
 
-* Dissimilation de « v » et « u ».
-
 * ᴖ  =>  Ce symbole indiquera le signe d'abréviation utilisé dans le manuscrit. Dans le manuscrit, un symbole semblable est placé au-dessus des lettres du mot abrégé, lequel comprend normalement la première lettre suivie des deux dernières. Étant donné que c'est difficile de transcrire ce symbole, on placera le symbole ( ᴖ )  entre la première lettre et les deux dernières pour indiquer les lettres manquantes.
 
 **Exemples :** 
@@ -51,6 +49,8 @@ Quant au texte barré comme dans l'exemple ci-dessus, on va le transcrire ainsi 
 ![&](/pics_protocole/esperluette.png)
 Ce symbole sera transcrit comme « & » (esperluette).
 
+![-](/pics_protocole/cesure.png)
+Ce symbole sera transcrit comme « - » (tiret de césure).
 
 
 ### Référence 

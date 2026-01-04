@@ -234,7 +234,7 @@ function loadTimelineAssets() {
 
     return Promise.all([
       loadCSS('https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css'),
-      loadScript('https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js')
+      loadScript(`/timeline.js`)
     ]);
   }
 //console.log(tline_data())
@@ -265,9 +265,9 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 
 <svelte:head>
 <title>{t.home}</title>    
-<!--<link title="timeline-styles" rel="stylesheet" 
+<link title="timeline-styles" rel="stylesheet" 
               href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-<script src='https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js'></script>-->
+<script src='/timeline.js'></script>
 </svelte:head>
 
 <!-- Timeline -->

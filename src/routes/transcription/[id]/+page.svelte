@@ -484,7 +484,7 @@ function opendiv2(evt, tabname) {
  
 </div>
 <div style="margin-top:3rem; font-size:.5rem">
-  <p>Transcription faite sur la plateforme <a href="https://escriptorium.inria.fr/">eScriptorium</a> avec Kraken et à l'aide d'un modèle entraîné sur l'écriture de Jean Calvin à partir du model <a href="https://zenodo.org/records/6657809">HTR-United - Manu McFrench V1 (Manuscripts of Modern and Contemporaneous French)</a>. Vous pouvez consulter le protocole de transcription <a href="{base}/fr/recherche#protocole_transcription">ici</a>.</p>
+  <p>Transcription faite sur la plateforme <a href="https://escriptorium.inria.fr/">eScriptorium</a> avec Kraken et à l'aide d'un <a href="https://github.com/pippaJeanne/HTR-Jean-Calvin">modèle entraîné</a> sur l'écriture de Jean Calvin à partir du model <a href="https://zenodo.org/records/6657809">HTR-United - Manu McFrench (Manuscripts of Modern and Contemporaneous French)</a>. Vous pouvez consulter le protocole de transcription <a href="{base}/fr/recherche#protocole_transcription">ici</a>.</p>
 </div>
 
  <!-- Bonnet's edition syncNotes-->
