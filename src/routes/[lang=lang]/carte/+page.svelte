@@ -37,19 +37,19 @@
 	script.type = "module";
 	// change text when updating the map
 	script.textContent = fr ? `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/1956978c14deb22b@2653.js?v=4";
+import define from "https://api.observablehq.com/d/1956978c14deb22b@2659.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-92dc3179"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-92dc3179"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-92dc3179"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-d404795d"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-d404795d"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-d404795d"));
   return ["mapViz","arrow"].includes(name);
 });` 
     : `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/de8c36a8a2970791@2649.js?v=4";
+import define from "https://api.observablehq.com/d/de8c36a8a2970791@2655.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-e4084fcf"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-e4084fcf"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-e4084fcf"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-24eafb78"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-24eafb78"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-24eafb78"));
   return ["mapViz","arrow"].includes(name);
 });`
 	mapcontainer.appendChild(script)

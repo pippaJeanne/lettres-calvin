@@ -1,6 +1,20 @@
 {
        "persons_es": [
               {
+                     "name": "Abraham",
+                     "wikiurl": "http://www.wikidata.org/entity/Q9181",
+                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki%20Israel%2047514%20Samaritan%20museum%20on%20mount%20Grizim%20-%20Left.jpg",
+                     "desc": "personaje de la Biblia",
+                     "letters": [
+                            {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            }
+                     ],
+                     "id": "#abraham"
+              },
+              {
                      "name": "Agustín de Hipona (0354 - 0430)",
                      "wikiurl": "http://www.wikidata.org/entity/Q8018",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Cappella%20Palatina%20%28Palermo%29%2016%2007%202019%2014.jpg",
@@ -79,8 +93,13 @@
                                    "headline": "Señor de Fallais"
                             },
                             {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
                                    "slug": "1544_06_24_SraDeFalais",
-                                   "date": "24 de junio de 1544",
+                                   "date": "24 de junio de (1544)",
                                    "headline": "Señora de Fallais"
                             },
                             {
@@ -123,6 +142,49 @@
                             }
                      ],
                      "id": "#conseil-neuchatel"
+              },
+              {
+                     "name": "David ( - )",
+                     "wikiurl": "http://www.wikidata.org/entity/Q41370",
+                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/King%20David%2C%20the%20King%20of%20Israel.jpg",
+                     "desc": "monarca israelita",
+                     "letters": [
+                            {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            }
+                     ],
+                     "id": "#david"
+              },
+              {
+                     "name": "David de Busanton",
+                     "wikiurl": "http://www.wikidata.org/entity/Q137660629",
+                     "thumbnail": "",
+                     "desc": "Gentilhombre de Hainaut, refugiado en Ginebra ( - julio de 1545)",
+                     "letters": [
+                            {
+                                   "slug": "1543_10_14_SenorFalais",
+                                   "date": "[14 de octubre de 1543]",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
+                                   "slug": "1545_05_31_MFallais_ES",
+                                   "date": "31 de mayo de 1545",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
+                                   "slug": "1545_06_22_MFallais_ES",
+                                   "date": "22 de junio [1545]",
+                                   "headline": "Señor de Fallais"
+                            }
+                     ],
+                     "id": "#david_busanton"
               },
               {
                      "name": "Eduardo VI de Inglaterra (1537 - 1553)",
@@ -202,8 +264,23 @@
                                    "headline": "Señor de Fallais"
                             },
                             {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
                                    "slug": "1545_05_31_MFallais_ES",
                                    "date": "31 de mayo de 1545",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
+                                   "slug": "1545_06_22_MFallais_ES",
+                                   "date": "22 de junio [1545]",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
+                                   "slug": "1545_08_05_MFallais_ES",
+                                   "date": "5 de agosto de [1545]",
                                    "headline": "Señor de Fallais"
                             },
                             {
@@ -229,6 +306,20 @@
                      "id": "#trolliet"
               },
               {
+                     "name": "Jean de Bourgogne",
+                     "wikiurl": "http://www.wikidata.org/entity/Q137660510",
+                     "thumbnail": "",
+                     "desc": "Señor de Fromont y de Han-sur-Sambre (1525-1585), hermano de Jacques de Bourgogne, Señor de Fallais",
+                     "letters": [
+                            {
+                                   "slug": "1545_06_22_MFallais_ES",
+                                   "date": "22 de junio [1545]",
+                                   "headline": "Señor de Fallais"
+                            }
+                     ],
+                     "id": "#jean_M_Fromont"
+              },
+              {
                      "name": "Jean de Tillet",
                      "wikiurl": "http://www.wikidata.org/entity/Q3175826",
                      "thumbnail": "",
@@ -248,7 +339,7 @@
                      "id": "#jean_tillet"
               },
               {
-                     "name": "Jeremías",
+                     "name": "Jeremías ( - )",
                      "wikiurl": "http://www.wikidata.org/entity/Q158825",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Dome%20of%20Immanuel%20in%20St%20Mark%27s%20Basilica-Jeremiah.jpg",
                      "desc": "profeta mayor hebreo",
@@ -262,7 +353,7 @@
                      "id": "#jeremie"
               },
               {
-                     "name": "Jonás",
+                     "name": "Jonás ( - )",
                      "wikiurl": "http://www.wikidata.org/entity/Q2468262",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Jonah.jpg",
                      "desc": "personaje de la Biblia y el Corán",
@@ -326,6 +417,20 @@
                             }
                      ],
                      "id": "#marguerite_valois_angouleme"
+              },
+              {
+                     "name": "Martín Bucero (1491 - 1551)",
+                     "wikiurl": "http://www.wikidata.org/entity/Q318622",
+                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Martin%20Buzer%20%28Bucer%29.jpg",
+                     "desc": "teólogo y reformador protestante alemán",
+                     "letters": [
+                            {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            }
+                     ],
+                     "id": "#bucer"
               },
               {
                      "name": "Nuevo creyente",
@@ -446,7 +551,7 @@
                      "id": "#madame-bude"
               },
               {
-                     "name": "Salomón",
+                     "name": "Salomón ( - )",
                      "wikiurl": "http://www.wikidata.org/entity/Q37085",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/087.King%20Solomon%20in%20Old%20Age.jpg",
                      "desc": "rey de Israel, personaje de la Biblia",
@@ -514,8 +619,18 @@
                             },
                             {
                                    "slug": "1544_06_24_SraDeFalais",
-                                   "date": "24 de junio de 1544",
+                                   "date": "24 de junio de (1544)",
                                    "headline": "Señora de Fallais"
+                            },
+                            {
+                                   "slug": "1545_06_22_MFallais_ES",
+                                   "date": "22 de junio [1545]",
+                                   "headline": "Señor de Fallais"
+                            },
+                            {
+                                   "slug": "1545_08_05_MFallais_ES",
+                                   "date": "5 de agosto de [1545]",
+                                   "headline": "Señor de Fallais"
                             },
                             {
                                    "slug": "1552_SrDeFalais",
@@ -524,6 +639,20 @@
                             }
                      ],
                      "id": "#jolande_brederode"
+              },
+              {
+                     "name": "filisteos",
+                     "wikiurl": "http://www.wikidata.org/entity/Q193776",
+                     "thumbnail": "",
+                     "desc": "pueblo de la Antigüedad",
+                     "letters": [
+                            {
+                                   "slug": "1544_06_24_MFallais_ES",
+                                   "date": "24 de junio de [1544]",
+                                   "headline": "Señor de Fallais"
+                            }
+                     ],
+                     "id": "#philistins"
               }
        ]
 }

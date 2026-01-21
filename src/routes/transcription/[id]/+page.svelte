@@ -768,10 +768,26 @@ a {
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   #prev, #next {font-size: 11px}
+  #openseadragon1{
+    height: 100px !important;
+  }
 }
 @media screen and (max-width: 1200px) {
   .tab_left, .tab_right {
   width: 100%!important;
 }
+#openseadragon1{
+    height: 100px !important;
+  }
+}
+@media screen and (max-width:1600px){
+  #openseadragon1{
+    height: 50rem !important;
+  }
+}
+@media screen and (max-width:2000px){
+  #openseadragon1{
+    height: 60rem !important;
+  }
 }
 </style>
