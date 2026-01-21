@@ -98,7 +98,6 @@
                </addrLine>
             </address>
             <dateline xml:id="opener">[Envoyée à <placeName key="Strasbourg" ref="https://www.wikidata.org/wiki/Q6602" corresp="#strasbourg">Strasbourg</placeName>]</dateline>
-            <placeName key="Strasbourg" ref="https://www.wikidata.org/wiki/Q6602">Strasbourg</placeName>
             <hi rend="bold"><label type="nature">Orig. autographe</label>. Bibliothèque de Genève. Vol. 194.</hi>
             <hi xml:id="editorNote">
                [Maintenant sous la cote Ms. fr. 194 (f. 41-44)]</hi>
