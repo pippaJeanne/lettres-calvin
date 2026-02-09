@@ -64,14 +64,14 @@ for (let file of xmlfr){
         let src = srcB.getAttribute('url');
         tilesrcB.push(src)
     }}
-    let signatures = parser.getElementsByTagName('signed');
+    let signatures = parser.querySelectorAll("closer:not([xml:id='inNote']) > signed");
     let signed = []
     if(signatures !== undefined){
     for (let sign of signatures){
         let diff = sign.textContent;
-        let s = sign.getElementsByTagName('persName')[0]?.textContent;
-        if (s !== undefined){
-        signed.push(s)
+        let s = sign.getElementsByTagName('persName');
+        if (s !== undefined && s.length > 0){
+        signed.push(s[0].getAttribute('key'))
         }else if (diff !== undefined){
           signed.push(diff)
         }
@@ -127,7 +127,7 @@ for (let file of xmlfr){
         tags : tags,
        text : text 
     };
-    let categories;
+    let categories = [];
    if(signed.length > 1){
       let pseudonym = 'SIGNÉE PAR PLUSIEURS';
       categories = [lettersData[slug].destType?.toUpperCase(),lettersData[slug].nature?.toUpperCase(), pseudonym]
@@ -174,20 +174,19 @@ for (let file of xmles){
         let src = srcB.getAttribute('url');
         tilesrcB.push(src)
     }}*/
-    let signaturesEs = parser.getElementsByTagName('signed');
+    let signaturesEs = parser.querySelectorAll("closer:not([xml:id='inNote']) > signed");
     let signedEs = []
     if(signaturesEs !== undefined){
     for (let sign of signaturesEs){
         let diff = sign.textContent;
-        let s = sign.getElementsByTagName('persName')[0]?.textContent;
-        if (s !== undefined){
-        signedEs.push(s)
+        let s = sign.getElementsByTagName('persName');
+        if (s !== undefined && s.length > 0){
+        signedEs.push(s[0].getAttribute('key'))
         }else if (diff !== undefined){
           signedEs.push(diff)
         }
       }
     }
-    
     let listItemsEs = parser.querySelector("list[xml:id='tags']")?.getElementsByTagName('term');
     let tagsEs = [];
     if(listItemsEs !== undefined){
@@ -238,7 +237,7 @@ for (let file of xmles){
         tags : tagsEs,
        text : textEs 
     };
-    let categories;
+    let categories = [];
    if(signedEs.length > 1){
       let pseudonym = 'FIRMADA POR VARIOS';
       categories = [carta.destType?.toUpperCase(),carta.nature?.toUpperCase(), pseudonym]

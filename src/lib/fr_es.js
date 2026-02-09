@@ -2,9 +2,10 @@ export const fr_es = {
     fr: {
         site_title: "Lettres de Calvin",
         search: "Rechercher",
-        txt_ppt : "Cette édition critique numérique bilingue présente les lettres écrites en français par Jean Calvin entre 1538 et 1554. Elle propose une transcription modernisée, des annotations, ainsi qu’une traduction en espagnol. \n Pensée comme une plateforme dynamique de recherche, l’édition s’inscrit dans une démarche d’exploration des pratiques éditoriales à l’ère numérique. Elle mobilise des outils algorithmiques pour interroger la transmission des textes, le rôle du geste éditorial, et la réception contemporaine de la pensée calvinienne.",
+        txt_ppt : "Cette édition critique numérique bilingue présente les lettres écrites en français par Jean Calvin entre 1538 et 1554. Elle propose une transcription modernisée, des annotations, ainsi qu’une traduction en espagnol. \n Pensée comme une infrastructure dynamique de recherche, l’édition s’inscrit dans une démarche d’exploration des pratiques éditoriales à l’ère numérique. Elle mobilise des outils algorithmiques pour interroger la transmission des textes, le rôle du geste éditorial, et la réception contemporaine de la pensée calvinienne.",
         txt_temp: "L'édition est encore en cours de développement. De nouveau contenu et des lettres seront ajoutées prochainement.",
         home: "Accueil",
+        keywords: "Jean Calvin, lettres, correspondance, Réforme protestante, XVIe siècle, histoire, religion, théologie, édition, manuscrits anciens, transcriptions, réseau de correspondance",
         calvin : "Jean Calvin",
         lettres : "Lettres",
         preface: "Préface par Jules Bonnet (1854)",
@@ -50,20 +51,23 @@ export const fr_es = {
         edition: "Édition de Yanet Hernández Pedraza",
         m_error: "La page n'a pas été trouvée.",
         name_index: "Index de noms",
+        names_desc: "Index de destinataires et de personnes mentionnées dans les lettres de Calvin (1538-1554).",
         name_carte: "Index de lieux",
+        carte_desc:"Carte interactive du réseau de la correspondance de Calvin (1538-1554) montrant autant la dimension géographique que les dimensions relationnelle et temporelle de son activité épistolaire.",
         name_notes : "Les informations ont été directement tirées de Wikidata, sauf indication contraire.",
        portrait_text : "Portrait de",
         href_letters : "fr/lettres",
         ppt_index: "Vous pouvez également explorer la correspondance par :",
         savoirplus: "En savoir plus",
-        misajour: "Dernière mise à jour : 21 janvier 2026"
+        misajour: "Dernière mise à jour : 9 février 2026"
     },
     es: {
         site_title: "Cartas de Calvino",
         search: "Buscar",
-        txt_ppt : "Esta edición crítica digital bilingüe presenta las cartas escritas en francés por Juan Calvino entre 1538 y 1554. Ofrece una transcripción modernizada, anotaciones y una traducción al español. \n Concebida como una plataforma dinámica de investigación, la edición se inscribe en una reflexión sobre las prácticas editoriales en la era digital. Recurre a herramientas algorítmicas para interrogar la transmisión de los textos, el papel del gesto editorial y la recepción contemporánea del pensamiento calvinista.",
+        txt_ppt : "Esta edición crítica digital bilingüe presenta las cartas escritas en francés por Juan Calvino entre 1538 y 1554. Ofrece una transcripción modernizada, anotaciones y una traducción al español. \n Concebida como una infraestructura dinámica de investigación, la edición se inscribe en una reflexión sobre las prácticas editoriales en la era digital. Recurre a herramientas algorítmicas para interrogar la transmisión de los textos, el papel del gesto editorial y la recepción contemporánea del pensamiento calvinista.",
         txt_temp: "La edición aún está en desarrollo. Pronto se añadirán nuevos contenidos y cartas.",
         home: "Página de inicio",
+        keywords: "Juan Calvino, cartas, correspondencia, Reforma protestante, siglo XVI, historia, religión, teología, edición, manuscritos antiguos, transcripciones, red de correspondencia",
         calvin : "Juan Calvino",
         lettres : "Cartas",
         preface: "Prefacio de Jules Bonnet (1854)",
@@ -109,12 +113,14 @@ export const fr_es = {
         edition: "Edición de Yanet Hernández Pedraza",
         m_error: "Esta página no existe.",
         name_index: "Índice de personas",
+        names_desc: "Índice de destinatarios y de personas mencionadas en las cartas de Calvino (1538-1554).",
         name_carte: "Índice de lugares",
+        carte_desc:"Mapa interactivo de la red de la correspondencia de Calvino (1538-1554) que muestra tanto la dimensión geográfica como relacional y temporal de su actividad epistolar.",
         name_notes : "Las informaciones provienen directamente de Wikidata, salvo indicación contraria.",
         portrait_text : "Retrato de",
         href_letters : "es/cartas",
         ppt_index: "También puede explorar la correspondencia por:",
         savoirplus: "Más información",
-        misajour: "Última actualización : 21 de enero de 2026"
+        misajour: "Última actualización : 9 de febrero de 2026"
     }
 }

@@ -42,6 +42,26 @@
               },
               {
                      "media": {
+                            "url": "https://ge.ch/arvaegrefdoc/PH/180775/chaeg_ph_1203_00006.jpg",
+                            "thumbnail": "https://ge.ch/arvaegrefdoc/PH/180775/chaeg_ph_1203_00006.jpg"
+                     },
+                     "start_date": {
+                            "year": "1538",
+                            "month": "10",
+                            "day": "01"
+                     },
+                     "display_date": "1er octobre 1538",
+                     "text": {
+                            "headline": "Église de Genève",
+                            "text": "<div><p>Jean Calvin écrit à l'Église de Genève, depuis son exil à Strasbourg, pour les exhorter à la patience et à l'humilité face aux tribulations et aux divisions, et à persévérer dans la prière.</p><p style='text-align:right !important; font-size:1.5rem'><a href='/fr/lettres/1538_10_01_EgliseGeneve' style='color: #2b2b28 !important;'>Accès à la lettre</a></p></div>"
+                     },
+                     "background": {
+                            "url": "https://ge.ch/arvaegrefdoc/PH/180775/chaeg_ph_1203_00006.jpg",
+                            "color": "#5e5e52"
+                     }
+              },
+              {
+                     "media": {
                             "url": "https://gallica.bnf.fr/ark:/12148/btv1b90076313/f22.jpeg",
                             "thumbnail": "https://gallica.bnf.fr/ark:/12148/btv1b90076313/f22.jpeg"
                      },
@@ -57,6 +77,26 @@
                      },
                      "background": {
                             "url": "https://gallica.bnf.fr/ark:/12148/btv1b90076313/f22.jpeg",
+                            "color": "#5e5e52"
+                     }
+              },
+              {
+                     "media": {
+                            "url": "https://ge.ch/arvaegrefdoc/PH2/112132/chaeg_ph_1250_00003.JPG",
+                            "thumbnail": "https://ge.ch/arvaegrefdoc/PH2/112132/chaeg_ph_1250_00003.JPG"
+                     },
+                     "start_date": {
+                            "year": "1540",
+                            "month": "07",
+                            "day": "28"
+                     },
+                     "display_date": "28 juillet 1540",
+                     "text": {
+                            "headline": "Monsieur du Tailly",
+                            "text": "<div><p>Calvin écrit à Monsieur du Tailly, un réfugié protestant à Genève, concernant les développements des conférences religieuses à Haguenau et la situation politique des princes protestants face à l'Empereur et au Pape.</p><p style='text-align:right !important; font-size:1.5rem'><a href='/fr/lettres/1540_07_28_DuTailly' style='color: #2b2b28 !important;'>Accès à la lettre</a></p></div>"
+                     },
+                     "background": {
+                            "url": "https://ge.ch/arvaegrefdoc/PH2/112132/chaeg_ph_1250_00003.JPG",
                             "color": "#5e5e52"
                      }
               },

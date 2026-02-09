@@ -37,19 +37,19 @@
 	script.type = "module";
 	// change text when updating the map
 	script.textContent = fr ? `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/1956978c14deb22b@2659.js?v=4";
+import define from "https://api.observablehq.com/d/1956978c14deb22b.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-d404795d"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-d404795d"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-d404795d"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-920ecaf3"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-920ecaf3"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-920ecaf3"));
   return ["mapViz","arrow"].includes(name);
 });` 
     : `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/de8c36a8a2970791@2655.js?v=4";
+import define from "https://api.observablehq.com/d/de8c36a8a2970791@2657.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-24eafb78"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-24eafb78"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-24eafb78"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-86cf6b04"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-86cf6b04"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-86cf6b04"));
   return ["mapViz","arrow"].includes(name);
 });`
 	mapcontainer.appendChild(script)
@@ -61,12 +61,15 @@ new Runtime().module(define, name => {
 
 <svelte:head>
     <title>{t.name_carte}</title>
+	<meta name="description" content="{t.carte_desc}">
 </svelte:head>
 <article>
 {#if fr }
-<MapFR title={t.name_carte}/>
+<MapFR title={t.name_carte}
+ description={t.carte_desc}/>
 {/if}
 {#if es }
-<MapEs title={t.name_carte}/>
+<MapEs title={t.name_carte}
+ description={t.carte_desc}/>
 {/if}
 </article>

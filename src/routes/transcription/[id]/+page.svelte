@@ -29,7 +29,7 @@ export const transc_pages = thisTransc !== undefined ? Object.keys(thisTransc): 
 // To create the right amount of "dots" elements for the slide
 export const num_dots = transc_pages.length
 
-let {id, url,lang, title, date, categories, editor, bibliothequeMs, srcMs, srcB, coteMs, foliosB, tags, desc} = data.letters[slugOk];
+let {id, url,lang, title, date, categories, editor, bibliothequeMs, srcMs, srcB, coteMs, foliosB, tags, desc, person} = data.letters[slugOk];
 	//Checking library name. If 'bibliothèque de genève' rearrange array of image urls. Geneva's library facs not iiiF compatible
     export const biblMsCheck = () => { 
     let newarray = [];
@@ -103,6 +103,7 @@ for ( let p of transc_pages){
 
 <svelte:head>
     <title>Trancription de la {title} </title>
+    <meta name="description" content="Transcription diplomatique de la lettre manuscrite autographe de Jean Calvin à {person}, écrite le {date}.">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
