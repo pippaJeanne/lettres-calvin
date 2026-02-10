@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 //import path from 'path';
-const path = await import('node:path');
+const path = require('node:path');
 import { json } from '@sveltejs/kit';
 import * as jsdom from 'jsdom'
 const { JSDOM } = jsdom;
