@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import path from 'path';
+import path from 'node:path';
 import { json } from '@sveltejs/kit';
 import * as jsdom from 'jsdom'
 const { JSDOM } = jsdom;
