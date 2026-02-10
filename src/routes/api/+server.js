@@ -27,6 +27,7 @@ export const GET = () => {
 	
 	const pathdirfr = path.resolve('src/lib/xml');
 	const pathdires = path.resolve('src/lib/xmles');
+  //const xstltxt = fs.readFileSync(path.resolve('src/lib/xslt/xml_body_transform.xslt'), 'utf-8');
   //console.log(pathdirfr, pathdires)
 
 	let xmlfr = getFiles(pathdirfr);
@@ -86,10 +87,15 @@ for (let file of xmlfr){
         tags.push(tag)
     }}
     let text = "";
-    let bodyarr = parser.querySelectorAll("*");
+    let bodyarr = parser.querySelectorAll("body opener salute, body p, body closer");
     for(let el of bodyarr){
-        text += `${el.textContent} `;
+      let orig_tag = el.querySelectorAll("orig");
+      let origs = []
+      orig_tag.forEach(c => origs.push(c.textContent));
+        text += `${el.textContent.replace(new RegExp(origs.join('|'), 'g'), '').trim()} `;
     }
+    //console.log(text)
+   
     let persons = [];
     let persarr = parser.querySelectorAll("persName");
     let keys = [];
@@ -195,10 +201,11 @@ for (let file of xmles){
         tagsEs.push(tag)
     }}
     let textEs = "";
-    let bodyarrEs = parser.querySelectorAll("*");
+    let bodyarrEs = parser.querySelectorAll("body opener salute, body p, body closer");
     for(let el of bodyarrEs){
-        textEs += `${el.textContent} `;
+        textEs += `${el.textContent.trim()} `;
     }
+
     let personsEs = [];
     let persarrEs = parser.querySelectorAll("persName");
     let keysEs = [];
