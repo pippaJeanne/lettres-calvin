@@ -1,4 +1,4 @@
-/*import fs from 'fs/promises';
+import fs from 'fs/promises';
 import path from 'path';
 
 export const GET = async ({params, fetch}) => {
@@ -39,4 +39,4 @@ export const GET = async ({params, fetch}) => {
   } catch (err) {
     return new Response('File not found', { status: 404 });
   }
-};*/
+};

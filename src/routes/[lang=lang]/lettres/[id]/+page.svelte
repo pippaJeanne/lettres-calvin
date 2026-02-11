@@ -45,8 +45,8 @@ let coteok = split[0];
 export let biblMsInfo = biblMs[bibliothequeMs][coteok];
 biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 //serving xml files and transformation stylesheets
-	export const xmlfile = base + '/xml/' + url; // '/api/xml/' + url;
-	export const xmlfileEs = base + '/xmles/' + xmlEs; // '/api/xml/' + xmlEs; 
+	export const xmlfile = base + '/api/xml/' + url;
+	export const xmlfileEs = base + '/api/xml/' + xmlEs; 
 	//export const xmlfileMme = base + "/xmles/SeñoradeFalais-14-oct-1543.xml";
 	export const xsltfile =  `${base}/xslt/Transfm-fr.xslt`;
 	export const xsltchng =  `${base}/xslt/Transfm-Fr-voir-changements.xslt`;
