@@ -229,12 +229,12 @@ display:block;
     height: 80rem !important;
   }
   .cont svg g{
-    transform: translate(0px, 0px) scale(1.05) !important;
+    transform: translate(0px, 0px) scale(1) !important;
   }
 }
 @media screen and (max-width:1600px){
   .cont{
-    transform: translate(-.5rem, 0px) scale(1.05)!important;
+    transform: translate(-.5rem, 0px) scale(.9)!important;
     height: 60rem !important;
   }
   .cont svg g{
