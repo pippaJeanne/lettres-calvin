@@ -696,7 +696,7 @@ a {
 #prev, #next, #prev1, #next1 {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 25%;
   width: auto;
   padding: 16px;
   margin-top: -22px;
@@ -773,7 +773,7 @@ a {
     height: 100px !important;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 950px) {
   .tab_left, .tab_right {
   width: 100%!important;
 }
@@ -783,12 +783,12 @@ a {
 }
 @media screen and (max-width:1600px){
   #openseadragon1{
-    height: 50rem !important;
+    height: 30rem !important;
   }
 }
 @media screen and (max-width:2000px){
   #openseadragon1{
-    height: 60rem !important;
+    height: 40rem !important;
   }
 }
 </style>
