@@ -72,7 +72,7 @@ export const fr_es = {
         noteStment: `Les notes proviennent de l'édition de Jules Bonnet de 1854 sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.`,
         text_filtres: "Collection de lettres générée d'après les filtres suivants :",
         pdf_table_cont: "Table des matières",
-        misajour: "Dernière mise à jour : 9 février 2026"
+        misajour: "Dernière mise à jour : 26 février 2026"
     },
     es: {
         site_title: "Cartas de Calvino",
@@ -147,6 +147,6 @@ export const fr_es = {
         noteStment: 'Las notas provienen de la edición de Jules Bonnet de 1854 a menos que se indique lo contrario. Las notas bajo la apelación "editoriales" (en verde) y las notas de las citas en latín pertenecen a la autora de este proyecto: Yanet Hernández Pedraza.',
         text_filtres: "Colección de cartas generada según los filtros siguientes:",
         pdf_table_cont: "Tabla de contenidos",
-        misajour: "Última actualización : 9 de febrero de 2026"
+        misajour: "Última actualización : 26 de febrero de 2026"
     }
 }

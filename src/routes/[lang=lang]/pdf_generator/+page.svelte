@@ -1,5 +1,5 @@
 <script>
-import "$lib/pagedjs_css.css";
+//import "$lib/pagedjs_css.css";
 import "$lib/blog.css"
 export let data;
 import { fr_es } from '$lib/fr_es';
@@ -198,11 +198,15 @@ if (filter.value !== selectedAll){
 		};
     let script = document.createElement("script");
     script.src = pajedjsurl;
+    let css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = `${base}/pagedjs_css.css`
     let toc_script = document.createElement("script");
     toc_script.type = "text/javascript";
     toc_script.src = `${base}/createToc.js`;
     head.appendChild(script);
     head.appendChild(toc_script);
+    head.appendChild(css);
     const body = document.querySelector("body");
 	  body.appendChild(div);
     document.querySelector("header#app-bar").style.display="none";
