@@ -73,12 +73,12 @@ for (let file of xmlfr){
         let s = sign.getElementsByTagName('persName');
         if (s !== undefined && s.length > 0){
         signed.push(s[0].getAttribute('key'))
-        }else if (diff !== undefined){
+        }else if (s===undefined || diff !== undefined){
           signed.push(diff)
         }
       }
     }
-    
+    //console.log(signed)
     let listItems = parser.querySelector("list[xml:id='tags']")?.getElementsByTagName('term');
     let tags = [];
     if(listItems !== undefined){
@@ -119,9 +119,11 @@ for (let file of xmlfr){
         title : parser.querySelectorAll('title')[0]?.textContent,
         desc : parser.querySelector('desc')?.textContent,
         date : parser.querySelectorAll("correspAction")[0]?.getElementsByTagName('date')[0]?.getAttribute('when'),
+        dateDisplay: parser.querySelectorAll("correspAction")[0]?.getElementsByTagName('date')[0]?.textContent,
         person : parser.querySelector("correspAction[type='received']")?.getElementsByTagName('name')[0].textContent,
         destType : parser.querySelector("correspAction[type='received']")?.getElementsByTagName('name')[0]?.getAttribute('type'),
         place : parser.querySelector("correspAction[type='sent']")?.getElementsByTagName('settlement')[0].textContent,
+        placeDest : parser.querySelector("correspAction[type='received']")?.getElementsByTagName('settlement')[0].textContent,
         nature : parser.querySelector("label[type='nature']")?.textContent,
         editor: parser.querySelector("titleStmt")?.getElementsByTagName('editor')[0].textContent,
         bibliothequeMs: parser.querySelector("repository")?.textContent,
@@ -229,9 +231,11 @@ for (let file of xmles){
         title : parser.querySelectorAll('title')[0]?.textContent,
         desc : parser.querySelector('desc')?.textContent,
         date : parser.querySelectorAll("correspAction")[0]?.getElementsByTagName('date')[0]?.getAttribute('when'),
+        dateDisplay: parser.querySelectorAll("correspAction")[0]?.getElementsByTagName('date')[0]?.textContent,
         person : parser.querySelector("correspAction[type='received']")?.getElementsByTagName('name')[0].textContent,
         destType : parser.querySelector("correspAction[type='received']")?.getElementsByTagName('name')[0]?.getAttribute('type'),
         place : parser.querySelector("correspAction[type='sent']")?.getElementsByTagName('settlement')[0].textContent,
+        placeDest : parser.querySelector("correspAction[type='received']")?.getElementsByTagName('settlement')[0].textContent,
         nature : parser.querySelector("label[type='nature']")?.textContent,
         editor: parser.querySelector("titleStmt")?.getElementsByTagName('editor')[0].textContent,
         source: parser.querySelector("sourceDesc")?.getAttribute("corresp"),

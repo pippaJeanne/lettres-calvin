@@ -27,8 +27,7 @@
    <div style="display:flex;flex-direction:row;">
     <span style="font-size:.9rem;">
     <a class="sup" style="text-decoration:none;"> 
-    <xsl:attribute name="href">
-    #<xsl:value-of select="./@n"/>FR</xsl:attribute>
+    <xsl:attribute name="href">#<xsl:value-of select="./@n"/>FR</xsl:attribute>
     <xsl:attribute name="name">
     <xsl:value-of select="./@n"/>fr</xsl:attribute>
     <xsl:value-of select="./@n"/>

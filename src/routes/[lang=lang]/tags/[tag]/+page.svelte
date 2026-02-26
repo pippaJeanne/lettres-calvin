@@ -28,7 +28,7 @@
 			    <a class="card" href="{base}/{lang}/{rightSlug}/{lettre}">
 					<Index
 					title={data.l[lettre].title}
-					date={data.l[lettre].date}
+					date={data.l[lettre].dateDisplay}
 					catlist = {data.l[lettre].categories}
 					tags = {data.l[lettre].tags}
 				> {data.l[lettre].desc}</Index>

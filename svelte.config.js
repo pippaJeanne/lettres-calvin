@@ -16,7 +16,7 @@ const config = {
 	},
 	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [mdsvex({ extensions: ['.md', '.svx'] }), sveltePreprocess()],
-	
+	//moduleExtensions: ['.js', '.ts']
 };
 
 export default config;

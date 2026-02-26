@@ -17,7 +17,7 @@
 	
 	//deconstructing values from api
 	// French letter
-    let {id, url, title, date, categories, editor, bibliothequeMs, srcMs, srcB, coteMs, foliosB, tags, desc} = data.letters[slugOk];
+    let {id, url, title, date, dateDisplay, categories, editor, bibliothequeMs, srcMs, srcB, coteMs, foliosB, tags, desc} = data.letters[slugOk];
 	// Spanish translations (correpondence given by @id of French letter iquals Spanish translation @source value)
 	let cartas = data.letters["cartas"];
 	let xmlEs = ""
@@ -26,6 +26,7 @@
 			xmlEs = carta.url ;
 		} 
 	}
+
 	//Checking library name. If 'bibliothèque de genève' rearrange array of image urls. Geneva's library facs not iiiF compatible
    export const biblMsCheck = () => { 
     let newarray = [];
@@ -48,86 +49,73 @@ biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 	export const xmlfile = base + '/api/xml/' + url;
 	export const xmlfileEs = base + '/api/xml/' + xmlEs; 
 	//export const xmlfileMme = base + "/xmles/SeñoradeFalais-14-oct-1543.xml";
-	export const xsltfile =  `${base}/xslt/Transfm-fr.xslt`;
-	export const xsltchng =  `${base}/xslt/Transfm-Fr-voir-changements.xslt`;
-	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.xslt`;
-	export const xsltes =  `${base}/xslt/Transfm-es.xslt`;
+	export const xsltfile =  `${base}/xslt/Transfm-fr.sef.json`;
+	export const xsltchng =  `${base}/xslt/Transfm-Fr-voir-changements.sef.json`;
+	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.sef.json`;
+	export const xsltes =  `${base}/xslt/Transfm-es.sef.json`;
 //declaring transfromation functions (executed on client-side)
 	export async function displayResult(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xsl = await fetch(xsltfile);
-	
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
+	return SaxonJS.transform({
+                stylesheetLocation: xsltfile,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const modernisation = document.createElement("div");
+			  modernisation.innerHTML = output.principalResult;
+			  document.getElementById("transformedFR").appendChild(modernisation);
+			})
 
-	const xslText = await xsl.text();
-    const stylesheet = parser.parseFromString(xslText, "application/xml"); 
-	xsltProcessor.importStylesheet(stylesheet);
-    const modernisation = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("transformedFR").appendChild(modernisation);
 }
 
 	export async function displayResultChng(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xslchng = await fetch(xsltchng);
-
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
-
-	const xslTextMod = await xslchng.text();
-    const stylesheetMod = parser.parseFromString(xslTextMod, "application/xml"); 
-
-	xsltProcessor.importStylesheet(stylesheetMod);
-	const modifs = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("see-changes")?.appendChild(modifs);
+	return SaxonJS.transform({
+                stylesheetLocation: xsltchng,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const modifs = document.createElement("div");
+			  modifs.innerHTML = output.principalResult;
+			  document.getElementById("see-changes").appendChild(modifs);
+			})
 	  }
 export async function displayDiplomatic(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xsldiplo = await fetch(xsltdiplo);
-
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
-
-	const xslTextDiplo = await xsldiplo.text();
-    const stylesheetDiplo = parser.parseFromString(xslTextDiplo, "application/xml"); 
-
-	xsltProcessor.importStylesheet(stylesheetDiplo);
-	const diplo = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("diplomatic").appendChild(diplo);
-}
-
-	export async function displayResultEs(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
+	return SaxonJS.transform({
+                stylesheetLocation: xsltdiplo,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const diplo = document.createElement("div");
+			  diplo.innerHTML = output.principalResult;
+			  document.getElementById("diplomatic").appendChild(diplo);
+			})
+	  }
+export async function displayResultEs(){
 	let xmles;
 	let xsles;
 	if(xmlEs !== ""){
-		 xmles = await fetch(xmlfileEs);
-		 xsles = await fetch(xsltes);
+		 xmles = xmlfileEs;
+		 xsles = xsltes;
 	/*} else if(title.includes("Madame") && date.includes("1543")){
 		 xmles = await fetch(xmlfileEs);
 		 xsles = await fetch(xsltes); */
 	} else {
-		 xmles = await fetch(xmlfile);
-		 xsles = await fetch(xsltfile);
+		 xmles = xmlfile;
+		 xsles = xsltfile;
 	}
-	
-
-	const xmlesText = await xmles.text();
-    const xmlesdoc = parser.parseFromString(xmlesText, "application/xml"); 
-
-	const xslesText = await xsles.text();
-    const stylesheetes = parser.parseFromString(xslesText, "application/xml"); 
-	
-	xsltProcessor.importStylesheet(stylesheetes);
-	const docEs = xsltProcessor.transformToFragment(xmlesdoc, document);
-	document.getElementById("transformedES").appendChild(docEs);
+	return SaxonJS.transform({
+                stylesheetLocation: xsles,
+                sourceLocation: xmles,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const docEs = document.createElement("div");
+				//docEs.className = "transformedxml" 
+			  docEs.innerHTML = output.principalResult;
+			  document.getElementById("transformedES").appendChild(docEs);
+			})
 }
 const slugslist = Object.keys(transc)
 export const createLinkTransc = () =>{
@@ -188,13 +176,14 @@ onMount(()=>{
 	<meta name="keywords" content="{tags.map(tag => tag).join(', ')}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{base}/saxonjs3/SaxonJS3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </svelte:head>
 <div id='anchor'>
 <article>
 	<h1>{title}</h1>
-    <p><span class="tag">Date : {date}</span></p>
+    <p><span class="tag">Date : {dateDisplay}</span></p>
     <p><span class="tag">{editor}</span></p>
 	<!--<p><strong>Thèmes</strong> {#each tags as tag}
 		<span class="tag">{tag}</span>

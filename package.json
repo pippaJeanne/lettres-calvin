@@ -29,6 +29,8 @@
 	"dependencies": {
 		"flexsearch": "^0.7.43",
 		"jsdom": "^24.0.0",
-		"mdsvex": "^0.11.0"
+		"mdsvex": "^0.11.0",
+		"saxonjs-he": "^3.0.0-beta2",
+		"xslt3-he": "^3.0.0-beta2"
 	}
 }

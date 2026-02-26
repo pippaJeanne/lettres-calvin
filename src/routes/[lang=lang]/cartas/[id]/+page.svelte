@@ -71,34 +71,35 @@ let tags = []
 	
 	//deconstructing values from api
 	// Spanish translations
-let {title, date, editor, desc} = cartaOk;
+let {title, date, dateDisplay, editor, desc} = cartaOk;
 
 //serving xml files and transformation stylesheets
 	export const xmlfileEs = base + '/api/xml/' + xmlEs; 
 	
-export const xsltes =  `${base}/xslt/Transfm-es.xslt`;
+export const xsltes =  `${base}/xslt/Transfm-es.sef.json`;
 //declaring transfromation functions (executed on client-site)
 
 export async function displayEs(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
 	let xmles;
 	let xsles;
 	if(xmlEs !== ""){
-		 xmles = await fetch(xmlfileEs);
-		 xsles = await fetch(xsltes);
-	}
-	
-
-	const xmlesText = await xmles.text();
-    const xmlesdoc = parser.parseFromString(xmlesText, "application/xml"); 
-
-	const xslesText = await xsles.text();
-    const stylesheetes = parser.parseFromString(xslesText, "application/xml"); 
-	
-	xsltProcessor.importStylesheet(stylesheetes);
-	const docEs = xsltProcessor.transformToFragment(xmlesdoc, document);
-	document.getElementById("ES").appendChild(docEs);
+		 xmles = xmlfileEs;
+		 xsles = xsltes;
+	} 
+	return SaxonJS.transform({
+                stylesheetLocation: xsles,
+                sourceLocation: xmles,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const docEs = document.createElement("div");
+				//docEs.className = "transformedxml" 
+			  docEs.innerHTML = output.principalResult;
+			  document.getElementById("ES").appendChild(docEs);
+			})
+			.catch(error => {
+				console.error("Error in the transformation process:", error);
+			})
 }
 
 // For comparison interface
@@ -134,79 +135,70 @@ export let biblMsInfo = biblMs[bibliothequeMs][coteok];
 biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 //serving xml files and transformation stylesheets
 	export const xmlfile = base + '/api/xml/' + urlfr;
-	export const xsltfile =  `${base}/xslt/Transfm-fr.xslt`;
-	export const xsltchng =  `${base}/xslt/Transfm-Fr-voir-changements.xslt`;
-	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.xslt`;
+	export const xsltfile =  `${base}/xslt/Transfm-fr.sef.json`;
+	export const xsltchng =  `${base}/xslt/Transfm-Fr-voir-changements.sef.json`;
+	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.sef.json`;
 	
 //declaring transfromation functions (executed on client-side)
 	export async function displayResult(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xsl = await fetch(xsltfile);
-	
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
-
-	const xslText = await xsl.text();
-    const stylesheet = parser.parseFromString(xslText, "application/xml"); 
-	xsltProcessor.importStylesheet(stylesheet);
-    const modernisation = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("transformedFR").appendChild(modernisation);
+	return SaxonJS.transform({
+                stylesheetLocation: xsltfile,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const modernisation = document.createElement("div");
+			  modernisation.innerHTML = output.principalResult;
+			  document.getElementById("transformedFR").appendChild(modernisation);
+			})
 }
 
 	export async function displayResultChng(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xslchng = await fetch(xsltchng);
-
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
-
-	const xslTextMod = await xslchng.text();
-    const stylesheetMod = parser.parseFromString(xslTextMod, "application/xml"); 
-
-	xsltProcessor.importStylesheet(stylesheetMod);
-	const modifs = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("see-changes")?.appendChild(modifs);
+	return SaxonJS.transform({
+                stylesheetLocation: xsltchng,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const modifs = document.createElement("div");
+			  modifs.innerHTML = output.principalResult;
+			  document.getElementById("see-changes").appendChild(modifs);
+			})
 	  }
 export async function displayDiplomatic(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xsldiplo = await fetch(xsltdiplo);
+	return SaxonJS.transform({
+                stylesheetLocation: xsltdiplo,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const diplo = document.createElement("div");
+			  diplo.innerHTML = output.principalResult;
+			  document.getElementById("diplomatic").appendChild(diplo);
+			})
+	  }
 
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
-
-	const xslTextDiplo = await xsldiplo.text();
-    const stylesheetDiplo = parser.parseFromString(xslTextDiplo, "application/xml"); 
-
-	xsltProcessor.importStylesheet(stylesheetDiplo);
-	const diplo = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("diplomatic").appendChild(diplo);
-}
 export async function displayResultEs(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
 	let xmles;
 	let xsles;
 	if(xmlEs !== ""){
-		 xmles = await fetch(xmlfileEs);
-		 xsles = await fetch(xsltes);
-	}
-	
-
-	const xmlesText = await xmles.text();
-    const xmlesdoc = parser.parseFromString(xmlesText, "application/xml"); 
-
-	const xslesText = await xsles.text();
-    const stylesheetes = parser.parseFromString(xslesText, "application/xml"); 
-	
-	xsltProcessor.importStylesheet(stylesheetes);
-	const docEs = xsltProcessor.transformToFragment(xmlesdoc, document);
-	document.getElementById("transformedES").appendChild(docEs);
+		 xmles = xmlfileEs;
+		 xsles = xsltes;
+	} 
+	return SaxonJS.transform({
+                stylesheetLocation: xsles,
+                sourceLocation: xmles,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const docEs = document.createElement("div");
+				//docEs.className = "transformedxml" 
+			  docEs.innerHTML = output.principalResult;
+			  document.getElementById("transformedES").appendChild(docEs);
+			})
+			.catch(error => {
+				console.error("Error in the transformation process:", error);
+			});
 }
 
 //Transcription
@@ -270,12 +262,13 @@ onMount(()=>{
 	<meta name="keywords" content="{tags.map(tag => tag.tag).join(', ')}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{base}/saxonjs3/SaxonJS3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </svelte:head>
 <div id='anchor'>
 <article>
 	<h1>{title}</h1>
-    <p><span class="tag">Date : {date}</span></p>
+    <p><span class="tag">Date : {dateDisplay}</span></p>
     <p><span class="tag">{editor}</span></p>
 	<!--<p><strong>Thèmes</strong> {#each tags as tag}
 		<span class="tag">{tag}</span>

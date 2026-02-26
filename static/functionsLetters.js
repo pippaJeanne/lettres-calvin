@@ -37,24 +37,26 @@
 		//code for button to see changes of modernisation ^^
 	  
 		function see() {
-		  var btn = document.getElementById("see-changes");
+		  var modifdiv = document.getElementById("see-changes");
 		  var usual = document.getElementById("transformedFR");
-		  if (btn.style.display === "none" && usual.style.display === "block"){
-		  btn.style.display = "block";
+		  if (modifdiv.style.display === "none" && usual.style.display === "block"){
+		  modifdiv.style.display = "block";
 		  usual.style.display = "none";
 		  }else{
-		  btn.style.display = "none";
+		  modifdiv.style.display = "none";
 		  usual.style.display = "block";
 		  }
 		  }
+		  
+		 //code for button to see diplomatic transcription ^^
 		  function seediplo() {
-		  var btn = document.getElementById("diplomatic");
+		  var diplodiv = document.getElementById("diplomatic");
 		  var usual = document.getElementById("bonnet");
-		  if (btn.style.display === "none" && usual.style.display === "block"){
-		  btn.style.display = "block";
+		  if (diplodiv.style.display === "none" && usual.style.display === "block"){
+		  diplodiv.style.display = "block";
 		  usual.style.display = "none";
 		  }else{
-		  btn.style.display = "none";
+		  diplodiv.style.display = "none";
 		  usual.style.display = "block";
 		  }
 		  }

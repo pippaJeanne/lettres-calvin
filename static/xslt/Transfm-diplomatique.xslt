@@ -29,8 +29,7 @@
     <span style="font-size:.9rem;">
     <a class="sup" style="text-decoration:none;"> 
     <xsl:attribute name="href">#<xsl:value-of select='position()'/>DIPLO</xsl:attribute>
-    <xsl:attribute name="name">
-    <xsl:value-of select='position()'/>diplo</xsl:attribute>
+    <xsl:attribute name="name"><xsl:value-of select='position()'/>diplo</xsl:attribute>
     <!--<xsl:value-of select="./@n"/>-->
     <xsl:value-of select='position()'/>
     </a> 

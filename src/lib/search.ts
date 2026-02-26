@@ -28,7 +28,7 @@ export function createPostsIndex(data: Data[]) {
 	})
 
 	letters = data
-    console.log(postsIndex)
+    //console.log(postsIndex)
 }
 
 export function searchPostsIndex(searchTerm: string) {

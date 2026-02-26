@@ -393,9 +393,9 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 		{#each slugslist  as slug}
 			<li class="tagplugin">
 				<a class="tag" href="./transcription/{slug}">
-				{transcs[slug].title} ({transcs[slug].date})
+				{transcs[slug].title} ({transcs[slug].dateDisplay})
 				</a>
-			</li>
+			</li> | 
 		{/each}
 	</ul> 
 	</div>
