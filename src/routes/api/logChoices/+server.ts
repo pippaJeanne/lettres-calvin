@@ -1,4 +1,8 @@
 import { getStore } from '@netlify/blobs';
+//import type { Context } from "@netlify/functions";
+export const config = {
+  runtime: "nodejs"
+};
 
 export async function POST({ request }) {
   const data = await request.json();
