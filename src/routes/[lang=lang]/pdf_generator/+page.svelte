@@ -125,7 +125,8 @@ let nochoice = "";
 let searchFilter = ""
 let resultsFilter = [];
 let research = 'loading';
-
+let finalChoices = {};
+finalChoices['language'] = lang;
 
 
 export async function generatepdf(){
@@ -134,6 +135,7 @@ export async function generatepdf(){
 let filter = document.getElementById('filter');
 console.log(filter.value)
 if (filter.value !== selectedAll){
+  finalChoices['selection'] = {};
    let filter_info = document.createElement('div');
     let passed_filters = document.querySelectorAll('#cat_filters div:not(#recipient) select');
     let recipients_div = document.querySelector('#recipient select')
@@ -147,6 +149,8 @@ if (filter.value !== selectedAll){
     let years = document.createElement('p')
     years.innerHTML = `<strong>${t.filter_categories.period}</strong>: ${ys[0]} — ${ys[1]}`;
     filter_info.appendChild(years);
+     //Record choices 
+    finalChoices['selection']['period'] = `${ys[0]} — ${ys[1]}`;
 
     let chosen_recipient = [];
     for (let option of recipients_div.options){
@@ -162,6 +166,8 @@ if (filter.value !== selectedAll){
         ul.appendChild(li);
       });
       filter_info.appendChild(ul);
+      //Record choices 
+      finalChoices['selection']['recipient'] = chosen_recipient;
      };
 
     passed_filters.forEach(f => {
@@ -170,6 +176,8 @@ if (filter.value !== selectedAll){
      if (f.value !== ''){
       p.innerHTML = `<strong>${filter_name}</strong>: ${f.value}`;
       filter_info.appendChild(p);
+      //Record choices 
+      finalChoices['selection'][filter_name] = f.value;
      }
     })
     console.log(passed_filters)
@@ -178,10 +186,15 @@ if (filter.value !== selectedAll){
     if (s.value !== ''){
       let p = document.createElement('p');
       p.innerHTML = `<strong>${t.filter_categories.searchFilter}</strong>: ${s.value}`;
-      filter_info.appendChild(p)
+      filter_info.appendChild(p);
+      //Record choices 
+      finalChoices['selection']['search term'] = s.value;
     }
      where.appendChild(filter_info); 
-    //console.log(where);
+
+    } else {
+       //Record choices 
+    finalChoices['selection'] = selectedAll;
     }
 
 // Run transformation
@@ -263,8 +276,13 @@ if (filter.value !== selectedAll){
       //console.log(tocEl)
      }
      )
-     // Print
-    setTimeout(() => window.print(), 7000);
+     // Send recorder choices to storage.
+      fetch('/api/logChoices', {
+        method: 'POST',
+        body: JSON.stringify(finalChoices)
+      });
+        // Print
+        setTimeout(() => window.print(), 7000);
         };
       }
     };
@@ -374,7 +392,6 @@ if (chromeAgent) {
 $: if (research === 'ready') {
 		resultsFilter = searchPostsIndex(searchFilter)
   }
-
 
 </script>
 
