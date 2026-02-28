@@ -135,7 +135,8 @@ let filter = document.getElementById('filter');
 console.log(filter.value)
 if (filter.value !== selectedAll){
    let filter_info = document.createElement('div');
-    let passed_filters = document.querySelectorAll('#cat_filters div select');
+    let passed_filters = document.querySelectorAll('#cat_filters div:not(#recipient) select');
+    let recipients_div = document.querySelector('#recipient select')
     let year_divs = document.querySelector('#period');
     let where = document.getElementById('noteStment');
     let h = document.createElement('strong');
@@ -146,6 +147,23 @@ if (filter.value !== selectedAll){
     let years = document.createElement('p')
     years.innerHTML = `<strong>${t.filter_categories.period}</strong>: ${ys[0]} — ${ys[1]}`;
     filter_info.appendChild(years);
+
+    let chosen_recipient = [];
+    for (let option of recipients_div.options){
+      if (option.selected && option.value !== "") chosen_recipient.push(option.value)
+    };
+    if (chosen_recipient.length !== 0) {
+      let ul = document.createElement('ul');
+     let filter_name = recipients_div.parentElement.querySelector('span').textContent;
+     ul.innerHTML += `<strong>${filter_name}</strong>:`;
+      chosen_recipient.forEach(c => {
+        let li = document.createElement('li');
+        li.textContent = c;
+        ul.appendChild(li);
+      });
+      filter_info.appendChild(ul);
+     };
+
     passed_filters.forEach(f => {
      let p = document.createElement('p');
      let filter_name = f.parentElement.querySelector('span').textContent;
@@ -154,6 +172,7 @@ if (filter.value !== selectedAll){
       filter_info.appendChild(p);
      }
     })
+    console.log(passed_filters)
     let s = document.querySelector('#searchTerm input[type="search"]');
     console.log(s.value)
     if (s.value !== ''){
@@ -245,7 +264,7 @@ if (filter.value !== selectedAll){
      }
      )
      // Print
-    //setTimeout(() => window.print(), 7000);
+    setTimeout(() => window.print(), 7000);
         };
       }
     };
@@ -280,8 +299,14 @@ export async function applyFilters() {
   if (filter.value === selectedAll) {
    filteredLetters = letters2filter.filter(l => l && l.title && l.id);
   } else if (filter.value === selectedFilter) {
+    let recipient_values = [];
     let nature = document.querySelector('#nature select');
     let recipient = document.querySelector('#recipient select');
+    for (let option of recipient.options) {
+      //console.log(option.selected)
+      if (option.selected) recipient_values.push(option.value);
+    };
+    //console.log(recipient_values.includes())
     let thematique = document.querySelector('#theme select');
     let startY = document.querySelector('#period input#start');
     let endY = document.querySelector('#period input#end');
@@ -289,15 +314,17 @@ export async function applyFilters() {
     let srcPlace = document.querySelector('#srcPlace select');
     let destPlace = document.querySelector('#destPlace select');
      if (resultsFilter.length === 0){
-      filteredLetters = letters2filter.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => l.person === recipient.value || recipient.value === '').filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place === srcPlace.value || srcPlace.value === '').filter(l => l.placeDest === destPlace.value || destPlace.value === '');
+      filteredLetters = letters2filter.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place.includes(srcPlace.value) || srcPlace.value === '').filter(l => l.placeDest.includes(destPlace.value) || destPlace.value === '');
       console.log(filteredLetters)
     } else if(resultsFilter.length !== 0){
       //filteredLetters = letters2filter.filter(l => resultsFilter.map(res => res.slug.includes(l.slug)))
       let arrayTrue = []; 
       resultsFilter.map(res => {
-        let searchTrue = letters2filter.map(l => {if (res.slug.includes(l.slug)) {arrayTrue.push(l)}});
+         letters2filter.map(l => {if (res.slug.includes(l.slug)) {arrayTrue.push(l)}});
       }) 
-      filteredLetters = arrayTrue.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => l.person === recipient.value || recipient.value === '').filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place === srcPlace.value || srcPlace.value === '').filter(l => l.placeDest === destPlace.value || destPlace.value === '');
+      filteredLetters = arrayTrue.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place.includes(srcPlace.value) || srcPlace.value === '').filter(l => l.placeDest.includes(destPlace.value) || destPlace.value === '');
+      
+      filteredLetters.sort((a,b) => {return new Date(a.date) - new Date(b.date)});
     }
   }
      //console.log(filteredLetters)
@@ -325,6 +352,23 @@ onMount(async () => {
 		const posts = await fetch(`/${lang}/search`).then((res) => res.json())
 		createPostsIndex(posts)
     research = 'ready';
+
+    // Detect Chrome
+let chromeAgent = window.navigator.userAgent.includes('Chrome') //.indexOf("Chrome") > -1;
+// Detect Safari
+let safariAgent = window.navigator.userAgent.includes('Safari') //.indexOf("Safari") > -1;
+
+// Discard Safari since it also matches Chrome
+if ((chromeAgent) && (safariAgent)) safariAgent = false;
+
+console.log(`safari : ${safariAgent}`, `chrome: ${chromeAgent}`, )
+if (chromeAgent) {
+  let warning = document.createElement('p');
+  warning.style = 'color:red; text-align:center';
+  warning.textContent = t.warning_browser;
+  document.querySelector('div.no-print').insertBefore(warning, document.querySelector('div.filters'))
+}
+
 
 });
 $: if (research === 'ready') {
@@ -363,7 +407,7 @@ $: if (research === 'ready') {
         </select>
       </div>
       <div id="recipient"><span>{t.filter_categories.recipient}</span>
-      <select name="c2">
+      <select name="c2" multiple>
         <option value="{nochoice}"></option>
         {#each destinataires as dest }
               <option value="{dest}">{dest}</option>
