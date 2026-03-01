@@ -277,7 +277,7 @@ if (filter.value !== selectedAll){
      }
      )
      // Send recorder choices to storage.
-      fetch('/api/logChoices', {
+      fetch('/.netlify/functions/logChoices', {
         method: 'POST',
         body: JSON.stringify(finalChoices)
       });
