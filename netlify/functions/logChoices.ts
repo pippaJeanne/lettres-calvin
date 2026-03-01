@@ -1,6 +1,9 @@
 import { getStore } from '@netlify/blobs';
 import type { Handler } from "@netlify/functions"
 
+console.log("SITE ID:", process.env.NETLIFY_SITE_ID);
+console.log("BLOBS TOKEN:", process.env.NETLIFY_BLOBS_TOKEN);
+
 export const handler:Handler = async (event) => {
   const data = JSON.parse(event.body || "{}");
   const store = getStore('pdf-choices');
