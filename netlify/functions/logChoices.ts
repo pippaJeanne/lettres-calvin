@@ -1,6 +1,6 @@
 import { getStore } from '@netlify/blobs';
 import type { Handler } from "@netlify/functions"
-
+/*
 export const handler:Handler = async (event) => {
   const data = JSON.parse(event.body || "{}");
   const store = getStore("pdf-choices");
@@ -10,6 +10,19 @@ export const handler:Handler = async (event) => {
  console.log(key, data)
   return {
     statusCode:200,
-    body: 'ok'
+    body: 'ok',
   };
 }
+*/
+
+export const handler: Handler = async () => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      node: process.version,
+      aws: process.env.AWS_EXECUTION_ENV ?? "no aws exec env",
+      lambda: process.env.LAMBDA_TASK_ROOT ?? "no lambda root",
+      blobs: process.env.NETLIFY_BLOBS_CONTEXT ?? "no blobs context"
+    })
+  };
+};
