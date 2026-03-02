@@ -384,8 +384,13 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 			</a>
 		</li>-->
 	</ul> 
-		</div>
+
+	<div id="lien4pdf">
+	<a href='./{lang}/pdf_generator'><p>{t.pdfs_header}</p></a>
+	</div>
 </div>
+</div>
+
 {#if lang === "fr"}
 <div class="nuage">
 	<h2>Sélection de transcriptions de l'écriture de Jean Calvin</h2>
@@ -464,5 +469,19 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 	}
 	#vizIndex ul h3, #vizIndex li{
 		text-align: center !important;
+	}
+	#lien4pdf {
+		margin-top: 2rem;
+		padding: .5rem;
+		text-align:center !important;
+		border-radius: 40px;
+		float:right;
+		background-color: white;
+	}
+	#lien4pdf p{
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #022932;
+		margin: auto;
 	}
 </style>

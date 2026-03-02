@@ -435,10 +435,10 @@ https://www.wikidata.org/wiki/Q97578531  -->
                     </div>
                 </div>
             </div>
-           <!-- <a class="mdc-list-item mdc-ripple-upgraded" href="./{lang}/frise" tabindex="-1">
+            <a class="mdc-list-item mdc-ripple-upgraded" href="{base}/{lang}/pdf_generator" tabindex="-1">
                 <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__primary-text">{t.letters}</span>
-            </a>-->
+                <span class="mdc-list-item__primary-text">{t.pdfs_header}</span>
+            </a>
             <a class="mdc-list-item mdc-ripple-upgraded" href="{base}/{lang}/recherche" tabindex="-1">
                 <span class="mdc-list-item__ripple"></span>
                 <span class="mdc-list-item__primary-text">{t.research}</span>
