@@ -51,27 +51,42 @@ biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 //serving xml files and transformation stylesheets
 	export const xmlfile = base + "/api/xml/" + url;
 	//export const xmlfileMme = base + "/xmles/SeñoradeFalais-14-oct-1543.xml";
-	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.xslt`;
-//declaring transfromation functions (executed on client-site)
+	export const xsltdiplo =  `${base}/xslt/Transfm-diplomatique.sef.json`;
 
+  //declaring transfromation functions (executed on client-site with SaxonJS)
 export async function displayDiplomatic(){
-	const parser = new DOMParser();
-	const xsltProcessor = new XSLTProcessor();
-	const xml = await fetch(xmlfile);
-	const xsldiplo = await fetch(xsltdiplo);
+	return SaxonJS.transform({
+                stylesheetLocation: xsltdiplo,
+                sourceLocation: xmlfile,
+                destination: "serialized"
+            }, "async")
+            .then (output => {
+				const diplo = document.createElement("div");
+			  diplo.innerHTML = output.principalResult;
+			  document.getElementById("diplomatic").appendChild(diplo);
+			})
+	  }
 
-	const xmlText = await xml.text();
-    const xmldoc = parser.parseFromString(xmlText, "application/xml"); 
-
-	const xslTextDiplo = await xsldiplo.text();
-    const stylesheetDiplo = parser.parseFromString(xslTextDiplo, "application/xml"); 
-
-	xsltProcessor.importStylesheet(stylesheetDiplo);
-	const diplo = xsltProcessor.transformToFragment(xmldoc, document);
-	document.getElementById("diplomatic").appendChild(diplo);
+//Loading SaxonJS script 
+function loadSaxonJS() {
+    const loadScript = src => new Promise((resolve, reject) => {
+      if (window.SaxonJS) return resolve(); // Already loaded
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+	return Promise.all([
+		loadScript(`${base}/saxonjs3/SaxonJS3.js`)
+	]);
 }
 
-onMount((event)=>{
+//triggers functions that need the DOM to be in place (hydration)
+onMount(async (event)=>{
+	// making sure SaxonJS loads first
+  await loadSaxonJS();
+  
 	document.addEventListener(event, displayDiplomatic());
 	document.getElementById('msInfo').innerHTML = biblMsInfo;
     var viewer1 = OpenSeadragon({
@@ -105,6 +120,7 @@ for ( let p of transc_pages){
     <title>Trancription de la {title} </title>
     <meta name="description" content="Transcription diplomatique de la lettre manuscrite autographe de Jean Calvin à {person}, écrite le {dateDisplay}.">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{base}/saxonjs3/SaxonJS3.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"  rel="stylesheet">

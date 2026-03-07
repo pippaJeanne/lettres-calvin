@@ -135,9 +135,28 @@ export const createLinkTransc = () =>{
   })
   return link2transc;
 }
+
+//Loading SaxonJS script 
+function loadSaxonJS() {
+    const loadScript = src => new Promise((resolve, reject) => {
+      if (window.SaxonJS) return resolve(); // Already loaded
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+	return Promise.all([
+		loadScript(`${base}/saxonjs3/SaxonJS3.js`)
+	]);
+}
+
 //triggers functions that need the DOM to be in place (hydration)
-onMount((event)=>{
-	document.addEventListener(event, displayResult());
+onMount(async (event)=>{
+	// making sure SaxonJS loads first
+  await loadSaxonJS();
+  
+  document.addEventListener(event, displayResult());
 	document.addEventListener(event, displayResultEs());
 	document.addEventListener(event, displayResultChng());
 	document.addEventListener(event, displayDiplomatic());

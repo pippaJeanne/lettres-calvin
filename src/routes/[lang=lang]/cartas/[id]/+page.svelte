@@ -220,8 +220,25 @@ export const createLinkTransc = () =>{
   return link2transc;
 }
 
+//Loading SaxonJS script 
+function loadSaxonJS() {
+    const loadScript = src => new Promise((resolve, reject) => {
+      if (window.SaxonJS) return resolve(); // Already loaded
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+	return Promise.all([
+		loadScript(`${base}/saxonjs3/SaxonJS3.js`)
+	]);
+}
+
 //triggers functions that need the DOM to be in place (hydration)
-onMount((event)=>{
+onMount(async (event)=>{
+	// making sure SaxonJS loads first
+  await loadSaxonJS();
 	document.addEventListener(event, displayEs());
 	document.addEventListener(event, displayResultEs());
 	document.addEventListener(event, displayResult());
@@ -262,7 +279,7 @@ onMount((event)=>{
 	<meta name="keywords" content="{tags.map(tag => tag.tag).join(', ')}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{base}/saxonjs3/SaxonJS3.js"></script>
+	<script src="{base}/saxonjs3/SaxonJS3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </svelte:head>
 <div id='anchor'>
