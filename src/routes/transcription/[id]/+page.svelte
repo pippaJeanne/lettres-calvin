@@ -30,10 +30,10 @@ export const transc_pages = thisTransc !== undefined ? Object.keys(thisTransc): 
 export const num_dots = transc_pages.length
 
 let {id, url,lang, title, date, dateDisplay, categories, editor, bibliothequeMs, srcMs, srcB, coteMs, foliosB, tags, desc, person} = data.letters[slugOk];
-	//Checking library name. If 'bibliothèque de genève' rearrange array of image urls. Geneva's library facs not iiiF compatible
-    export const biblMsCheck = () => { 
+	//Checking library name. If 'bibliothèque de genève'  ou 'Archives d'états' rearrange array of image urls. Those institutions facs not iiiF compatible
+   export const biblMsCheck = () => { 
     let newarray = [];
-    if(bibliothequeMs.toLowerCase().includes('bibliothèque de genève')){
+    if(bibliothequeMs.toLowerCase().includes('bibliothèque de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de neuchâtel')){
        srcMs.map(src => {
        newarray.push({type:'image',
          url: src})
@@ -71,8 +71,8 @@ export async function displayDiplomatic(){
 	document.getElementById("diplomatic").appendChild(diplo);
 }
 
-onMount(()=>{
-	document.addEventListener('load', displayDiplomatic());
+onMount((event)=>{
+	document.addEventListener(event, displayDiplomatic());
 	document.getElementById('msInfo').innerHTML = biblMsInfo;
     var viewer1 = OpenSeadragon({
 			id: "openseadragon1", prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
@@ -509,7 +509,7 @@ for (var note of notes){
 		var txt = snote.querySelector('a.sup')?.getAttribute('title');
 		var link = snote.querySelector('a.sup');
 		var num = snote.querySelector('a.sup').textContent;
-		if(txt==textOk){
+		if(txt.substring(0,30)==textOk.substring(0,30)){
 			link.setAttribute("href",`#${name}`);
 			var string = href?.split('#');
 			var nom = string[1];

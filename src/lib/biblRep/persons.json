@@ -59,7 +59,7 @@
               {
                      "name": "Augustin d’Hippone (0354 - 0430)",
                      "wikiurl": "http://www.wikidata.org/entity/Q8018",
-                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Cappella%20Palatina%20%28Palermo%29%2016%2007%202019%2014.jpg",
+                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Augustine%20by%20Philippe%20de%20Champaigne.jpg",
                      "desc": "théologien, philosophe chrétien et évêque d’Afrique du Nord, saint et docteur de l’Église catholique",
                      "letters": [
                             {
@@ -107,7 +107,7 @@
                             },
                             {
                                    "slug": "1543_10_14_MadameDeFalais",
-                                   "date": "14 octobre (1543)",
+                                   "date": "14 octobre [1543]",
                                    "headline": "Madame de Fallais"
                             },
                             {
@@ -127,7 +127,7 @@
                             },
                             {
                                    "slug": "1544_06_24_MmeDeFalais",
-                                   "date": "24 juin (1544)",
+                                   "date": "24 juin [1544]",
                                    "headline": "Madame de Fallais"
                             },
                             {
@@ -137,6 +137,20 @@
                             }
                      ],
                      "id": "#espeville"
+              },
+              {
+                     "name": "Christophe Fabri",
+                     "wikiurl": "http://www.wikidata.org/entity/Q96318836",
+                     "thumbnail": "",
+                     "desc": "Réformateur de Bôle, Boudry et Pontareuse, nommé par le synode de Berne pasteur à Neuchâtel en 1532. Réformateur itinérant à Genève et à Thonon.",
+                     "letters": [
+                            {
+                                   "slug": "1545_06_JeanCavent",
+                                   "date": "[juin 1545]",
+                                   "headline": "Jean Cavent"
+                            }
+                     ],
+                     "id": "#fabri"
               },
               {
                      "name": "Consistoire de Genève",
@@ -186,7 +200,7 @@
                      "id": "#cure"
               },
               {
-                     "name": "Daniel ( - )",
+                     "name": "Daniel",
                      "wikiurl": "http://www.wikidata.org/entity/Q171724",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Buonarroti%20026.jpg",
                      "desc": "personne de la Bible hébraïque, protagoniste du Livre de Daniel",
@@ -200,7 +214,7 @@
                      "id": "#daniel"
               },
               {
-                     "name": "David ( - )",
+                     "name": "David",
                      "wikiurl": "http://www.wikidata.org/entity/Q41370",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/King%20David%2C%20the%20King%20of%20Israel.jpg",
                      "desc": "personnage de la Bible, deuxième roi d'Israël",
@@ -260,7 +274,7 @@
                      "name": "François Ier de France (1494 - 1547)",
                      "wikiurl": "http://www.wikidata.org/entity/Q129857",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Fran%C3%A7ois%20Ier%20Louvre.jpg",
-                     "desc": "roi de France de 1515 à 1547 (1494-1547)",
+                     "desc": "roi de France de 1515 à 1547",
                      "letters": [
                             {
                                    "slug": "1540_07_28_DuTailly",
@@ -386,6 +400,11 @@
                                    "headline": "Monsieur de Fallais"
                             },
                             {
+                                   "slug": "1545_06_JeanCavent",
+                                   "date": "[juin 1545]",
+                                   "headline": "Jean Cavent"
+                            },
+                            {
                                    "slug": "1545_08_05_MFallais",
                                    "date": "5 août [1545]",
                                    "headline": "Monsieur de Fallais"
@@ -397,6 +416,20 @@
                             }
                      ],
                      "id": "#jacques-bourgogne"
+              },
+              {
+                     "name": "Jean Cavent",
+                     "wikiurl": "",
+                     "thumbnail": "",
+                     "desc": "diacre de l'église de Lausanne",
+                     "letters": [
+                            {
+                                   "slug": "1545_06_JeanCavent",
+                                   "date": "[juin 1545]",
+                                   "headline": "Jean Cavent"
+                            }
+                     ],
+                     "id": "#cavent"
               },
               {
                      "name": "Jean Cochlaeus (1479 - 1552)",
@@ -516,7 +549,7 @@
                      "id": "#eveque_Treves"
               },
               {
-                     "name": "Jonas ( - )",
+                     "name": "Jonas",
                      "wikiurl": "http://www.wikidata.org/entity/Q2468262",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Sistine%20jonah.jpg",
                      "desc": "prophète biblique et coranique",
@@ -530,7 +563,7 @@
                      "id": "#jonas"
               },
               {
-                     "name": "Jérémie ( - )",
+                     "name": "Jérémie",
                      "wikiurl": "http://www.wikidata.org/entity/Q158825",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Dome%20of%20Immanuel%20in%20St%20Mark%27s%20Basilica-Jeremiah.jpg",
                      "desc": "prophète du Tanakh dans l'hébraïque ou de l'Ancien Testament pour les chrétiens",
@@ -666,7 +699,7 @@
                      "id": "#du-tailly"
               },
               {
-                     "name": "Nabuchodonosor II ( - )",
+                     "name": "Nabuchodonosor II",
                      "wikiurl": "http://www.wikidata.org/entity/Q12591",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Nebukadnessar%20II.jpg",
                      "desc": "roi de Babylone entre 604 av. J.-C. et 562 av. J.-C.",
@@ -791,13 +824,18 @@
               {
                      "name": "Pierre Viret (1511 - 1571)",
                      "wikiurl": "http://www.wikidata.org/entity/Q123337",
-                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/PierreViret.jpg",
+                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20Zwitserse%20hervormer%20Pierre%20Viret%20Petrus%20Viretus%20Gallia%20nemo%20futur%20dulcius%20%28titel%20op%20object%29%2C%20RP-P-1910-4243.jpg",
                      "desc": "réformateur vaudois",
                      "letters": [
                             {
                                    "slug": "1541_02_19_SeigneursGeneve",
                                    "date": " 19 février 1541",
                                    "headline": "Seigneurs de Genève"
+                            },
+                            {
+                                   "slug": "1545_06_JeanCavent",
+                                   "date": "[juin 1545]",
+                                   "headline": "Jean Cavent"
                             }
                      ],
                      "id": "#viret"
@@ -831,7 +869,7 @@
                      "id": "#madame-bude"
               },
               {
-                     "name": "Salomon ( - )",
+                     "name": "Salomon",
                      "wikiurl": "http://www.wikidata.org/entity/Q37085",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/087.King%20Solomon%20in%20Old%20Age.jpg",
                      "desc": "personnage biblique",
@@ -899,12 +937,12 @@
                      "letters": [
                             {
                                    "slug": "1543_10_14_MadameDeFalais",
-                                   "date": "14 octobre (1543)",
+                                   "date": "14 octobre [1543]",
                                    "headline": "Madame de Fallais"
                             },
                             {
                                    "slug": "1544_06_24_MmeDeFalais",
-                                   "date": "24 juin (1544)",
+                                   "date": "24 juin [1544]",
                                    "headline": "Madame de Fallais"
                             },
                             {

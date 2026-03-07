@@ -221,12 +221,12 @@ export const createLinkTransc = () =>{
 }
 
 //triggers functions that need the DOM to be in place (hydration)
-onMount(()=>{
-	document.addEventListener('load', displayEs());
-	document.addEventListener('load', displayResult());
-	document.addEventListener('load', displayResultChng());
-	document.addEventListener('load', displayResultEs());
-	document.addEventListener('load', displayDiplomatic());
+onMount((event)=>{
+	document.addEventListener(event, displayEs());
+	document.addEventListener(event, displayResultEs());
+	document.addEventListener(event, displayResult());
+	document.addEventListener(event, displayResultChng());
+	document.addEventListener(event, displayDiplomatic());
 	document.getElementById('msInfo').innerHTML = biblMsInfo;
     var viewer1 = OpenSeadragon({
 			id: "openseadragon1", prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
@@ -268,7 +268,7 @@ onMount(()=>{
 <div id='anchor'>
 <article>
 	<h1>{title}</h1>
-    <p><span class="tag">Date : {dateDisplay}</span></p>
+    <p><span class="tag">Fecha : {dateDisplay}</span></p>
     <p><span class="tag">{editor}</span></p>
 	<!--<p><strong>Thèmes</strong> {#each tags as tag}
 		<span class="tag">{tag}</span>
@@ -411,7 +411,7 @@ for (var note of notes){
 	   var txt = snote.querySelector('a.sup')?.getAttribute('title');
 	   var link = snote.querySelector('a.sup');
 	   var num = snote.querySelector('a.sup').textContent;
-	   if(txt==textOk){
+	   if(txt.substring(0,30)==textOk.substring(0,30)){
 		   link.setAttribute("href",`#${name}`);
 		   var string = href?.split('#');
 		   var nom = string[1];

@@ -37,19 +37,19 @@
 	script.type = "module";
 	// change text when updating the map
 	script.textContent = fr ? `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/1956978c14deb22b.js?v=4";
+import define from "https://api.observablehq.com/d/1956978c14deb22b@2664.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-920ecaf3"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-920ecaf3"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-920ecaf3"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-c039cb10"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-c039cb10"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-c039cb10"));
   return ["mapViz","arrow"].includes(name);
 });` 
     : `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/de8c36a8a2970791@2657.js?v=4";
+import define from "https://api.observablehq.com/d/de8c36a8a2970791@2661.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-86cf6b04"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-86cf6b04"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-86cf6b04"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-980b69f3"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-980b69f3"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-980b69f3"));
   return ["mapViz","arrow"].includes(name);
 });`
 	mapcontainer.appendChild(script)

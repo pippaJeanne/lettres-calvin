@@ -72,7 +72,7 @@
                <persName>Jean Calvin</persName>
                <settlement key="Genève"
                            ref="https://www.wikidata.org/wiki/Q71"
-                           corresp="#geneve">Villefranche</settlement>
+                           corresp="#geneve">Genève</settlement>
                <date when="1542-05">mai 1542</date>
             </correspAction>
             <correspAction type="received">

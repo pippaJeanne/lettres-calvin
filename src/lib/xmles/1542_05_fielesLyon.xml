@@ -34,7 +34,7 @@
  <correspDesc>
   <correspAction type="sent">
   <persName>Juan Calvino</persName>
-  <settlement key="Ginebra" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">Villefranche</settlement>
+  <settlement key="Ginebra" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">Ginebra</settlement>
   <date when="1542-05">mayo de 1542</date>
  </correspAction>
  <correspAction type="received">

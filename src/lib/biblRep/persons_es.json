@@ -112,7 +112,7 @@
                             },
                             {
                                    "slug": "1543_10_14_SenoraFalais",
-                                   "date": "14 de octubre de (1543)",
+                                   "date": "14 de octubre de [1543]",
                                    "headline": "Señora de Fallais"
                             },
                             {
@@ -127,7 +127,7 @@
                             },
                             {
                                    "slug": "1544_06_24_SraDeFalais",
-                                   "date": "24 de junio de (1544)",
+                                   "date": "24 de junio de [1544]",
                                    "headline": "Señora de Fallais"
                             },
                             {
@@ -137,6 +137,20 @@
                             }
                      ],
                      "id": "#espeville"
+              },
+              {
+                     "name": "Christophe Fabri",
+                     "wikiurl": "http://www.wikidata.org/entity/Q96318836",
+                     "thumbnail": "",
+                     "desc": "Reformador de Bôle, Boudry y Pontareuse, nombrado pastor de Neuchâtel por el sínodo de Berna en 1532. Reformador itinerante en Ginebra y en Thonon.",
+                     "letters": [
+                            {
+                                   "slug": "1545_06_JeanCavent_ES",
+                                   "date": "[junio de 1545]",
+                                   "headline": "Jean Cavent"
+                            }
+                     ],
+                     "id": "#fabri"
               },
               {
                      "name": "Consistorio de Ginebra",
@@ -166,13 +180,13 @@
                             {
                                    "slug": "1541_09_29_senoresNeuchatel",
                                    "date": " 29 de septiembre de 1541",
-                                   "headline": "A los señores de Neuchâtel"
+                                   "headline": "Señores de Neuchâtel"
                             }
                      ],
                      "id": "#conseil-neuchatel"
               },
               {
-                     "name": "Daniel ( - )",
+                     "name": "Daniel",
                      "wikiurl": "http://www.wikidata.org/entity/Q171724",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Buonarroti%20026.jpg",
                      "desc": "personaje bíblico",
@@ -186,7 +200,7 @@
                      "id": "#daniel"
               },
               {
-                     "name": "David ( - )",
+                     "name": "David",
                      "wikiurl": "http://www.wikidata.org/entity/Q41370",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/King%20David%2C%20the%20King%20of%20Israel.jpg",
                      "desc": "monarca israelita",
@@ -279,7 +293,7 @@
                      "name": "Francisco I de Francia (1494 - 1547)",
                      "wikiurl": "http://www.wikidata.org/entity/Q129857",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Fran%C3%A7ois%20Ier%20Louvre.jpg",
-                     "desc": "rey de Francia",
+                     "desc": "rey de Francia (1515–1547)",
                      "letters": [
                             {
                                    "slug": "1540_07_28_DuTailly_ES",
@@ -360,20 +374,6 @@
                      "id": "#archevequeCologne"
               },
               {
-                     "name": "Iglesia de Lyon",
-                     "wikiurl": "",
-                     "thumbnail": "",
-                     "desc": "",
-                     "letters": [
-                            {
-                                   "slug": "1542_05_fielesLyon",
-                                   "date": "mayo de 1542",
-                                   "headline": "Fieles de Lyon"
-                            }
-                     ],
-                     "id": "#eglise_Lyon"
-              },
-              {
                      "name": "Iglesia protestante de Ginebra",
                      "wikiurl": "http://www.wikidata.org/entity/Q13371956",
                      "thumbnail": "",
@@ -419,6 +419,11 @@
                                    "headline": "Señor de Fallais"
                             },
                             {
+                                   "slug": "1545_06_JeanCavent_ES",
+                                   "date": "[junio de 1545]",
+                                   "headline": "Jean Cavent"
+                            },
+                            {
                                    "slug": "1545_08_05_MFallais_ES",
                                    "date": "5 de agosto de [1545]",
                                    "headline": "Señor de Fallais"
@@ -430,6 +435,20 @@
                             }
                      ],
                      "id": "#jacques-bourgogne"
+              },
+              {
+                     "name": "Jean Cavent",
+                     "wikiurl": "",
+                     "thumbnail": "",
+                     "desc": "diácono de la iglesia de Lausana",
+                     "letters": [
+                            {
+                                   "slug": "1545_06_JeanCavent_ES",
+                                   "date": "[junio de 1545]",
+                                   "headline": "Jean Cavent"
+                            }
+                     ],
+                     "id": "#cavent"
               },
               {
                      "name": "Jean Trolliet",
@@ -479,7 +498,7 @@
                      "id": "#jean_tillet"
               },
               {
-                     "name": "Jeremías ( - )",
+                     "name": "Jeremías",
                      "wikiurl": "http://www.wikidata.org/entity/Q158825",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Dome%20of%20Immanuel%20in%20St%20Mark%27s%20Basilica-Jeremiah.jpg",
                      "desc": "profeta mayor hebreo",
@@ -549,7 +568,7 @@
                      "id": "#eveque_Treves"
               },
               {
-                     "name": "Jonás ( - )",
+                     "name": "Jonás",
                      "wikiurl": "http://www.wikidata.org/entity/Q2468262",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Sistine%20jonah.jpg",
                      "desc": "personaje de la Biblia y el Corán",
@@ -671,7 +690,7 @@
                      "id": "#luther"
               },
               {
-                     "name": "Nabucodonosor II ( - )",
+                     "name": "Nabucodonosor II",
                      "wikiurl": "http://www.wikidata.org/entity/Q12591",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Nebukadnessar%20II.jpg",
                      "desc": "monarca babilónico",
@@ -683,6 +702,20 @@
                             }
                      ],
                      "id": "#nabuchodonosor"
+              },
+              {
+                     "name": "Nuevo creyente",
+                     "wikiurl": "",
+                     "thumbnail": "",
+                     "desc": "",
+                     "letters": [
+                            {
+                                   "slug": "1548_06_NuevoCreyente",
+                                   "date": "13 de junio de [1548]",
+                                   "headline": "Nuevo creyente"
+                            }
+                     ],
+                     "id": "#converti"
               },
               {
                      "name": "Pablo de Tarso (0005 - 0066)",
@@ -749,13 +782,18 @@
               {
                      "name": "Pierre Viret (1511 - 1571)",
                      "wikiurl": "http://www.wikidata.org/entity/Q123337",
-                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/PierreViret.jpg",
+                     "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20Zwitserse%20hervormer%20Pierre%20Viret%20Petrus%20Viretus%20Gallia%20nemo%20futur%20dulcius%20%28titel%20op%20object%29%2C%20RP-P-1910-4243.jpg",
                      "desc": "Teólogo suizo",
                      "letters": [
                             {
                                    "slug": "1541_02_19_senoresGinebra",
                                    "date": " 19 de febrero de 1541",
                                    "headline": "Señores de Ginebra"
+                            },
+                            {
+                                   "slug": "1545_06_JeanCavent_ES",
+                                   "date": "[junio de 1545]",
+                                   "headline": "Jean Cavent"
                             }
                      ],
                      "id": "#viret"
@@ -803,7 +841,7 @@
                      "id": "#madame-bude"
               },
               {
-                     "name": "Salomón ( - )",
+                     "name": "Salomón",
                      "wikiurl": "http://www.wikidata.org/entity/Q37085",
                      "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/087.King%20Solomon%20in%20Old%20Age.jpg",
                      "desc": "rey de Israel, personaje de la Biblia",
@@ -899,12 +937,12 @@
                      "letters": [
                             {
                                    "slug": "1543_10_14_SenoraFalais",
-                                   "date": "14 de octubre de (1543)",
+                                   "date": "14 de octubre de [1543]",
                                    "headline": "Señora de Fallais"
                             },
                             {
                                    "slug": "1544_06_24_SraDeFalais",
-                                   "date": "24 de junio de (1544)",
+                                   "date": "24 de junio de [1544]",
                                    "headline": "Señora de Fallais"
                             },
                             {

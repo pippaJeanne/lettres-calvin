@@ -7,7 +7,7 @@
 
 <div class="card">
 	<h2>{title}</h2>
-	<p>Date: {date}</p>
+	<p><em>{date}</em></p>
 
 	<slot />
 

@@ -27,7 +27,7 @@
 		} 
 	}
 
-	//Checking library name. If 'bibliothèque de genève' rearrange array of image urls. Geneva's library facs not iiiF compatible
+	//Checking library name. If 'bibliothèque de genève'  ou 'Archives d'états' rearrange array of image urls. Those institutions facs not iiiF compatible
    export const biblMsCheck = () => { 
     let newarray = [];
     if(bibliothequeMs.toLowerCase().includes('bibliothèque de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de neuchâtel')){
@@ -136,11 +136,11 @@ export const createLinkTransc = () =>{
   return link2transc;
 }
 //triggers functions that need the DOM to be in place (hydration)
-onMount(()=>{
-	document.addEventListener('load', displayResult());
-	document.addEventListener('load', displayResultChng());
-	document.addEventListener('load', displayResultEs());
-	document.addEventListener('load', displayDiplomatic());
+onMount((event)=>{
+	document.addEventListener(event, displayResult());
+	document.addEventListener(event, displayResultEs());
+	document.addEventListener(event, displayResultChng());
+	document.addEventListener(event, displayDiplomatic());
 	document.getElementById('msInfo').innerHTML = biblMsInfo;
     var viewer1 = OpenSeadragon({
 			id: "openseadragon1", prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
@@ -205,7 +205,7 @@ onMount(()=>{
 	<div id="lienTransc"></div>
 	<p style="text-align: center !important;font-size: 1.2rem;">{desc}</p>
 	<!--<svelte:component this={content}/>-->
-	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourrir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs.</p>
+	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs.</p>
 
 <div class="sec-container"><!-- manuscript original or copy-->
 	 <div class="inner-cont cartav1" style="-webkit-order: 1;order: 1;">

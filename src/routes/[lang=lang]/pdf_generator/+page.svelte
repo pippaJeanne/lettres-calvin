@@ -331,7 +331,7 @@ export async function applyFilters() {
     let signature = document.querySelector('#signature select');
     let srcPlace = document.querySelector('#srcPlace select');
     let destPlace = document.querySelector('#destPlace select');
-     if (resultsFilter.length === 0){
+     if (searchFilter === "" && resultsFilter.length === 0){
       filteredLetters = letters2filter.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place.includes(srcPlace.value) || srcPlace.value === '').filter(l => l.placeDest.includes(destPlace.value) || destPlace.value === '');
       console.log(filteredLetters)
     } else if(resultsFilter.length !== 0){
@@ -425,7 +425,7 @@ $: if (research === 'ready') {
       </div>
       <div id="recipient"><span>{t.filter_categories.recipient}</span>
       <select name="c2" multiple>
-        <option value="{nochoice}"></option>
+        <option value="{nochoice}" selected></option>
         {#each destinataires as dest }
               <option value="{dest}">{dest}</option>
             {/each}
