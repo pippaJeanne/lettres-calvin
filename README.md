@@ -10,6 +10,7 @@ Le processus de traitement des lettres et d'autres informations et fichiers de l
 
 ### Instructions importantes
 
+- **Installer saxonjs/xslt3-he => *npm i saxonjs-he***
 - **Commande pour la transformation des feuilles xslt en format sef.json** :
 *nécessaire afin de pouvoir utiliser la bibliothèque de code SaxonJS pour la transformation XSLT des fichiers XML*
     
