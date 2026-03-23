@@ -1,0 +1,33 @@
+{
+  "exportedAt": "2026-03-01T23:02:49.988Z",
+  "count": 3,
+  "entries": [
+    {
+      "language": "fr",
+      "selection": {
+        "period": "1538 — 1554",
+        "recipient": [
+          "Madame de Fallais",
+          "Monsieur de Fallais"
+        ],
+        "Nature du document source": "ORIG. AUTOGRAPHE",
+        "Signature": "SIGNÉE JEAN CALVIN"
+      }
+    },
+    {
+      "language": "fr",
+      "selection": {
+        "period": "1538 — 1554",
+        "Nature du document source": "ORIG. AUTOGRAPHE",
+        "Signature": "SANS SIGNATURE"
+      }
+    },
+    {
+      "language": "es",
+      "selection": {
+        "period": "1538 — 1548",
+        "Lugar de origen": "Estrasburgo"
+      }
+    }
+  ]
+}
