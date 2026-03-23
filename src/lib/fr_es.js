@@ -73,7 +73,7 @@ export const fr_es = {
         text_filtres: "Collection de lettres générée d'après les filtres suivants :",
         pdf_table_cont: "Table des matières",
         warning_browser : "Votre navigateur peut avoir des problèmes pour bien générer le PDF pour 15 lettres ou plus. Il est recommandé d'utiliser Safari ou Firefox.",
-        misajour: "Dernière mise à jour : 7 mars 2026"
+        misajour: "Dernière mise à jour : 23 mars 2026"
     },
     es: {
         site_title: "Cartas de Calvino",
@@ -149,6 +149,6 @@ export const fr_es = {
         text_filtres: "Colección de cartas generada según los filtros siguientes:",
         pdf_table_cont: "Tabla de contenidos",
         warning_browser : "Puede que su navegador no genere bien el PDF para 15 cartas o más. Se recomienda usar Safari o Firefox.",
-        misajour: "Última actualización : 7 de marzo de 2026"
+        misajour: "Última actualización : 23 de marzo de 2026"
     }
 }

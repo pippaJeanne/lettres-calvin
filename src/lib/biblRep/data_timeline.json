@@ -368,7 +368,7 @@
                      "start_date": {
                             "year": "1545",
                             "month": "06",
-                            "day": "30"
+                            "day": "01"
                      },
                      "display_date": "[juin 1545]",
                      "text": {
@@ -422,6 +422,26 @@
               },
               {
                      "media": {
+                            "url": "/JeanFrellon_page_1.png",
+                            "thumbnail": "/JeanFrellon_page_1.png"
+                     },
+                     "start_date": {
+                            "year": "1546",
+                            "month": "02",
+                            "day": "13"
+                     },
+                     "display_date": "13 de février 1546",
+                     "text": {
+                            "headline": "Jean Frellon",
+                            "text": "<div><p>Jean Calvin répond à la sollicitation de Jean Frellon, libraire à Lyon, concernant Michel Servet.</p><p style='text-align:right !important; font-size:1.5rem'><a href='/fr/lettres/1546_02_13_JeanFrellon' style='color: #2b2b28 !important;'>Accès à la lettre</a></p></div>"
+                     },
+                     "background": {
+                            "url": "/JeanFrellon_page_1.png",
+                            "color": "#5e5e52"
+                     }
+              },
+              {
+                     "media": {
                             "url": "https://archives.bge-geneve.ch/archive/fullSizeImage?file=https%3A%2F%2Farchives.bge-geneve.ch%2Fcgi-bin%2Fiipsrv.fcgi%3FPY%3D1%26CVT%3DJPG%26FIF%3D%252Fhome%252Fhttpd%252Fbge%252Fdiffusion%252Fprod%252Fapp%252Fwebroot%252Fdata%252Ffiles%252Fbge.diffusion%252Fimages%252Fms_lat_1_376ead%252Fms_lat_107a_volume_2%252Fms_lat_107a_02_f357r.jpg",
                             "thumbnail": "https://archives.bge-geneve.ch/archive/fullSizeImage?file=https%3A%2F%2Farchives.bge-geneve.ch%2Fcgi-bin%2Fiipsrv.fcgi%3FPY%3D1%26CVT%3DJPG%26FIF%3D%252Fhome%252Fhttpd%252Fbge%252Fdiffusion%252Fprod%252Fapp%252Fwebroot%252Fdata%252Ffiles%252Fbge.diffusion%252Fimages%252Fms_lat_1_376ead%252Fms_lat_107a_volume_2%252Fms_lat_107a_02_f357r.jpg"
                      },
@@ -437,6 +457,26 @@
                      },
                      "background": {
                             "url": "https://archives.bge-geneve.ch/archive/fullSizeImage?file=https%3A%2F%2Farchives.bge-geneve.ch%2Fcgi-bin%2Fiipsrv.fcgi%3FPY%3D1%26CVT%3DJPG%26FIF%3D%252Fhome%252Fhttpd%252Fbge%252Fdiffusion%252Fprod%252Fapp%252Fwebroot%252Fdata%252Ffiles%252Fbge.diffusion%252Fimages%252Fms_lat_1_376ead%252Fms_lat_107a_volume_2%252Fms_lat_107a_02_f357r.jpg",
+                            "color": "#5e5e52"
+                     }
+              },
+              {
+                     "media": {
+                            "url": "https://gallica.bnf.fr/ark:/12148/bpt6k3227630/f607.jpeg",
+                            "thumbnail": "https://gallica.bnf.fr/ark:/12148/bpt6k3227630/f607.jpeg"
+                     },
+                     "start_date": {
+                            "year": "1551",
+                            "month": "01",
+                            "day": "19"
+                     },
+                     "display_date": "19 de janvier 1551",
+                     "text": {
+                            "headline": "Richard Le Fèvre",
+                            "text": "<div><p>Lettre de Jean Calvin à Richard Le Fèvre l'exhortant à la persévérance et à la foi pendant son emprisonnement, et offrant également des arguments doctrinaux pour répondre à ses accusateurs</p><p style='text-align:right !important; font-size:1.5rem'><a href='/fr/lettres/1551_01_19_Richard_Le_Fevre' style='color: #2b2b28 !important;'>Accès à la lettre</a></p></div>"
+                     },
+                     "background": {
+                            "url": "https://gallica.bnf.fr/ark:/12148/bpt6k3227630/f607.jpeg",
                             "color": "#5e5e52"
                      }
               },

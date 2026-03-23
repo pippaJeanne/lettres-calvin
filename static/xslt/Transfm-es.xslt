@@ -354,5 +354,28 @@
   <xsl:template match="//tei:*[@rend='underline']">
   <span style="text-decoration: underline;"><xsl:apply-templates/></span>
   </xsl:template>
-
+  
+  <xsl:template match="tei:hi[@xml:id='editorNote']//tei:title">
+    <xsl:choose>
+      <xsl:when  test="@ref">
+        <em>
+          <a style="color:inherit !important; text-decoration: underline;">
+            <xsl:attribute name="href"><xsl:value-of select="./@ref"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </a>
+        </em>
+      </xsl:when>
+      <xsl:otherwise>
+        <em>
+          <xsl:apply-templates/>
+        </em>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="tei:hi[@xml:id='editorNote']//tei:bibl">
+    <xsl:apply-templates/>
+  </xsl:template>
+  
 </xsl:stylesheet>

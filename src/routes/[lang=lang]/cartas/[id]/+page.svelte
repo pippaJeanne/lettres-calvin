@@ -118,7 +118,7 @@ const urlfr = data.letters[slugfr].url;
 //Checking library name. If 'bibliothèque de genève' rearrange array of image urls. Geneva's library facs not iiiF compatible
 export const biblMsCheck = () => { 
     let newarray = [];
-    if(bibliothequeMs.toLowerCase().includes('bibliothèque de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de neuchâtel')){
+    if(!bibliothequeMs.includes('Bibliothèque National de France (BNF). Gallica.')){
        srcMs.map(src => {
        newarray.push({type:'image',
          url: src})
