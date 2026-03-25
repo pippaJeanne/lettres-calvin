@@ -128,7 +128,6 @@ let research = 'loading';
 let finalChoices = {};
 finalChoices['language'] = lang;
 
-
 export async function generatepdf(){
   document.getElementById("tenor-gif-embed").style.display="block";
 // add filter info to Note Statement page
@@ -290,7 +289,8 @@ if (filter.value !== selectedAll){
  // Go back to page and reset filters
      document.getElementById("tenor-gif-embed").style.display="none";  
      window.addEventListener("afterprint", function() {
-      document.location.reload();
+      window.location.reload();
+      window.alert(t.alert)
     });
 
 }
