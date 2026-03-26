@@ -119,6 +119,7 @@ for ( let p of transc_pages){
 <svelte:head>
     <title>Trancription de la {title} </title>
     <meta name="description" content="Transcription diplomatique de la lettre manuscrite autographe de Jean Calvin à {person}, écrite le {dateDisplay}.">
+    <meta name="abstract" content="Transcription diplomatique de la lettre manuscrite autographe de Jean Calvin à {person}, écrite le {dateDisplay}.">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{base}/saxonjs3/SaxonJS3.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

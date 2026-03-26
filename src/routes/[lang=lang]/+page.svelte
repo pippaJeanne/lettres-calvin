@@ -266,6 +266,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 <svelte:head>
 <title>{t.home}</title>  
 <meta name="description" content="{t.txt_ppt}">
+<meta name="abstract" content="{t.txt_ppt}">
 <meta name="keywords" content="{t.keywords}">  
 <link title="timeline-styles" rel="stylesheet" 
               href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">

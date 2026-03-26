@@ -192,6 +192,7 @@ onMount(async (event)=>{
 
 	<title>{title}</title>
 	<meta name="description" content="{desc}">
+	<meta name="abstract" content="{desc}">
 	<meta name="keywords" content="{tags.map(tag => tag).join(', ')}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

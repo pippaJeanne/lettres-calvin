@@ -62,6 +62,7 @@ new Runtime().module(define, name => {
 <svelte:head>
     <title>{t.name_carte}</title>
 	<meta name="description" content="{t.carte_desc}">
+	<meta name="abstract" content="{t.carte_desc}">
 </svelte:head>
 <article>
 {#if fr }

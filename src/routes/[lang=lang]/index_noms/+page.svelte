@@ -23,6 +23,7 @@ export let persons_list = personsIndex()
 <svelte:head>
     <title>{t.name_index}</title>
     <meta name="description" content="{t.names_desc}">
+     <meta name="abstract" content="{t.names_desc}">
     <script src="https://unpkg.com/material-components-web@13.0.0/dist/material-components-web.min.js">
     </script>
 </svelte:head>
