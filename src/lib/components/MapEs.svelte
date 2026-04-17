@@ -20,14 +20,14 @@
 <li>Círculos rojos: lugares mencionados en las cartas</li>
 <li>Color más oscuro = más cartas vinculadas al lugar</li>
 <li>Clic en un marcador = lista y enlaces a las cartas enviadas a ese lugar</li>
- <li>[] = información incierta</li></ul>
+ <li>[información entre corchetes] = información incierta (nivel de confianza entre bajo y medio)</li></ul>
 </div>
 
 <div style="width:100%" id="observableCarteEs"> <!-- Only change the number in the next 3 divs' ids when updating along with what's inside the script type="module" tag at the corresponding spot in the template/svelte page for the 'carte' route -->
-<div id="observablehq-viewof-date-e92f92be"></div>
-<div id="observablehq-carte-e92f92be"></div>
-<div id="observablehq-activate-e92f92be" class="cacher"></div>
-<p>Credit: <a href="https://observablehq.com/d/de8c36a8a2970791@2649">Red de la correspondencia de Calvino by Yanet&#039;s Visualiser</a></p>
+<div id="observablehq-viewof-date-72726b44"></div>
+<div id="observablehq-carte-72726b44"></div>
+<div id="observablehq-activate-72726b44" class="cacher"></div>
+<p>Credit: <a href="https://observablehq.com/d/de8c36a8a2970791">Red de la correspondencia de Calvino by Yanet&#039;s Visualiser</a></p>
 </div>
 
 </div>
