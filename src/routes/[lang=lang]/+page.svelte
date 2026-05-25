@@ -317,7 +317,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 	<ul class="taglist">
 		{#each tagsL as tag}
 			<li class="tagplugin">
-				<a class="tag" href="./{lang}/tags/{tag.slug}">
+				<a class="tag" target="_blank" href="./{lang}/tags/{tag.slug}">
 				{tag.name}
 				</a>
 			</li>
@@ -330,7 +330,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 		<ul class="cats"> <p>{t.cat_nature} :</p>
 			{#each catsL as cat}
 				{#if cat["source"]}
-				<li><a class="categ" href="./{lang}/categories/{cat.slug}">{cat.name} 
+				<li><a class="categ" target="_blank" href="./{lang}/categories/{cat.slug}">{cat.name} 
 					<span class="n"> [{cat.n}]</span></a> 
 			</li>	
 				{/if}
@@ -354,7 +354,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 		<ul class="cats"> <p>{t.cat_recipient} :</p>
 			{#each catsL as cat}
 				{#if cat["recipient"]}
-				<li><a class="categ" href="./{lang}/categories/{cat.slug}">{cat.name} 
+				<li><a class="categ" target="_blank" href="./{lang}/categories/{cat.slug}">{cat.name} 
 					<span class="n"> [{cat.n}]</span></a> 
 			</li>	
 				{/if}
@@ -369,7 +369,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 	<ul class="cats"><p>{t.cat_signature} :</p>
 		{#each catsL as cat}
 				{#if cat["sign"]}
-				<li><a class="categ" href="./{lang}/categories/{cat.slug}">{cat.name} 
+				<li><a class="categ" target="_blank" href="./{lang}/categories/{cat.slug}">{cat.name} 
 					<span class="n"> [{cat.n}]</span></a> 
 			</li>	
 				{/if}
@@ -398,7 +398,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 	<ul class="taglist">
 		{#each slugslist  as slug}
 			<li class="tagplugin">
-				<a class="tag" href="./transcription/{slug}">
+				<a class="tag" href="./transcription/{slug}" target="_blank">
 				{transcs[slug].title} ({transcs[slug].dateDisplay})
 				</a>
 			</li> | 
