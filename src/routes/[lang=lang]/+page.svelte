@@ -237,6 +237,14 @@ function loadTimelineAssets() {
       loadScript(`/timeline.js`)
     ]);
   }
+
+  // Anubis challenge handling
+let challengeComplete = false;
+
+function handleIframeLoad() {
+  // The user's browser has now processed the Anubis JS challenge page from Bibl. de Genève!
+    challengeComplete = true;
+}
 //console.log(tline_data())
 onMount(async ()=> {
 	await loadTimelineAssets();
@@ -272,6 +280,9 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
               href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
 <script src='/timeline.js'></script>
 </svelte:head>
+
+<iframe title="Anubis challenge" id="jsChallenge" src={tline_data().events[5].media.url} style="display:none;" on:load={handleIframeLoad}>
+</iframe>
 
 <!-- Timeline -->
 <div id='timeline-embed' style="width: 100%; height: 65vh;z-index:3"></div>

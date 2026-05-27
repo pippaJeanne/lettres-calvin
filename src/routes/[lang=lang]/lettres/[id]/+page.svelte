@@ -151,17 +151,17 @@ function loadSaxonJS() {
 	]);
 }
 
-//triggers functions that need the DOM to be in place (hydration)
-onMount(async (event)=>{
-	// making sure SaxonJS loads first
-  await loadSaxonJS();
-  
-  document.addEventListener(event, displayResult());
-	document.addEventListener(event, displayResultEs());
-	document.addEventListener(event, displayResultChng());
-	document.addEventListener(event, displayDiplomatic());
-	document.getElementById('msInfo').innerHTML = biblMsInfo;
-    var viewer1 = OpenSeadragon({
+// Anubis challenge handling
+let challengeComplete = false;
+
+function handleIframeLoad() {
+  // The user's browser has now processed the Anubis JS challenge page from Bibl. de Genève!
+    challengeComplete = true;
+    initOpenSeadragon();
+}
+
+async function initOpenSeadragon(){
+	var viewer1 = OpenSeadragon({
 			id: "openseadragon1", prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
 			tileSources:biblMsCheck(), 
 		sequenceMode: true,
@@ -174,6 +174,18 @@ onMount(async (event)=>{
 	gestureSettingsTouch: {
 	pinchRotate: true}
 	});
+}
+
+//triggers functions that need the DOM to be in place (hydration)
+onMount(async (event)=>{
+	// making sure SaxonJS loads first
+  await loadSaxonJS();
+  
+  document.addEventListener(event, displayResult());
+	document.addEventListener(event, displayResultEs());
+	document.addEventListener(event, displayResultChng());
+	document.addEventListener(event, displayDiplomatic());
+	document.getElementById('msInfo').innerHTML = biblMsInfo;
 	
 	 var viewer2 = OpenSeadragon({
 								id: "openseadragon2",
@@ -226,6 +238,8 @@ onMount(async (event)=>{
 	<p style="text-align: center !important;font-size: 1.2rem;">{desc}</p>
 	<!--<svelte:component this={content}/>-->
 	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs.</p>
+<iframe title="Anubis challenge" id="jsChallenge" src={srcMs[0]} style="display:none;" on:load={handleIframeLoad}>
+</iframe>
 
 <div class="sec-container"><!-- manuscript original or copy-->
 	 <div class="inner-cont cartav1" style="-webkit-order: 1;order: 1;">
@@ -294,6 +308,9 @@ onMount(async (event)=>{
             <div class="ancho-col content visualizar1grupo" style="display:none!important; width: 97%!important; margin-left: auto!important; margin-right: auto!important;">
                 <div id="openseadragon1"
                     style="width: 98%; height: 500px;background-color: #fcfcfc; display: block; margin-left: auto; margin-right: auto;">
+					{#if !challengeComplete}
+        			<div style="color: black; padding: 20px;">En accédant à l'archive...</div>
+					{/if}
                 </div>
                 <div>
                     <h6>{coteMs} </h6>

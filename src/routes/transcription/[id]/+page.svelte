@@ -35,8 +35,10 @@ let {id, url,lang, title, date, dateDisplay, categories, editor, bibliothequeMs,
     let newarray = [];
     if(bibliothequeMs.toLowerCase().includes('bibliothèque de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de genève') || bibliothequeMs.toLowerCase().includes('archives d\'état de neuchâtel')){
        srcMs.map(src => {
-       newarray.push({type:'image',
-         url: src})
+       newarray.push({
+        type:'image',
+         url: src
+      })
        })
        return newarray
     }else{
@@ -82,15 +84,18 @@ function loadSaxonJS() {
 	]);
 }
 
-//triggers functions that need the DOM to be in place (hydration)
-onMount(async (event)=>{
-	// making sure SaxonJS loads first
-  await loadSaxonJS();
-  
-	document.addEventListener(event, displayDiplomatic());
-	document.getElementById('msInfo').innerHTML = biblMsInfo;
+// Anubis challenge handling
+let challengeComplete = false;
+
+function handleIframeLoad() {
+  // The user's browser has now processed the Anubis JS challenge page from Bibl. de Genève!
+    challengeComplete = true;
+    initOpenSeadragon();
+}
+async function initOpenSeadragon() {
     var viewer1 = OpenSeadragon({
 			id: "openseadragon1", prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+      crossOriginPolicy: null,
 			tileSources:biblMsCheck(), 
 		sequenceMode: true,
 		// Initial rotation angle
@@ -102,6 +107,15 @@ onMount(async (event)=>{
 	gestureSettingsTouch: {
 	pinchRotate: true}
 	});
+  }
+
+//triggers functions that need the DOM to be in place (hydration)
+onMount(async (event)=>{
+	// making sure SaxonJS loads first
+  await loadSaxonJS();
+
+	document.addEventListener(event, displayDiplomatic());
+	document.getElementById('msInfo').innerHTML = biblMsInfo;
 
   document.getElementById("defaultOpen").click();
 document.getElementById("defaultOpen1").click();
@@ -113,7 +127,6 @@ for ( let p of transc_pages){
 }
 }
 })
-
 </script>
 
 <svelte:head>
@@ -434,6 +447,9 @@ function opendiv2(evt, tabname) {
     }
     </script>    
 
+<iframe title="Anubis challenge" id="jsChallenge" src={srcMs[0]} style="display:none;" on:load={handleIframeLoad}>
+</iframe>
+
 <div style="display: flex;flex-wrap:wrap;">
       <!-- Left-side tabs -->
   <div class="tab_left sec-container">
@@ -447,6 +463,9 @@ function opendiv2(evt, tabname) {
         <div>
             <div id="openseadragon1"
                 style="width: 98%; height: 500px;background-color: #fcfcfc; display: block; margin-left: auto; margin-right: auto;">
+                {#if !challengeComplete}
+        <div style="color: black; padding: 20px;">En accédant à l'archive...</div>
+                {/if}
             </div>
             <div>
                 <h6>{coteMs} </h6>
