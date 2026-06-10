@@ -281,9 +281,7 @@
    <xsl:choose>
   <xsl:when  test="@corresp">
     <strong>
-    <a style="color:inherit !important; text-decoration: underline;">
-    <xsl:attribute name="href"><xsl:copy-of select="$persIndex"/><xsl:value-of select="./@corresp"/>
-    </xsl:attribute>
+      <a style="color:inherit !important; text-decoration: underline;" href="{$persIndex}{./@corresp}">
       <xsl:apply-templates/>
     </a>
     </strong>
