@@ -130,7 +130,8 @@ for ( let p of transc_pages){
 </script>
 
 <svelte:head>
-    <title>Trancription de la {title} </title>
+    <title>Trancription de la {title} du {dateDisplay}</title>
+    <meta name="editor" content="{editor}">
     <meta name="description" content="Transcription diplomatique de la lettre manuscrite autographe de Jean Calvin à {person}, écrite le {dateDisplay}.">
     <meta name="abstract" content="Transcription diplomatique de la lettre manuscrite autographe de Jean Calvin à {person}, écrite le {dateDisplay}.">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

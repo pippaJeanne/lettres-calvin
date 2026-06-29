@@ -202,7 +202,8 @@ onMount(async (event)=>{
 
 <svelte:head>
 
-	<title>{title}</title>
+	<title>{title} [{dateDisplay}]</title>
+	<meta name="editor" content="{editor}">
 	<meta name="description" content="{desc}">
 	<meta name="abstract" content="{desc}">
 	<meta name="keywords" content="{tags.map(tag => tag).join(', ')}">
