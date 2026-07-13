@@ -508,7 +508,8 @@ https://www.wikidata.org/wiki/Q97578531  -->
     </div>
     <div class="elevado">
             <a href="http://institutions.ville-geneve.ch/fr/bge/collections/manuscrits-et-archives/presentation/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="272" height="68" viewBox="0 0 272 68" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="272" height="68" viewBox="0 0 272 68" fill="none" style="max-height: 30px !important;
+    width: auto;">
                     <g clip-path="url(#clip0_25_9951)">
                     <path d="M0 7.02246H8.73234C13.2217 7.02246 16.0029 10.098 16.0029 13.7343C16.0029 15.9498 15.1707 17.4685 13.7089 18.5082C16.0029 19.4772 17.6727 21.4804 17.6727 24.5287C17.6727 28.8182 14.2291 31.5835 9.46596 31.5835H0V7.02246ZM8.20675 17.3651C10.6759 17.3651 11.9296 15.9117 11.9296 14.0446C11.9296 12.1774 10.6759 10.724 8.20675 10.724H4.03494V17.3651H8.20675ZM9.46049 27.8438C12.2417 27.8438 13.5995 26.3577 13.5995 24.3491C13.5995 22.3404 12.2417 20.789 9.46049 20.789H4.03494V27.8438H9.46049Z" fill="#1D1D21"/>
                     <path d="M21.2695 7.02246H25.3045V31.578H21.2695V7.02246Z" fill="#1D1D21"/>

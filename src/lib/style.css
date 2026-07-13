@@ -265,16 +265,16 @@ margin-bottom:1rem;
 
 #siteTitle{
 	color: whitesmoke !important;
-	text-shadow:4px 4px 6px grey !important;
+	/*text-shadow:4px 4px 6px grey !important;*/
 }
 .tit1{
 	margin:0;
-	color: #797c80 !important;
+	color: #585a5d !important;
 }
 .tit2 {
     font-size: 0.625em !important;
     margin-top: 0;
-    color: #797c80 !important;
+    color: #585a5d !important;
 }
 .content {
  height:600px;
