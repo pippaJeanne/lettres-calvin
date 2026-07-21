@@ -74,7 +74,7 @@ export const fr_es = {
         pdf_table_cont: "Table des matières",
         warning_browser : "Votre navigateur peut avoir des problèmes pour bien générer le PDF pour 15 lettres ou plus. Il est recommandé d'utiliser Safari ou Firefox.",
         alert: "Il faut rafraîchir la page pour sortir de la vue d'impression.",
-        misajour: "Dernière mise à jour : 23 mars 2026"
+        misajour: "Dernière mise à jour : 21 juillet 2026"
     },
     es: {
         site_title: "Cartas de Calvino",
@@ -151,6 +151,6 @@ export const fr_es = {
         pdf_table_cont: "Tabla de contenidos",
         warning_browser : "Puede que su navegador no genere bien el PDF para 15 cartas o más. Se recomienda usar Safari o Firefox.",
         alert: "Debe recargar la página para salir de la vista de impresión.",
-        misajour: "Última actualización : 23 de marzo de 2026"
+        misajour: "Última actualización : 21 de julio de 2026"
     }
 }
