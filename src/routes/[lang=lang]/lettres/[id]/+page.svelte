@@ -238,7 +238,7 @@ onMount(async (event)=>{
 	<div id="lienTransc"></div>
 	<p style="text-align: center !important;font-size: 1.2rem;">{desc}</p>
 	<!--<svelte:component this={content}/>-->
-	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs.</p>
+	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs. Vous pouvez également changer l'ordre des sections.</p>
 <iframe title="Anubis challenge" id="jsChallenge" src={srcMs[0]} style="display:none;" on:load={handleIframeLoad}>
 </iframe>
 
@@ -426,7 +426,7 @@ for (var note of notes){
 			style="width: 98%; height: 500px;background-color: #fcfcfc; display: block; margin-left: auto; margin-right: auto;">
 			</div>
 			<div>
-			<h6>Facsimiles {foliosB} </h6>
+			<h6>Facsimilés {foliosB} </h6>
 			<!-- Notice de la bibliohèque -->
 			<h3 style="text-align: center;">Notice de la bibliothèque
 			</h3>

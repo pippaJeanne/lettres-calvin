@@ -74,7 +74,7 @@
       <dateline>Desde <placeName key="Ginebra" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">Ginebra</placeName>, <date when="1541-09-29">este 29 de septiembre de 1541</date>.
       </dateline> 
       <salute>Sus humildes servidores en nuestro Señor.</salute>
-      <signed><persName key="Jean Calvin" ref="#"><choice><orig>JÉHAN</orig><reg>JEAN</reg></choice> CALVIN</persName></signed>
+      <signed><persName key="Juan Calvino" ref="#">JUAN CALVINO</persName></signed>
 <signed><persName key="Aimé Champereau" ref="#">AYMÉ CHAMPEREAU</persName>.</signed>
 <signed><persName key="Jacques Bernard" ref="#">JACQUES BERNARD</persName>.</signed>
       </closer>

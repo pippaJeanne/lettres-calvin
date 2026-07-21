@@ -353,6 +353,7 @@ for ( let p of transc_pages){
   <p><span class="tag">Date : {dateDisplay}</span></p>
   <p><a href="{base}/{lang}/lettres/{slug}">Édition critique de la lettre</a></p>
   <p style="text-align: center !important;font-size: 1.2rem;">{desc}</p>
+  <p style="text-align: right !important;font-size: 0.9rem; padding: 5px;"><span style="background-color: #77bf91;">À l'attention des lecteurs : les zones en vert, comme celle-ci, indiquent les passages qui ont fait l'objet d'annotations, à l'exception des passages en marge qui sont plus faciles à apercevoir.</span></p>
   
 
   <script>

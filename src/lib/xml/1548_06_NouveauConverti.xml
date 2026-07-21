@@ -50,8 +50,7 @@
 </facsimile>
    </msDesc>
  <notesStmt>
-          <note>Les notes proviennent de l'édition de Jules Bonnet de 1854 
-            sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
+          <note>Les notes proviennent de l'édition de Jules Bonnet de 1854 sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
  </notesStmt>
 </sourceDesc>
 </fileDesc>
@@ -90,7 +89,7 @@
 <opener>
 <address><addrLine>À un <persName type="individu" key="Nouveau converti" ref="#" corresp="#converti">nouveau converti</persName><note n="*" place="bottom"><p>Lettre sans indication de personne et d'année.</p></note></addrLine>
 </address>
-<dateline xml:id="opener">[Envoyée à <placeName key="Genève" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">[Genève]</placeName>]
+<dateline xml:id="opener">[Envoyée à <placeName key="Genève" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">[Genève]<note n="1" place="bottom" type="editorial"><p>On présume qu'il s'agit d'un nouveau converti de sa congrégation à <placeName key="Genève" ref="https://www.wikidata.org/wiki/Q71">Genève</placeName>. [Note éditoriale]</p></note></placeName>]
 </dateline>
 <hi rend="bold"><label type='nature'>Minute originale</label>. Bibl. de Genève. Vol. 107 a.</hi>
 <hi xml:id="editorNote">

@@ -98,7 +98,7 @@
     <dateline>De <placeName key="Ginebra" ref="https://www.wikidata.org/wiki/Q71" corresp="#geneve">Ginebra</placeName>, este <date when="1551-01-19">19 de enero de 1551</date>.</dateline>
     <salute>Su hermano en nuestro Señor,</salute>
     <signed>
-      <persName type="fullname" key="Jean Calvin" ref="#">JUAN CALVINO</persName>.
+      <persName type="fullname" key="Juan Calvino" ref="#">JUAN CALVINO</persName>.
     </signed>
   </closer>
   </body>

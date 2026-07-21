@@ -15,18 +15,25 @@
     <p>{description}</p>
 <div>
 <h3>Leyenda</h3>
-<ul><li>Círculos azules: lugar de envío</li>
-<li>Marcadores azules: lugar de destino</li>
-<li>Círculos rojos: lugares mencionados en las cartas</li>
-<li>Color más oscuro = más cartas vinculadas al lugar</li>
-<li>Clic en un marcador = lista y enlaces a las cartas enviadas a ese lugar</li>
- <li>[información entre corchetes] = información incierta (nivel de confianza entre bajo y medio)</li></ul>
+<ul>
+<li><strong><img src="/blue_circle.png" alt="Círculo azul" width="10" height="10"> Círculos azules</strong>: lugar de envío</li>
+<li><strong><img src="/Blue_map_pin.png" alt="Marcador azul" width="10" height="10"> Marcadores azules</strong>: lugar de destino</li>
+<li><strong><img src="/red_circle.png" alt="Círculo rojo" width="10" height="10"> Círculos rojos</strong>: lugares mencionados en las cartas</li>
+<li><strong>Color más oscuro y/o círculo más grande</strong> = más cartas vinculadas al lugar</li>
+<li><strong>Clic en un marcador</strong> = lista y enlaces a las cartas enviadas al lugar escogido</li>
+<li><strong>Clic en un círculo azul</strong> = lista y enlaces a las cartas enviadas desde el lugar escogido</li>
+ <li><strong>[información entre corchetes]</strong> = información incierta (nivel de confianza entre bajo y medio)</li>
+  <ul>
+    <li><span style="color:#a31d0b">el texto en rojo indica un nivel de certidumbre bajo</span></li>
+    <li><span style="color:#b38c0e">el texto en amarillo indica un nivel de certidumbre medio</span></li>
+  </ul>
+</ul>
 </div>
 
 <div style="width:100%" id="observableCarteEs"> <!-- Only change the number in the next 3 divs' ids when updating along with what's inside the script type="module" tag at the corresponding spot in the template/svelte page for the 'carte' route -->
-<div id="observablehq-viewof-date-72726b44"></div>
-<div id="observablehq-carte-72726b44"></div>
-<div id="observablehq-activate-72726b44" class="cacher"></div>
+<div id="observablehq-viewof-date-413999a4"></div>
+<div id="observablehq-carte-413999a4"></div>
+<div id="observablehq-activate-413999a4" class="cacher"></div>
 <p>Credit: <a href="https://observablehq.com/d/de8c36a8a2970791">Red de la correspondencia de Calvino by Yanet&#039;s Visualiser</a></p>
 </div>
 
