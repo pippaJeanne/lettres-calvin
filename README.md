@@ -23,9 +23,9 @@ Le processus de traitement des lettres et d'autres informations et fichiers de l
 - **Vues multiples des lettres** : Sources manuscrites ou imprimées, version texte de l'édition de base (celle de l'historien Jules Bonnet parue en 1854) (transcription fidèle), version modernisée (français moderne), traduction espagnole.
 - **Recherche avancée** : Recherche plein texte avec FlexSearch, par catégories, thématiques, dates, etc.
 - **Navigation** : Par ordre chronologique (timeline), catégories, thématiques, index des noms, carte interactive.
-- **Fac-similés de manuscrits** : Affichage avec OpenSeadragon pour zoom et rotation.
+- **Fac-similés de manuscrits** : Affichage avec OpenSeadragon(v3.0.0) pour zoom et rotation.
 - **Transcriptions diplomatiques** : Pages dédiées aux transcriptions des feuillets manuscrits originaux autographes (écriture de Jean Calvin).
-- **Génération de PDF** : Export personnalisable —par un filtrage transversal— avec Paged.js pour explorer des tendances ou des aspects spécifiques, pour impression ou archivage.
+- **Génération de PDF** : Export personnalisable —par un filtrage transversal— avec Paged.js(v0.4.3) pour explorer des tendances ou des aspects spécifiques, pour impression ou archivage.
 - **API** : *Endpoint* pour récupérer les données des lettres depuis les fichiers TEI XML.
 - **Détection d’erreurs** : Signalement des incohérences d’encodage, des informations manquantes et de certains problèmes d’alignement FR-ES afin de faciliter la révision éditoriale.
 
@@ -36,7 +36,7 @@ Le processus de traitement des lettres et d'autres informations et fichiers de l
 - **Transformations** : SaxonJS pour XSLT 3.0 côté client, traitement des fichiers TEI XML.
 - **Recherche** : FlexSearch pour l'indexation et la recherche plein texte.
 - **Fac-similés** : OpenSeadragon pour l'affichage d'images haute résolution.
-- **PDF** : Paged.js pour la génération de PDF paginés.
+- **PDF** : Paged.js(v0.4.3) pour la génération de PDF paginés.
 - **Déploiement** : Netlify avec fonctions *serverless*.
 - **Encodage** : TEI (*Text Encoding Initiative*) pour les lettres. Schéma [ODD](src/lib/odd/custom_schema.odd) adapté pour l'encodage des lettres en TEI XML. [Le schéma personnalisé](src/lib/odd/custom_schema.rng) comprend l'ajout des éléments `bibl` et `msDesc` pour les sources manuscrites et imprimées —y compris les liens ARK ou le protocole IIIF pour les fac-similés—, ainsi que l'encodage de la structure d'une lettre (`opener`,`p`, `closer`) à l'intérieur d'une note. 
 
@@ -56,12 +56,12 @@ Le processus de traitement des lettres et d'autres informations et fichiers de l
 2. Installer les dépendances :
     *Exemple:*
    ```bash
-   npm install jsdom # Pour l'extraction de données des fichiers XML et leur manipulation pour l'API
+   npm install jsdom # Pour l'extraction de données des fichiers XML et leur manipulation pour l'API (v24.0.0)
    ```
 
 3. Installer SaxonJS pour les transformations XSLT :
    ```bash
-   npm i saxonjs-he
+   npm i saxonjs-he  #(v3.0.0-beta2)
    ```
 
 4. Compiler les feuilles XSLT en format SEF (nécessaire pour SaxonJS) :
@@ -210,9 +210,9 @@ Cette infrastructure est modulaire : commencez par remplacer les données, puis 
 - **Multiple letter views**: manuscript and printed sources, base edition text (from Jules Bonnet, 1854) as faithful transcription, modernized French version, Spanish translation.
 - **Advanced search**: full-text search with FlexSearch, by categories, themes, dates, etc.
 - **Navigation**: Browse by chronological order (timeline), categories, themes, name index, interactive map.
-- **Manuscript facsimiles**: Display using OpenSeadragon for zoom and rotation.
+- **Manuscript facsimiles**: Display using OpenSeadragon(v3.0.0) for zoom and rotation.
 - **Diplomatic transcriptions**: Dedicated pages for diplomatic transcriptions of the original autograph pages in Calvin's handwriting.
-- **PDF generation**: Custom export with cross-filtering options to explore trends or specific aspects, with Paged.js for printing or archival use.
+- **PDF generation**: Custom export with cross-filtering options to explore trends or specific aspects, with Paged.js(v0.4.3) for printing or archival use.
 - **API**: Endpoint to retrieve letter data from TEI XML files.
 - **Error detection**: Flags encoding inconsistencies, missing information, and certain FR-ES alignment issues to support editorial revision.
 
@@ -223,7 +223,7 @@ Cette infrastructure est modulaire : commencez par remplacer les données, puis 
 - **Transformations**: SaxonJS for XSLT 3.0 client-side transformation of TEI XML.
 - **Search**: FlexSearch for indexing and search.
 - **Facsimiles**: OpenSeadragon for high-resolution image display.
-- **PDF**: Paged.js for paginated PDF generation.
+- **PDF**: Paged.js(v0.4.3) for paginated PDF generation.
 - **Deployment**: Netlify with serverless functions.
 - **Encoding**: TEI (Text Encoding Initiative). Custom ODD schema in `src/lib/odd/custom_schema.odd` and `src/lib/odd/custom_schema.rng` supports `bibl`, `msDesc`, ARK/IIIF links, and letter structure in a note.
 
@@ -243,12 +243,12 @@ Cette infrastructure est modulaire : commencez par remplacer les données, puis 
 2. Install dependencies:
    *Example:*
    ```bash
-   npm install jsdom # For extracting and manipulating XML data for the API
+   npm install jsdom # For extracting and manipulating XML data for the API (v24.0.0)
    ```
 
 3. Install SaxonJS for XSLT transformations:
    ```bash
-   npm i saxonjs-he
+   npm i saxonjs-he #(v3.0.0-beta2)
    ```
 
 4. Compile XSLT stylesheets to SEF format (required by SaxonJS):
