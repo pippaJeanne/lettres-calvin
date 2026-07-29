@@ -1,0 +1,16 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: Hernández Pedraza
+  given-names: Yanet
+orcid: https://orcid.org/0009-0008-1499-1542
+title: Lettres de Calvin
+abstract: "Lettres de Calvin (*Calvin's Letters*), a bilingual critical digital edition (French-Spanish) of John Calvin's French correspondence. The digital edition provides access to the letters in their original French, a modern French version, a Spanish translation, annotations, visualisations and transversal indexing. It aims to facilitate research on Calvin's correspondence and its historical context."
+keywords:
+  - "http://onto.nerc.ac.uk/vocab/edition"
+  - "http://onto.nerc.ac.uk/vocab/research-infrastructure"
+  - "http://onto.nerc.ac.uk/vocab/critical-edition"
+  - "http://onto.nerc.ac.uk/vocab/visualisation"
+  - "http://onto.nerc.ac.uk/vocab/deployment"
+version: v1.2
+date-released: 2026-07-29
