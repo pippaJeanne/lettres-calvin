@@ -45,9 +45,9 @@
 <xsl:template match="tei:teiHeader">
 <xsl:apply-templates/>
 </xsl:template>
-
-<xsl:template match="tei:titleStmt">
-  <span style="display:none;">
+  
+  <xsl:template match="tei:titleStmt">
+    <!--<span style="display:none;">
   <xsl:value-of select="./tei:title"/>
   </span>
   <xsl:for-each select="./tei:editor">
@@ -56,7 +56,7 @@
   <xsl:value-of select="./@role"/> : </span>
   <span><xsl:value-of select="."/></span>
   </p>
-  </xsl:for-each>
+  </xsl:for-each>-->
 </xsl:template> 
 
 <xsl:template match="tei:publicationStmt">
@@ -64,9 +64,8 @@
 
 
   <xsl:template match="tei:bibl">
-
     <p style="font-style:italic;">
-   <xsl:apply-templates/>
+   <xsl:apply-templates select="replace(., '(\n+\s*\n*\s*|\s*),', ',')"/> 
     </p>
   </xsl:template>
 
@@ -260,11 +259,13 @@
   </xsl:template>
     <xsl:template match="tei:msDesc//tei:settlement">
   </xsl:template>
+
    <xsl:template match="tei:msDesc">
-   <p style="font-style:italic;">
+   <!--  <p style="font-style:italic;">
     <xsl:apply-templates/>
-    </p>
+    </p>-->
   </xsl:template>
+
    <xsl:template match="tei:repository">
    <span style="font-style:italic;">
     <xsl:apply-templates/><xsl:text> : </xsl:text>

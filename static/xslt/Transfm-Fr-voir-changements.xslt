@@ -68,7 +68,7 @@
   <xsl:template match="tei:bibl">
 
     <p style="font-style:italic;">
-    <xsl:apply-templates/>
+    <xsl:apply-templates select="replace(., '(\n+\s*\n*\s*|\s*),', ',')"/>
     </p>
 
   </xsl:template>
