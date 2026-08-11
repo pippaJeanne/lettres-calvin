@@ -6,7 +6,6 @@
 	import {base} from '$app/paths';
 	import {onMount, setContext} from 'svelte';
 	import {transc} from '$lib/biblRep/transcriptions.json';
-	import { text } from 'stream/consumers';
 
     let uri = $page.url.pathname.split('/');
     let slug = uri[uri.length -1];
@@ -283,6 +282,18 @@ onMount(async (event)=>{
 	
 	createLinkTransc() !== undefined ? document.getElementById("lienTransc").appendChild(createLinkTransc()): null;
 		
+	const observer = new MutationObserver((mutations, obs) => {
+    const errorElement = document.querySelector(".openseadragon-message div div div");
+    
+    if (errorElement && errorElement.textContent.includes("Error")) {
+        errorElement.textContent = "Si la imagen no se carga, intente recargar la página. Si está usando un bloqueador de anuncios, intente desactivarlo para este sitio. Si el problema persiste, intente cambiar de navegador.";
+        obs.disconnect(); // Stop watching once we fixed the text
+    }
+});
+
+// Start watching the entire webpage for changes
+observer.observe(document.body, { childList: true, subtree: true });
+
 })
 
 </script>
@@ -1249,12 +1260,6 @@ for (var note of notes){
 		trad_es.style.display = "block";
 		comparisons.style.display = "none"
 }
-</script>
-<script>
-	var Openseadragon_error_message = document.querySelector(".openseadragon-message div div div")?.textContent;
-	if (Openseadragon_error_message?.includes("Error")) {
-		document.querySelector(".openseadragon-message div div div").textContent = "Si la imagen no se carga, intente recargar la página. Si está usando un bloqueador de anuncios, intente desactivarlo para este sitio. Si el problema persiste, intente cambiar de navegador.";
-	}
 </script>
 
 	<script src="{base}/functionsLetters.js"/>
