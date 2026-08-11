@@ -39,20 +39,24 @@
 		function see() {
 		  var modifdiv = document.getElementById("see-changes");
 		  var usual = document.getElementById("transformedFR");
-		  if (modifdiv.style.display === "none" && usual.style.display === "block"){
-		  modifdiv.style.display = "block";
-		  usual.style.display = "none";
-		  }else{
-		  modifdiv.style.display = "none";
-		  usual.style.display = "block";
-		  }
-		  }
+		var modifDisplay = window.getComputedStyle(modifdiv).display;
+ 		var usualDisplay = window.getComputedStyle(usual).display;
+  		if (modifDisplay === "none" && usualDisplay === "block") {
+    		modifdiv.style.display = "block";
+    		usual.style.display = "none";
+  		} else {
+    		modifdiv.style.display = "none";
+    		usual.style.display = "block";
+  		}
+		}
 		  
 		 //code for button to see diplomatic transcription ^^
 		  function seediplo() {
 		  var diplodiv = document.getElementById("diplomatic");
 		  var usual = document.getElementById("bonnet");
-		  if (diplodiv.style.display === "none" && usual.style.display === "block"){
+		  var diplodisplay = window.getComputedStyle(diplodiv).display;
+		  var usualdisplay = window.getComputedStyle(usual).display;
+		  if (diplodisplay === "none" && usualdisplay === "block"){
 		  diplodiv.style.display = "block";
 		  usual.style.display = "none";
 		  }else{
@@ -97,6 +101,7 @@
 		document.getElementById("voirdiplo").style.display ="none";
 		document.getElementById("reduire0").style.display ="block";
 	  document.getElementById("agrandir0").style.display ="none";
+	  document.getElementById("voir0").style.display ="none";
 	  var div1 = document.getElementById("diplomatic").cloneNode(true);
 		div1.id = "diplo-fullpage";
 		div1.classList.toggle("full");
@@ -142,6 +147,7 @@
 		document.getElementById("reduire0").style.display ="none";
 		document.getElementById("agrandir0").style.display ="block";
 		document.getElementById("voirdiplo").style.display ="block";
+		document.getElementById("voir0").style.display = "block";
 		while(document.getElementById("diplo-fullpage")){
 		  document.querySelector("#diplo-fullpage").remove();
 		}

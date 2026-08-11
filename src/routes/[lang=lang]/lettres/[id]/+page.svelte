@@ -196,6 +196,20 @@ onMount(async (event)=>{
 	});
 	
 	createLinkTransc() !== undefined ? document.getElementById("lienTransc").appendChild(createLinkTransc()): null;
+	
+const observer = new MutationObserver((mutations, obs) => {
+    const errorElement = document.querySelector(".openseadragon-message div div div");
+    
+    if (errorElement && errorElement.textContent.includes("Error")) {
+        errorElement.textContent = "Si l'image ne se charge pas, essayez de recharger la page. Si vous utilisez un bloqueur de publicités, essayez de le désactiver pour ce site. Si le problème persiste, essayez de changer de navigateur.";
+        obs.disconnect(); // Stop watching once we fixed the text
+    }
+});
+
+// Start watching the entire webpage for changes
+observer.observe(document.body, { childList: true, subtree: true });
+
+
 })
 
 </script>

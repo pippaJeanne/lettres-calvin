@@ -231,7 +231,7 @@
     </p>
   </xsl:template>
 
-  <xsl:template match="tei:signed/text()">
+  <xsl:template match="tei:signed//text()">
     <span><strong>
     <xsl:value-of select="."/>
     </strong>

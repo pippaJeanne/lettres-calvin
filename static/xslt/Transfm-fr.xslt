@@ -207,7 +207,7 @@
     </p>
   </xsl:template>
 
-  <xsl:template match="tei:signed/text()">
+  <xsl:template match="tei:signed//text()">
     <span><strong>
     <xsl:value-of select="."/>
     </strong>
@@ -215,10 +215,9 @@
   </xsl:template>
 
 <xsl:template match="tei:signed//tei:reg">
-    <span><strong>
+  <strong>
     <xsl:value-of select="."/>
     </strong>
-    </span>
   </xsl:template>
   
 <xsl:template match="tei:dateline/tei:placeName">
