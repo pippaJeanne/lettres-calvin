@@ -37,19 +37,19 @@
 	script.type = "module";
 	// change text when updating the map : code inside <script> tag from Oservable's Runtime Javascript embed (first block from the notebook in French, the second block from the notebook in Spanish) 
 	script.textContent = fr ? `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/1956978c14deb22b@2821.js?v=4";
+import define from "https://api.observablehq.com/d/1956978c14deb22b@2823.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-9caab41e"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-9caab41e"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-9caab41e"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-15b58c5c"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-15b58c5c"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-15b58c5c"));
   return ["mapViz","arrow"].includes(name);
 });` 
     : `import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/de8c36a8a2970791@2752.js?v=4";
+import define from "https://api.observablehq.com/d/de8c36a8a2970791@2754.js?v=4";
 new Runtime().module(define, name => {
-  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-8d6f24cc"));
-  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-8d6f24cc"));
-  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-8d6f24cc"));
+  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-0fa2f2d9"));
+  if (name === "carte") return new Inspector(document.querySelector("#observablehq-carte-0fa2f2d9"));
+  if (name === "activate") return new Inspector(document.querySelector("#observablehq-activate-0fa2f2d9"));
   return ["mapViz","arrow"].includes(name);
 });`
 	mapcontainer.appendChild(script)

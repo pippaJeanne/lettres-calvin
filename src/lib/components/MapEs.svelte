@@ -35,9 +35,9 @@
 </div>
 
 <div style="width:100%" id="observableCarteEs"> <!-- Only change the number in the next 3 divs' ids when updating along with what's inside the script type="module" tag at the corresponding spot in the template/svelte page for the 'carte' route -->
-<div id="observablehq-viewof-date-8d6f24cc"></div>
-<div id="observablehq-carte-8d6f24cc"></div>
-<div id="observablehq-activate-8d6f24cc" class="cacher"></div>
+<div id="observablehq-viewof-date-0fa2f2d9"></div>
+<div id="observablehq-carte-0fa2f2d9"></div>
+<div id="observablehq-activate-0fa2f2d9" class="cacher"></div>
 <p>Credit: <a href="https://observablehq.com/d/de8c36a8a2970791">Red de la correspondencia de Calvino by Yanet&#039;s Visualiser</a></p>
 </div>
 
