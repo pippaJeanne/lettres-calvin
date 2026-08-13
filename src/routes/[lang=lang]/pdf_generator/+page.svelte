@@ -136,10 +136,13 @@ console.log(filter.value)
 if (filter.value !== selectedAll){
   finalChoices['selection'] = {};
    let filter_info = document.createElement('div');
-    let passed_filters = document.querySelectorAll('#cat_filters div:not(#recipient) select');
+    let passed_filters = document.querySelectorAll('#cat_filters div:not(#recipient, #theme, #srcPlace, #destPlace) select');
     let recipients_div = document.querySelector('#recipient select')
     let year_divs = document.querySelector('#period');
+    let theme_divs = document.querySelector('#theme select');
     let where = document.getElementById('noteStment');
+    let srcPlace_divs = document.querySelector('#srcPlace select');
+    let destPlace_divs = document.querySelector('#destPlace select');
     let h = document.createElement('strong');
      h.textContent = t.text_filtres;
      filter_info.appendChild(h);
@@ -168,6 +171,60 @@ if (filter.value !== selectedAll){
       //Record choices 
       finalChoices['selection']['recipient'] = chosen_recipient;
      };
+
+     let chosen_themes = [];
+    for (let option of theme_divs.options){
+      if (option.selected && option.value !== "") chosen_themes.push(option.value)
+    }
+    if (chosen_themes.length !== 0) {
+      let ul = document.createElement('ul');
+      let filter_name = theme_divs.parentElement.querySelector('span').textContent;
+      ul.innerHTML += `<strong>${filter_name}</strong>:`;
+      chosen_themes.forEach(c => {
+        let li = document.createElement('li');
+        li.textContent = c;
+        ul.appendChild(li);
+      });
+      filter_info.appendChild(ul);
+      //Record choices 
+      finalChoices['selection']['themes'] = chosen_themes;
+    }
+
+    let srcPlace_values = [];
+    srcPlace_divs.querySelectorAll('option').forEach(o => {
+      if (o.selected && o.value !== "") srcPlace_values.push(o.value);
+    });
+    if(srcPlace_values.length !== 0) {
+      let ul = document.createElement('ul');
+      let filter_name = srcPlace_divs.parentElement.querySelector('span').textContent;
+      ul.innerHTML += `<strong>${filter_name}</strong>:`;
+      srcPlace_values.forEach(c => {
+        let li = document.createElement('li');
+        li.textContent = c;
+        ul.appendChild(li);
+      });
+      filter_info.appendChild(ul);
+      //Record choices 
+      finalChoices['selection']['srcPlace'] = srcPlace_values;
+    }
+
+    let destPlace_values = [];
+    destPlace_divs.querySelectorAll('option').forEach(o => {
+      if (o.selected && o.value !== "") destPlace_values.push(o.value);
+    });
+    if(destPlace_values.length !== 0) {
+      let ul = document.createElement('ul');
+      let filter_name = destPlace_divs.parentElement.querySelector('span').textContent;
+      ul.innerHTML += `<strong>${filter_name}</strong>:`;
+      destPlace_values.forEach(c => {
+        let li = document.createElement('li');
+        li.textContent = c;
+        ul.appendChild(li);
+      });
+      filter_info.appendChild(ul);
+      //Record choices 
+      finalChoices['selection']['destPlace'] = destPlace_values;
+    }
 
     passed_filters.forEach(f => {
      let p = document.createElement('p');
@@ -325,14 +382,26 @@ export async function applyFilters() {
       if (option.selected) recipient_values.push(option.value);
     };
     //console.log(recipient_values.includes())
+    let themes_values = [];
     let thematique = document.querySelector('#theme select');
+    for (let option of thematique.options) {
+      if (option.selected) themes_values.push(option.value);
+    };
     let startY = document.querySelector('#period input#start');
     let endY = document.querySelector('#period input#end');
     let signature = document.querySelector('#signature select');
     let srcPlace = document.querySelector('#srcPlace select');
+    let srcPlace_values = [];
+    for (let option of srcPlace.options) {
+      if (option.selected) srcPlace_values.push(option.value);
+    };
     let destPlace = document.querySelector('#destPlace select');
+    let destPlace_values = []; 
+    for (let option of destPlace.options) {
+      if (option.selected) destPlace_values.push(option.value);
+    };
      if (searchFilter === "" && resultsFilter.length === 0){
-      filteredLetters = letters2filter.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place.includes(srcPlace.value) || srcPlace.value === '').filter(l => l.placeDest.includes(destPlace.value) || destPlace.value === '');
+      filteredLetters = letters2filter.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => themes_values.map(theme => l.tags.includes(theme)).includes(true) || themes_values.includes("")).filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> srcPlace_values.map(value => l.place.includes(value)).includes(true) || srcPlace_values.includes("")).filter(l => destPlace_values.map(value => l.placeDest.includes(value)).includes(true) || destPlace_values.includes(""));
       console.log(filteredLetters)
     } else if(resultsFilter.length !== 0){
       //filteredLetters = letters2filter.filter(l => resultsFilter.map(res => res.slug.includes(l.slug)))
@@ -340,7 +409,7 @@ export async function applyFilters() {
       resultsFilter.map(res => {
          letters2filter.map(l => {if (res.slug.includes(l.slug)) {arrayTrue.push(l)}});
       }) 
-      filteredLetters = arrayTrue.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => l.tags.includes(thematique.value) || thematique.value === '').filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> l.place.includes(srcPlace.value) || srcPlace.value === '').filter(l => l.placeDest.includes(destPlace.value) || destPlace.value === '');
+      filteredLetters = arrayTrue.filter(l => l.nature.toUpperCase() === nature.value || nature.value === '').filter(l => recipient_values.includes(l.person) || recipient_values.includes("")).filter(l => themes_values.map(theme => l.tags.includes(theme)).includes(true) || themes_values.includes("")).filter(l => l.categories[2]=== signature.value || signature.value === '').filter(l => Number(l.date.split('-')[0]) >= Number(startY.value)  && Number(l.date.split('-')[0]) <= Number(endY.value)).filter(l=> srcPlace_values.map(value => l.place.includes(value)).includes(true) || srcPlace_values.includes("")).filter(l => destPlace_values.map(value => l.placeDest.includes(value)).includes(true) || destPlace_values.includes(""));
       
       filteredLetters.sort((a,b) => {return new Date(a.date) - new Date(b.date)});
     }
@@ -440,8 +509,8 @@ $: if (research === 'ready') {
       </select>
       </div>
       <div id="theme"><span>{t.filter_categories.theme}</span>
-      <select name="c4">
-        <option value="{nochoice}"></option>
+      <select name="c4" multiple>
+        <option value="{nochoice}" selected></option>
         {#each theme as t }
               <option value="{t}">{t}</option>
             {/each}
@@ -451,16 +520,16 @@ $: if (research === 'ready') {
        <input name="years" id="start" type="number" min="1538" max="1554" placeholder="1538" required value=1538> - <input id="end" type="number" min="1538" max="1554" placeholder="1554" value=1554 required>
       </div>
       <div id="srcPlace"><span>{t.filter_categories.srcPlace}</span>
-        <select name="c5">
-          <option value="{nochoice}"></option>
+        <select name="c5" multiple>
+          <option value="{nochoice}" selected></option>
           {#each origPlace as op }
               <option value="{op}">{op}</option>
             {/each}
         </select>
       </div>
       <div id="destPlace"><span>{t.filter_categories.destPlace}</span>
-        <select name="c6">
-          <option value="{nochoice}"></option>
+        <select name="c6" multiple>
+          <option value="{nochoice}" selected></option>
           {#each destPlace as dp }
               <option value="{dp}">{dp}</option>
             {/each}
@@ -507,7 +576,8 @@ $: if (research === 'ready') {
   </div> 
   {#each filteredLetters as letter}
     <div class="page">
-     <h2 id="{letter.id}ref" style="text-align: center;" data-date="{letter.dateDisplay}"><a class="back2toc" href="#toc">{letter.title}</a></h2>
+     <h2 id="{letter.person + '_' + letter.date}ref" style="text-align: center;" data-date="{` ${letter.dateDisplay} `}"><a class="back2toc" href="#toc">{letter.title}</a></h2>
+     <p style="text-align:right !important; font-size:.9em;"><em>{letter.dateDisplay}</em></p>
      <p style="text-align:center !important; color: #27753c !important; font-size:.9em;"><em>{letter.desc}</em></p>
       <div id="{letter.id}"></div>
     </div>

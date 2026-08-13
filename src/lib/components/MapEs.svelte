@@ -20,7 +20,7 @@
 <li><strong><img src="/Blue_map_pin.png" alt="Marcador azul" width="10" height="10"> Marcadores azules</strong>: lugar de destino</li>
 <li><strong><img src="/red_circle.png" alt="Círculo rojo" width="10" height="10"> Círculos rojos</strong>: lugares mencionados en las cartas</li>
 <li><strong>Color de líneas:</strong></li>
-  <ul><li><span style="color:#0c3b05"><strong>—</strong></span> línea verde indica que el nivel de certidumbre para los dos lugares es elevado</li>
+  <ul><li><span style="color:#0c3b05"><strong>—</strong></span> línea verde indica que el nivel de certidumbre para los dos lugares es alto</li>
     <li><span style="color:#b38c0e"><strong>—</strong></span> línea amarilla indica que el nivel de certidumbre para uno de los dos lugares es bajo o medio</li>
     <li><span style="color:#a31d0b"><strong>—</strong></span> línea roja indica que el nivel de certidumbre para los dos lugares es bajo o medio</li></ul>
 <li><strong>Color más oscuro y/o círculo más grande</strong> = más cartas vinculadas al lugar</li>
@@ -35,9 +35,9 @@
 </div>
 
 <div style="width:100%" id="observableCarteEs"> <!-- Only change the number in the next 3 divs' ids when updating along with what's inside the script type="module" tag at the corresponding spot in the template/svelte page for the 'carte' route -->
-<div id="observablehq-viewof-date-af5be744"></div>
-<div id="observablehq-carte-af5be744"></div>
-<div id="observablehq-activate-af5be744" class="cacher"></div>
+<div id="observablehq-viewof-date-8d6f24cc"></div>
+<div id="observablehq-carte-8d6f24cc"></div>
+<div id="observablehq-activate-8d6f24cc" class="cacher"></div>
 <p>Credit: <a href="https://observablehq.com/d/de8c36a8a2970791">Red de la correspondencia de Calvino by Yanet&#039;s Visualiser</a></p>
 </div>
 

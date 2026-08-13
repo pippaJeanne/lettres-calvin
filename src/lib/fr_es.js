@@ -65,7 +65,7 @@ export const fr_es = {
         pdf_btn_filtres: "Appliquer filtres",
         txt_filtrer : "Filtrer transversalement",
         txt_all: "Toutes",
-        filter_categories:{nature: "Nature du document source", recipient: "Destinataire(s)", signature: "Signature", theme: "Thématique", period: "Période", srcPlace: "Lieu d'origine", destPlace: "Lieu de destination", searchFilter: "Terme de recherche"},
+        filter_categories:{nature: "Nature du document source", recipient: "Destinataire(s)", signature: "Signature", theme: "Thématique(s)", period: "Période", srcPlace: "Lieu d'origine", destPlace: "Lieu de destination", searchFilter: "Terme de recherche"},
         pdf_title : "Lettres de Calvin",
         pdf_subtitle: "Édition critique numérique des lettres françaises de Jean Calvin entre 1538 et 1554",
         pdf_author: "Édition \nde\n Yanet Hernández Pedraza",
@@ -74,7 +74,7 @@ export const fr_es = {
         pdf_table_cont: "Table des matières",
         warning_browser : "Votre navigateur peut avoir des problèmes pour bien générer le PDF pour 15 lettres ou plus. Il est recommandé d'utiliser Safari ou Firefox.",
         alert: "Il faut rafraîchir la page pour sortir de la vue d'impression.",
-        misajour: "Dernière mise à jour : 8 août 2026"
+        misajour: "Dernière mise à jour : 12 août 2026"
     },
     es: {
         site_title: "Cartas de Calvino",
@@ -142,7 +142,7 @@ export const fr_es = {
         pdf_btn_filtres: "Aplicar filtros",
         txt_filtrer : "Filtrar transversalmente",
         txt_all: "Todas",
-        filter_categories: {nature: "Tipo de documento fuente", recipient: "Destinatario(s)", signature: "Firma", theme: "Tema", period: "Período", srcPlace: "Lugar de origen", destPlace: "Lugar de destino", searchFilter: "Término de búsqueda"},
+        filter_categories: {nature: "Tipo de documento fuente", recipient: "Destinatario(s)", signature: "Firma", theme: "Tema(s)", period: "Período", srcPlace: "Lugar de origen", destPlace: "Lugar de destino", searchFilter: "Término de búsqueda"},
         pdf_title : "Cartas de Calvino",
         pdf_subtitle: "Edición crítica digital de las cartas escritas en francés por Juan Calvino entre 1538 y 1554",
         pdf_author: "Edición \nde\n Yanet Hernández Pedraza",
@@ -151,6 +151,6 @@ export const fr_es = {
         pdf_table_cont: "Tabla de contenidos",
         warning_browser : "Puede que su navegador no genere bien el PDF para 15 cartas o más. Se recomienda usar Safari o Firefox.",
         alert: "Debe recargar la página para salir de la vista de impresión.",
-        misajour: "Última actualización : 8 de agosto de 2026"
+        misajour: "Última actualización : 12 de agosto de 2026"
     }
 }
