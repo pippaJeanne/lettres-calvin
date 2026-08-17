@@ -130,6 +130,9 @@ submenu2BotEl.addEventListener('click', () => {
     }
 });
 
+    submenu1BotEl.click();
+    submenu2BotEl.click();
+
 const menuIdiomaEl = document.querySelector('.menu-idioma');
 const menuIdioma = new mdc.menu.MDCMenu(menuIdiomaEl);
 const idiomaSelectEl = document.querySelector('.idioma-select');        
@@ -359,7 +362,7 @@ https://www.wikidata.org/wiki/Q97578531  -->
                     {lang === 'fr' ? '🇪🇸 Español' : '🇫🇷 Français'}
                   </button>
             </div>
-        </section>  
+        </section>
     </div>            
 </header>
 <aside class="mdc-drawer mdc-drawer--modal mdc-drawer--dismissible mdc-elevation--z4" style="background-color: #E5D2C3;" data-mdc-auto-init="MDCDrawer" data-mdc-auto-init-state="initialized">
@@ -403,10 +406,10 @@ https://www.wikidata.org/wiki/Q97578531  -->
                         <span class="mdc-list-item__ripple"></span>
                         <span class="mdc-list-item__primary-text">{t.preface}</span>
                     </a>
-                    <a class="mdc-list-item mdc-ripple-upgraded" href="{base}/{lang}/vie_ouvres" tabindex="-1">
+                    <!--<a class="mdc-list-item mdc-ripple-upgraded" href="{base}/{lang}/vie_ouvres" tabindex="-1">
                         <span class="mdc-list-item__ripple"></span>
                         <span class="mdc-list-item__primary-text">{t.onCalvin}</span>
-                    </a>
+                    </a>-->
                     <span class="mdc-list-item mdc-ripple-upgraded" style="align-items: center;" tabindex="-1">
                         <span class="mdc-list-item__ripple"></span>
                         <span class="mdc-list-item__primary-text">{t.context}</span>

@@ -90,22 +90,24 @@ let challengeComplete = false;
 function handleIframeLoad() {
   // The user's browser has now processed the Anubis JS challenge page from Bibl. de Genève!
     challengeComplete = true;
-    initOpenSeadragon();
+    console.log("Anubis challenge completed. Initializing OpenSeadragon...");
+    setTimeout(() => initOpenSeadragon(), 3000); // Delay to ensure the challenge is fully processed
 }
 async function initOpenSeadragon() {
     var viewer1 = OpenSeadragon({
 			id: "openseadragon1", prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-      crossOriginPolicy: null,
 			tileSources:biblMsCheck(), 
 		sequenceMode: true,
 		// Initial rotation angle
-		degrees: 90,
+		//degrees: 90,
 		message:"Item temporarily unavailable",
 	// Show rotation buttons
 	showRotationControl: true,
 	// Enable touch rotation on tactile devices
 	gestureSettingsTouch: {
-	pinchRotate: true}
+	pinchRotate: true},
+  loadTilesWithAjax: true,
+   ajaxWithCredentials: true // Obligatoire pour partager le cookie d'Anubis avec les requêtes de tuiles
 	});
   }
 
@@ -126,6 +128,26 @@ for ( let p of transc_pages){
     pag.innerHTML = thisTransc[p]
 }
 }
+
+if (!document.getElementById("monocle-embedIframe")){
+  //challengeComplete = true;
+  handleIframeLoad();
+}
+
+const observer = new MutationObserver((mutations, obs) => {
+    const errorElement = document.querySelectorAll(".openseadragon-message div div div");
+    for (let errorEl of errorElement) {
+        if (errorEl.textContent.includes("Error")) {
+            errorEl.textContent = "Si l'image ne se charge pas, essayez de recharger la page. Si vous utilisez un bloqueur de publicités, essayez de le désactiver pour ce site. Si le problème persiste, essayez de changer de navigateur.";
+            obs.disconnect(); // Stop watching once we fixed the text
+            break; // Exit the loop after fixing the first error element
+        }
+    }
+});
+
+// Start watching the entire webpage for changes
+observer.observe(document.body, { childList: true, subtree: true });
+
 })
 </script>
 
@@ -449,8 +471,13 @@ function opendiv2(evt, tabname) {
     }
     </script>    
 
-<iframe title="Anubis challenge" id="jsChallenge" src={srcMs[0]} style="display:none;" on:load={handleIframeLoad}>
+{#if srcMs[0].includes("archives.bge-geneve.ch")}
+  <iframe 
+	id="monocle-embedIframe" 
+	title="Ms. lat. 107a, volume 2  "
+	src="https://archives.bge-geneve.ch/ark:/17786/vta913b776ebb2c7460/dao/0/1?id=https%3A%2F%2Farchives.bge-geneve.ch%2Fark%3A%2F17786%2Fvta913b776ebb2c7460%2Fcanvas%2F0%2F1&iframe" style="display:none;" on:load={handleIframeLoad}>
 </iframe>
+{/if}
 
 <div style="display: flex;flex-wrap:wrap;">
       <!-- Left-side tabs -->

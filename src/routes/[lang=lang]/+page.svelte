@@ -281,7 +281,10 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 <script src='/timeline.js'></script>
 </svelte:head>
 
-<iframe title="Anubis challenge" id="jsChallenge" src={tline_data().events[5].media.url} style="display:none;" on:load={handleIframeLoad}>
+ <iframe 
+	id="monocle-embedIframe" 
+	title="Ms. lat. 107a, volume 2  "
+	src="https://archives.bge-geneve.ch/ark:/17786/vta913b776ebb2c7460/dao/0/1?id=https%3A%2F%2Farchives.bge-geneve.ch%2Fark%3A%2F17786%2Fvta913b776ebb2c7460%2Fcanvas%2F0%2F1&iframe" style="display:none;" on:load={handleIframeLoad}>
 </iframe>
 
 <!-- Timeline -->

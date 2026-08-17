@@ -157,7 +157,8 @@ let challengeComplete = false;
 function handleIframeLoad() {
   // The user's browser has now processed the Anubis JS challenge page from Bibl. de Genève!
     challengeComplete = true;
-    initOpenSeadragon();
+    console.log("Anubis challenge completed. Initializing OpenSeadragon...");
+    setTimeout(() => initOpenSeadragon(), 3000); // Delay to ensure the challenge is fully processed
 }
 
 async function initOpenSeadragon(){
@@ -166,13 +167,15 @@ async function initOpenSeadragon(){
 			tileSources:biblMsCheck(), 
 		sequenceMode: true,
 		// Initial rotation angle
-		degrees: 90,
+		//degrees: 90,
 		message:"Item temporarily unavailable",
 	// Show rotation buttons
 	showRotationControl: true,
 	// Enable touch rotation on tactile devices
 	gestureSettingsTouch: {
-	pinchRotate: true}
+	pinchRotate: true},
+	 loadTilesWithAjax: true,
+   ajaxWithCredentials: true // Obligatoire pour partager le cookie d'Anubis avec les requêtes de tuiles
 	});
 }
 
@@ -196,6 +199,11 @@ onMount(async (event)=>{
 	});
 	
 	createLinkTransc() !== undefined ? document.getElementById("lienTransc").appendChild(createLinkTransc()): null;
+
+if (!document.getElementById("monocle-embedIframe")){
+  //challengeComplete = true;
+  handleIframeLoad();
+}
 	
 const observer = new MutationObserver((mutations, obs) => {
     const errorElement = document.querySelector(".openseadragon-message div div div");
@@ -253,8 +261,14 @@ observer.observe(document.body, { childList: true, subtree: true });
 	<p style="text-align: center !important;font-size: 1.2rem;">{desc}</p>
 	<!--<svelte:component this={content}/>-->
 	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs. Vous pouvez également changer l'ordre des sections.</p>
-<iframe title="Anubis challenge" id="jsChallenge" src={srcMs[0]} style="display:none;" on:load={handleIframeLoad}>
+
+{#if srcMs[0].includes("archives.bge-geneve.ch")}
+  <iframe 
+	id="monocle-embedIframe" 
+	title="Ms. lat. 107a, volume 2  "
+	src="https://archives.bge-geneve.ch/ark:/17786/vta913b776ebb2c7460/dao/0/1?id=https%3A%2F%2Farchives.bge-geneve.ch%2Fark%3A%2F17786%2Fvta913b776ebb2c7460%2Fcanvas%2F0%2F1&iframe" style="display:none;" on:load={handleIframeLoad}>
 </iframe>
+{/if}
 
 <div class="sec-container"><!-- manuscript original or copy-->
 	 <div class="inner-cont cartav1" style="-webkit-order: 1;order: 1;">

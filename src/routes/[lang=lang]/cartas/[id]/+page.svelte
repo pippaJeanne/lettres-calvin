@@ -242,7 +242,7 @@ let challengeComplete = false;
 function handleIframeLoad() {
   // The user's browser has now processed the Anubis JS challenge page from Bibl. de Genève!
     challengeComplete = true;
-    initOpenSeadragon();
+    setTimeout(() => initOpenSeadragon(), 3000);
 }
 
 async function initOpenSeadragon(){
@@ -251,13 +251,15 @@ async function initOpenSeadragon(){
 			tileSources:biblMsCheck(), 
 		sequenceMode: true,
 		// Initial rotation angle
-		degrees: 90,
+		//degrees: 90,
 		message:"Item temporarily unavailable",
 	// Show rotation buttons
 	showRotationControl: true,
 	// Enable touch rotation on tactile devices
 	gestureSettingsTouch: {
-	pinchRotate: true}
+	pinchRotate: true},
+	 loadTilesWithAjax: true,
+   ajaxWithCredentials: true // Obligatoire pour partager le cookie d'Anubis avec les requêtes de tuiles
 	});
 }
 
@@ -281,7 +283,12 @@ onMount(async (event)=>{
 	});
 	
 	createLinkTransc() !== undefined ? document.getElementById("lienTransc").appendChild(createLinkTransc()): null;
-		
+	
+if (!document.getElementById("monocle-embedIframe")){
+  //challengeComplete = true;
+  handleIframeLoad();
+}
+
 	const observer = new MutationObserver((mutations, obs) => {
     const errorElement = document.querySelector(".openseadragon-message div div div");
     
@@ -358,8 +365,13 @@ observer.observe(document.body, { childList: true, subtree: true });
 	<div id="lienTransc"></div>
 	<p style="font-size: .9rem;">A continuación se brindan cuatro versiones de esta carta: el manuscrito de la copia más antigua que se conoce, le edición de Jules Bonnet publicada en 1854, una versión en francés moderno y una traducción al español que puede explorar y comparar. Solo necesita clicar sobre los botones para abrir (o cerrar) las secciones. También puede cambiar el orden de las secciones.</p>
 	<!-- Interface container-->
-	 <iframe title="Anubis challenge" id="jsChallenge" src={srcMs[0]} style="display:none;" on:load={handleIframeLoad}>
+	{#if srcMs[0].includes("archives.bge-geneve.ch")}
+  <iframe 
+	id="monocle-embedIframe" 
+	title="Ms. lat. 107a, volume 2  "
+	src="https://archives.bge-geneve.ch/ark:/17786/vta913b776ebb2c7460/dao/0/1?id=https%3A%2F%2Farchives.bge-geneve.ch%2Fark%3A%2F17786%2Fvta913b776ebb2c7460%2Fcanvas%2F0%2F1&iframe" style="display:none;" on:load={handleIframeLoad}>
 </iframe>
+{/if}
 <div class="sec-container"><!-- manuscript original or copy-->
 	<div class="inner-cont cartav1" style="-webkit-order: 1;order: 1;">
 
