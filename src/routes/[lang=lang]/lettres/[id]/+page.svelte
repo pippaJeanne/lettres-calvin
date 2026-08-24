@@ -173,10 +173,8 @@ async function initOpenSeadragon(){
 	showRotationControl: true,
 	// Enable touch rotation on tactile devices
 	gestureSettingsTouch: {
-	pinchRotate: true},
-	 loadTilesWithAjax: true,
-   ajaxWithCredentials: true // Obligatoire pour partager le cookie d'Anubis avec les requêtes de tuiles
-	});
+	pinchRotate: true}
+	})
 }
 
 //triggers functions that need the DOM to be in place (hydration)
@@ -225,10 +223,10 @@ observer.observe(document.body, { childList: true, subtree: true });
 <svelte:head>
 
 	<title>{title} [{dateDisplay}]</title>
-	<meta name="editor" content="{editor}">
-	<meta name="description" content="{desc}">
-	<meta name="abstract" content="{desc}">
-	<meta name="keywords" content="{tags.map(tag => tag).join(', ')}">
+	<meta name="DC.editor" content="{editor}">
+	<meta name="DC.description" content="{desc}">
+	<meta name="DC.abstract" content="{desc}">
+	<meta name="DC.keywords" content="{tags.map(tag => tag).join(', ')}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{base}/saxonjs3/SaxonJS3.js"></script>
@@ -243,14 +241,14 @@ observer.observe(document.body, { childList: true, subtree: true });
 	<!--<p><strong>Thèmes</strong> {#each tags as tag}
 		<span class="tag">{tag}</span>
 	{/each}</p>-->
-    <div>
+    <div data-sveltekit-reload>
 	{#each categories as cat}
 		<a class="tag" style='text-decoration:none;' href='{base}/fr/categories/{cat.toLowerCase().replaceAll(' ', '-').replaceAll("é",'e').replaceAll('è','e').replaceAll('.', '').replaceAll('î', 'i').replaceAll('û', 'u').replaceAll('à', 'a')}'>
 			<span>{cat}</span>
 		</a>
 	{/each}
    </div>
-   <div>
+   <div data-sveltekit-reload>
 	{#each tags as tag}
 		<a class="tag" style='text-decoration:none;' href='{base}/fr/tags/{tag.replaceAll(' ', '-').replaceAll("é",'e').replaceAll('è','e').replaceAll('.', '').replaceAll('î', 'i').replaceAll('û', 'u').replaceAll('à', 'a')}'>
 			<span>{tag}</span>

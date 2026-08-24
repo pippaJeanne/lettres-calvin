@@ -277,7 +277,7 @@ https://www.wikidata.org/wiki/Q97578531  -->
                 <div class="mdc-icon-button__ripple"></div>
             </span>
             <span class="mdc-top-app-bar__title ajuste2" style="display: flex;">
-                <a id="siteTitle" href='{base}/{lang}'>
+                <a id="siteTitle" href='{base}/{lang}' data-sveltekit-reload>
                     <h3 class=tit1>
                         {t.site_title}
                     </h3>
@@ -384,7 +384,7 @@ https://www.wikidata.org/wiki/Q97578531  -->
     <div role="separator" class="mdc-list-divider" style="margin-bottom: 2px;"> </div>
     <div class="mdc-drawer__content" style="z-index: 10000; display: block;">
         <div class="mdc-list list-principal" role="menu">
-            <a class="mdc-list-item mdc-list-item--activated mdc-ripple-upgraded" href="/{lang}" aria-current="page" tabindex="-1">
+            <a class="mdc-list-item mdc-list-item--activated mdc-ripple-upgraded" href="/{lang}" aria-current="page" tabindex="-1" data-sveltekit-reload>
                 <span class="mdc-list-item__ripple"></span>
                 <span class="mdc-list-item__primary-text">{t.home}</span>
             </a>
@@ -438,7 +438,7 @@ https://www.wikidata.org/wiki/Q97578531  -->
                     </div>
                 </div>
             </div>
-            <a class="mdc-list-item mdc-ripple-upgraded" href="{base}/{lang}/pdf_generator" tabindex="-1">
+            <a class="mdc-list-item mdc-ripple-upgraded" href="{base}/{lang}/pdf_generator" tabindex="-1" data-sveltekit-reload>
                 <span class="mdc-list-item__ripple"></span>
                 <span class="mdc-list-item__primary-text">{t.pdfs_header}</span>
             </a>

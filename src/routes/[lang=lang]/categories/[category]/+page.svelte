@@ -21,7 +21,7 @@
 </svelte:head>
 <article>
 {#if ready} <!--data.categorie.letters.length}-->
-	<div>
+	<div data-sveltekit-reload>
 		<h2>{t.category} : {data.categorie.category}</h2>
 		<ul>
 			{#each data.categorie.letters as lettre}

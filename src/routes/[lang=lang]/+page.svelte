@@ -400,7 +400,7 @@ window.timeline = new TL.Timeline('timeline-embed', tline_data());
 		</li>-->
 	</ul> 
 
-	<div id="lien4pdf">
+	<div id="lien4pdf" data-sveltekit-reload>
 	<a href='./{lang}/pdf_generator'><p>{t.pdfs_header}</p></a>
 	</div>
 </div>

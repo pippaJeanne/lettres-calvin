@@ -20,7 +20,7 @@
 </svelte:head>
 <article>
 {#if ready}  <!--data.tagname.letters.length}-->
-	<div>
+	<div data-sveltekit-reload>
 		<h2>{t.theme} : {data.tagname.tag}</h2>
 		<ul>
 			{#each data.tagname.letters as lettre}
