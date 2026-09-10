@@ -3,7 +3,7 @@
         <fileDesc>
             <titleStmt>
                 <title>Lettre à la reine de Navarre</title> 
-                <editor role="Modernisation et encodage">Yanet Hernández Pedraza (Candidate au doctorat en littérature option humanités numériques - UdeM)</editor>
+                <editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
             </titleStmt>
             <publicationStmt>
                 <publisher>TEI Consortium</publisher>
@@ -14,6 +14,7 @@
                         3.0 Unported License
                     </licence>
                 </availability>
+                <date when="2026">2026</date>
             </publicationStmt>
             
             <sourceDesc>

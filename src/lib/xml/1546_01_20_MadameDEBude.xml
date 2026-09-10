@@ -6,7 +6,6 @@
 <titleStmt>
 <title>Lettre à Madame de Budé</title>
 <editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
-<editor role="Relecture">Rudy Chaulet (ISTA - Université de Franche-Comté)</editor>
 </titleStmt>
 <publicationStmt>
   <publisher>TEI Consortium</publisher>
@@ -14,7 +13,8 @@
 <licence target="http://creativecommons.org/licenses/by-sa/3.0/">          Distributed under a Creative Commons Attribution-ShareAlike
 3.0 Unported License</licence>
 </availability>
-</publicationStmt>
+            <date when="2025">2025</date>
+         </publicationStmt>
 <sourceDesc>
   <bibl>
      <title>Lettres de Jean Calvin : lettres françaises. T. 1 / recueillies pour la première fois et publ. d'après les ms. originaux par Jules Bonnet</title>. Par

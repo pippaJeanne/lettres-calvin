@@ -12,7 +12,9 @@
   <availability status="free">
     <licence target="http://creativecommons.org/licenses/by-sa/3.0/">          Distributed under a Creative Commons Attribution-ShareAlike
          3.0 Unported License</licence>
-  </availability></publicationStmt>
+  </availability>
+   <date when="2025">2025</date>
+</publicationStmt>
 <sourceDesc corresp="fidelesLyon_1542_05">
         <bibl>
           Traducción de la versión modernizada de
@@ -25,8 +27,7 @@
           </editor>.
         </bibl>
  <notesStmt>
-          <note>Las notas provienen de la edición de Jules Bonnet de 1854
-          a menos que se indique lo contrario. Las notas bajo la apelación "editoriales" (en verde) y las notas de las citas en latín pertenecen a la autora de este proyecto: Yanet Hernández Pedraza.</note>
+          <note>Las notas provienen de la edición de Jules Bonnet de 1854 a menos que se indique lo contrario. Las notas bajo la apelación "editoriales" (en verde) y las notas de las citas en latín pertenecen a la autora de este proyecto: Yanet Hernández Pedraza.</note>
  </notesStmt>
 </sourceDesc>
 </fileDesc>

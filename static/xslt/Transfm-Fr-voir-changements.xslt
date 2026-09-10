@@ -3,6 +3,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0">
     
     <xsl:output method="html"/>
+  <xsl:param name="slug"/> 
 <xsl:variable name="map">
 <xsl:text>/fr/carte</xsl:text>
 </xsl:variable> 
@@ -15,6 +16,8 @@
 <hr width="40%" style="margin-top:1rem;margin-bottom:1rem;margin-left:30% ;border-top:1px solid #4d596b;"/>
 <h3>Bibliographie</h3>
 <xsl:apply-templates select="tei:teiHeader"/>
+    <p><strong>Citation recommandée :</strong></p>
+    <xsl:apply-templates select="tei:teiHeader" mode="cite"/>
 </xsl:template>
 
 <xsl:template match="tei:text">
@@ -57,12 +60,10 @@
   </p>
   </xsl:for-each>
 </xsl:template>
-
-<xsl:template match="tei:publicationStmt">
-  <span style="display:none;">
-  <xsl:value-of select="."/>
-  </span>
-</xsl:template> 
+  
+  <xsl:template match="tei:publicationStmt">
+    <strong>Date de publication : <xsl:value-of  select="./tei:date"/></strong>
+  </xsl:template>
 
 
   <xsl:template match="tei:bibl">
@@ -384,5 +385,9 @@
   <xsl:template match="tei:hi[@xml:id='editorNote']//tei:bibl">
     <xsl:apply-templates/>
   </xsl:template>
-
+  
+  <xsl:template match="tei:teiHeader" mode="cite">
+    <p><xsl:value-of select="substring-after(normalize-space(.//tei:correspAction[@type='sent']/tei:persName/text()[1]), ' ')"/>, <xsl:value-of select="substring-before(normalize-space(.//tei:correspAction[@type='sent']/tei:persName/text()[1]), ' ')"/>. « <xsl:value-of select=".//tei:titleStmt/tei:title"/> [<xsl:value-of select=".//tei:correspAction[@type='sent']/tei:date"/>] ». Dans <em>Lettres de Calvin</em>, éditée par Yanet Hernández Pedraza. <xsl:value-of select=".//tei:publicationStmt/tei:date"/>. https://lettres-calvin.netlify.app/fr/lettres/<xsl:value-of select="$slug"/>.</p>
+  </xsl:template>
+  
 </xsl:stylesheet>

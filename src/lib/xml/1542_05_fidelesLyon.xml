@@ -4,7 +4,7 @@
       <fileDesc>
          <titleStmt>
             <title>Lettre aux Fidèles de Lyon</title>
-            <editor role="Modernisation et encodage">Yanet Hernández Pedraza (Doctorante en littérature option humanités numériques - UdeM)</editor>
+            <editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
          </titleStmt>
          <publicationStmt>
             <publisher>TEI Consortium</publisher>
@@ -13,6 +13,7 @@
                   Creative Commons Attribution-ShareAlike
                   3.0 Unported License</licence>
             </availability>
+            <date when="2025">2025</date>
          </publicationStmt>
          <sourceDesc>
             <bibl>
@@ -61,8 +62,7 @@
                </facsimile>
             </msDesc>
             <notesStmt>
-               <note>Les notes proviennent de l'édition de Jules Bonnet de 1854
-                  sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
+               <note>Les notes proviennent de l'édition de Jules Bonnet de 1854 sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
             </notesStmt>
          </sourceDesc>
       </fileDesc>

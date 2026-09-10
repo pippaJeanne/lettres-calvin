@@ -21,9 +21,11 @@
 	// Spanish translations (correpondence given by @id of French letter iquals Spanish translation @source value)
 	let cartas = data.letters["cartas"];
 	let xmlEs = ""
+	let sluges = "";
 	for (let carta of cartas){
 		if (id === carta.source){
 			xmlEs = carta.url ;
+			sluges = carta.slug;
 		} 
 	}
 
@@ -58,6 +60,7 @@ biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 	return SaxonJS.transform({
                 stylesheetLocation: xsltfile,
                 sourceLocation: xmlfile,
+				stylesheetParams: { slug: slug },
                 destination: "serialized"
             }, "async")
             .then (output => {
@@ -72,6 +75,7 @@ biblMsInfo===undefined? biblMsInfo = "Non trouvé": null
 	return SaxonJS.transform({
                 stylesheetLocation: xsltchng,
                 sourceLocation: xmlfile,
+				stylesheetParams: { slug: slug },
                 destination: "serialized"
             }, "async")
             .then (output => {
@@ -108,6 +112,7 @@ export async function displayResultEs(){
 	return SaxonJS.transform({
                 stylesheetLocation: xsles,
                 sourceLocation: xmles,
+				stylesheetParams: { slug: sluges },
                 destination: "serialized"
             }, "async")
             .then (output => {
@@ -258,7 +263,7 @@ observer.observe(document.body, { childList: true, subtree: true });
 	<div id="lienTransc"></div>
 	<p style="text-align: center !important;font-size: 1.2rem;">{desc}</p>
 	<!--<svelte:component this={content}/>-->
-	<p style="font-size: .9rem;">Vous trouverez ci-après quatre versions de cette lettre : le manuscrit de la plus ancienne copie connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs. Vous pouvez également changer l'ordre des sections.</p>
+	<p style="font-size: .9rem;">Vous trouverez ci-après quatre modes de consultation pour cette lettre : le manuscrit original ou la plus ancienne copie manuscrite connue, l'édition de Jules Bonnet parue en 1854, une version en français moderne et une traduction vers l'espagnol que vous pouvez parcourir et comparer. Il suffit de cliquer sur les boutons pour ouvrir (ou fermer) les tiroirs. Vous pouvez également changer l'ordre des sections.</p>
 
 {#if srcMs[0].includes("archives.bge-geneve.ch")}
   <iframe 

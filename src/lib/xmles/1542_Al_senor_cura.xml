@@ -5,14 +5,16 @@
 <fileDesc>
 <titleStmt>
 <title>Carta al señor párroco</title>
-<editor role="Traducción y codificación TEI">Yanet Hernández Pedraza (M2 Rare Books and Digital Humanities - UBFC)</editor>
+<editor role="Traducción y codificación TEI">Yanet Hernández Pedraza</editor>
 </titleStmt>
 <publicationStmt>
   <publisher>TEI Consortium</publisher>
   <availability status="free">
     <licence target="http://creativecommons.org/licenses/by-sa/3.0/">          Distributed under a Creative Commons Attribution-ShareAlike
          3.0 Unported License</licence>
-  </availability></publicationStmt>
+  </availability>
+   <date when="2025">2025</date>
+</publicationStmt>
 <sourceDesc corresp="cure_05-42">
  <bibl>
   Traducción de la versión modernizada de

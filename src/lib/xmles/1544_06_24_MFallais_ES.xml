@@ -5,7 +5,7 @@
     <fileDesc>
       <titleStmt>
         <title>Carta al Señor de Fallais</title>
-        <editor role="Traducción y encodaje TEI">Yanet Hernández Pedraza (Candidata al doctorado en literatura opción humanidades digitales - UdeM)</editor>
+        <editor role="Traducción y encodaje TEI">Yanet Hernández Pedraza</editor>
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Consortium</publisher>
@@ -13,7 +13,8 @@
           <licence target="http://creativecommons.org/licenses/by-sa/3.0/">
             Distribuido bajo una Licencia Creative Commons Attribution-ShareAlike 3.0 Unported</licence>
         </availability>
-      </publicationStmt>
+   <date when="2026">2026</date>
+</publicationStmt>
       <sourceDesc corresp="M_Fallais14_10_44">
         <bibl>
           Traducción del texto modernizado de

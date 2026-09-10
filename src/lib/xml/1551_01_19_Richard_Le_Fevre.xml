@@ -3,7 +3,7 @@
 <fileDesc>
 <titleStmt>
 <title>Lettre à Richard Le Fèvre</title>
-<editor role="Modernisation et encodage">Yanet Hernández Pedraza (Candidate au doctorat en littérature option humanités numériques - UdeM)</editor>
+<editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
 </titleStmt>
 <publicationStmt>
   <publisher>TEI Consortium</publisher>
@@ -11,9 +11,9 @@
 <licence target="http://creativecommons.org/licenses/by-sa/3.0/">Distributed under a Creative Commons Attribution-ShareAlike
 3.0 Unported License</licence>
 </availability>
+   <date when="2026">2026</date>
 </publicationStmt>
 <sourceDesc>
-  
   <bibl>
      <title>Lettres de Jean Calvin : lettres françaises. T. 1 / recueillies pour la première fois et publ. d'après les ms. originaux par Jules Bonnet</title>. Par
 <author>

@@ -6,7 +6,6 @@
 <titleStmt>
 <title>Lettre au Roi d'Angleterre (Edouard VI)</title>
 <editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
-<editor role="Relecture">Rudy Chaulet (ISTA - Université de Franche-Comté)</editor>
 </titleStmt>
 <publicationStmt>
   <publisher>TEI Consortium</publisher>
@@ -14,6 +13,7 @@
 <licence target="http://creativecommons.org/licenses/by-sa/3.0/">          Distributed under a Creative Commons Attribution-ShareAlike
 3.0 Unported License</licence>
 </availability>
+   <date when="2025">2025</date>
 </publicationStmt>
 <sourceDesc>
   <bibl>
@@ -91,7 +91,7 @@
 <text>
 <body>
 <opener>
-<address><addrLine>Au <persName type="individu" key="Édouard VI d'Angleterre"  ref="https://www.wikidata.org/wiki/Q83229" corresp="#edouard-VI">roi d'Angleterre</persName><note n="*" place="bottom" type="editorial"><p><persName key="Édouard VI d'Angleterre" ref="https://www.wikidata.org/wiki/Q83229" corresp="#edouard-VI">Edouard VI</persName>, fils d'<persName key="Henri VIII" ref="https://www.wikidata.org/wiki/Q38370">Henri VIII</persName> et de <persName key="Jeanne Seymour" ref="https://www.wikidata.org/wiki/Q182637">Jeanne Seymour</persName>, roi d'<placeName key="Angleterre" ref="https://www.wikidata.org/wiki/Q21">Angleterre</placeName> en 1547, mort, dans sa seizième année, le 8 juillet 1553. Appliqué à l'étude et aux affaires et avec une extrême facilité pour apprendre, il a été instruit dans les langues anciennes et dans les littératures étrangères ; doué aussi d'une raison précoce et d'une sensibilité vive, il démontra un caractère doux et un esprit droit et amour pour la justice. Il soutenait la cause de la Réforme(...) [Note adaptée de celle de Jules Bonnet (<bibl><editor>Bonnet</editor>, éd. <title>Lettres de Jean Calvin</title>. <biblScope>t. 1</biblScope>. <date>1854</date>. <biblScope>p. 325</biblScope>. <ref terget="https://gallica.bnf.fr/ark:/12148/bpt6k209248w/f360">https://gallica.bnf.fr/ark:/12148/bpt6k209248w/f360</ref></bibl>)]</p></note></addrLine>
+<address><addrLine>Au <persName type="individu" key="Édouard VI d'Angleterre"  ref="https://www.wikidata.org/wiki/Q83229" corresp="#edouard-VI">roi d'Angleterre</persName><note n="*" place="bottom" type="editorial"><p><persName key="Édouard VI d'Angleterre" ref="https://www.wikidata.org/wiki/Q83229" corresp="#edouard-VI">Edouard VI</persName>, fils d'<persName key="Henri VIII" ref="https://www.wikidata.org/wiki/Q38370">Henri VIII</persName> et de <persName key="Jeanne Seymour" ref="https://www.wikidata.org/wiki/Q182637">Jeanne Seymour</persName>, roi d'<placeName key="Angleterre" ref="https://www.wikidata.org/wiki/Q21">Angleterre</placeName> en 1547, mort, dans sa seizième année, le 8 juillet 1553. Appliqué à l'étude et aux affaires et avec une extrême facilité pour apprendre, il a été instruit dans les langues anciennes et dans les littératures étrangères ; doué aussi d'une raison précoce et d'une sensibilité vive, il démontra un caractère doux et un esprit droit et amour pour la justice. Il soutenait la cause de la Réforme(...) [Note adaptée de celle de Jules Bonnet (<bibl><editor>Bonnet</editor>, éd. <title>Lettres de Jean Calvin</title>. <biblScope>t. 1</biblScope>. <date>1854</date>. <biblScope>p. 325</biblScope>. <ref target="https://gallica.bnf.fr/ark:/12148/bpt6k209248w/f360">https://gallica.bnf.fr/ark:/12148/bpt6k209248w/f360</ref></bibl>)]</p></note></addrLine>
 </address>
 <dateline xml:id="opener">[Envoyée à <placeName cert="high" key="Londres" ref="https://www.wikidata.org/wiki/Q84" corresp="#londres">Londres</placeName><note n="1" place="bottom" type="editorial"><p>Cette lettre a dû être envoyée à <placeName key="Londres" ref="https://www.wikidata.org/wiki/Q84">Londres</placeName>, puisqu'elle s'adresse au roi d'<placeName key="Angleterre" ref="https://www.wikidata.org/wiki/Q21">Angleterre</placeName>. [Note éditoriale]</p></note>]
 </dateline>

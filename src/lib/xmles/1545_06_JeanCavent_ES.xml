@@ -5,7 +5,7 @@
 <fileDesc>
 <titleStmt>
 <title>Carta a Jean Cavent</title>
-<editor role="Traducción y encodaje TEI">Yanet Hernández Pedraza (Candidata al doctorado en literatura opción humanidades digitales - UdeM)</editor>
+<editor role="Traducción y encodaje TEI">Yanet Hernández Pedraza</editor>
 </titleStmt>
 <publicationStmt>
   <publisher>TEI Consortium</publisher>
@@ -14,6 +14,7 @@
     Distributed under a Creative Commons Attribution-ShareAlike
          3.0 Unported License</licence>
   </availability>
+   <date when="2026">2026</date>
 </publicationStmt>
 <sourceDesc corresp="Cavent_1545_06">
     <bibl>

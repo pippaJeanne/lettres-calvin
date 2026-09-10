@@ -3,7 +3,7 @@
 <fileDesc>
 <titleStmt>
 <title>Lettre à Jean Cavent</title>
-<editor role="Modernisation et encodage">Yanet Hernández Pedraza (Candidate au doctorat en littérature option humanités numériques - UdeM)</editor>
+<editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
 </titleStmt>
 <publicationStmt>
   <publisher>TEI Consortium</publisher>
@@ -11,6 +11,7 @@
 <licence target="http://creativecommons.org/licenses/by-sa/3.0/">Distributed under a Creative Commons Attribution-ShareAlike
 3.0 Unported License</licence>
 </availability>
+   <date when="2026">2026</date>
 </publicationStmt>
       
 <sourceDesc>
@@ -46,8 +47,8 @@
     <idno type="cote">1PAST-2.5</idno>
 </msIdentifier>
 <facsimile>
-<graphic url="/JeanCavent_page_1.png"/>
-<graphic url="/JeanCavent_page_2.png"/>
+<graphic url="/facsimiles/JeanCavent_page_1.png"/>
+<graphic url="/facsimiles/JeanCavent_page_2.png"/>
 </facsimile>
 </msDesc>
   <notesStmt>

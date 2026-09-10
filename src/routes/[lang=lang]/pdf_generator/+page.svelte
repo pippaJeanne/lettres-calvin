@@ -133,19 +133,31 @@ export async function generatepdf(){
 // add filter info to Note Statement page
 let filter = document.getElementById('filter');
 console.log(filter.value)
+
+let where = document.getElementById('noteStment'); // Where to add the filters info
+let citation = document.querySelector('#citation'); // Where to add the citation info
+let filter_info = document.createElement('div'); // Create a div to hold the filters info
+ let h = document.createElement('strong'); // Create a strong element to hold the filters info title
+     h.textContent = t.text_filtres;
+     filter_info.appendChild(h);
+ let citation_p = document.createElement('p'); // Create a p element to hold the citation info
+ let pdf_avis = document.createElement('p'); // Create a p element to hold the pdf avis info
+ pdf_avis.style = "margin-top: 1rem; font-size: 0.9rem; font-style: italic;";
+ pdf_avis.textContent = t.pdf_avis;
+ citation_p.style = "text-align: left; margin-top: 1rem; font-weight: normal; text-indent: -2em;";
+ citation.appendChild(citation_p);
+ citation.appendChild(pdf_avis);
+ let filters4title = ""; // Create a string to hold the filters info for the citation title
+
 if (filter.value !== selectedAll){
   finalChoices['selection'] = {};
-   let filter_info = document.createElement('div');
     let passed_filters = document.querySelectorAll('#cat_filters div:not(#recipient, #theme, #srcPlace, #destPlace) select');
     let recipients_div = document.querySelector('#recipient select')
     let year_divs = document.querySelector('#period');
     let theme_divs = document.querySelector('#theme select');
-    let where = document.getElementById('noteStment');
     let srcPlace_divs = document.querySelector('#srcPlace select');
     let destPlace_divs = document.querySelector('#destPlace select');
-    let h = document.createElement('strong');
-     h.textContent = t.text_filtres;
-     filter_info.appendChild(h);
+   
      let ys = [];
     year_divs.querySelectorAll('input').forEach(y => ys.push(y.value));
     let years = document.createElement('p')
@@ -153,6 +165,7 @@ if (filter.value !== selectedAll){
     filter_info.appendChild(years);
      //Record choices 
     finalChoices['selection']['period'] = `${ys[0]} — ${ys[1]}`;
+    filters4title += ` ${t.filter_categories.period} : ${ys[0]}—${ys[1]}`;
 
     let chosen_recipient = [];
     for (let option of recipients_div.options){
@@ -170,6 +183,8 @@ if (filter.value !== selectedAll){
       filter_info.appendChild(ul);
       //Record choices 
       finalChoices['selection']['recipient'] = chosen_recipient;
+
+      filters4title += `; ${filter_name} : ${chosen_recipient.join(', ')}`;
      };
 
      let chosen_themes = [];
@@ -188,6 +203,7 @@ if (filter.value !== selectedAll){
       filter_info.appendChild(ul);
       //Record choices 
       finalChoices['selection']['themes'] = chosen_themes;
+      filters4title += `; ${filter_name} : ${chosen_themes.join(', ')}`;
     }
 
     let srcPlace_values = [];
@@ -206,6 +222,7 @@ if (filter.value !== selectedAll){
       filter_info.appendChild(ul);
       //Record choices 
       finalChoices['selection']['srcPlace'] = srcPlace_values;
+      filters4title += `; ${filter_name} : ${srcPlace_values.join(', ')}`;
     }
 
     let destPlace_values = [];
@@ -224,6 +241,7 @@ if (filter.value !== selectedAll){
       filter_info.appendChild(ul);
       //Record choices 
       finalChoices['selection']['destPlace'] = destPlace_values;
+      filters4title += `; ${filter_name} : ${destPlace_values.join(', ')}`;
     }
 
     passed_filters.forEach(f => {
@@ -234,6 +252,7 @@ if (filter.value !== selectedAll){
       filter_info.appendChild(p);
       //Record choices 
       finalChoices['selection'][filter_name] = f.value;
+      filters4title += `; ${filter_name} : ${f.value}`;
      }
     })
     console.log(passed_filters)
@@ -243,14 +262,33 @@ if (filter.value !== selectedAll){
       let p = document.createElement('p');
       p.innerHTML = `<strong>${t.filter_categories.searchFilter}</strong>: ${s.value}`;
       filter_info.appendChild(p);
+      
       //Record choices 
       finalChoices['selection']['search term'] = s.value;
+
+      filters4title += `; ${t.filter_categories.searchFilter} : ${s.value}`;
     }
+    
+    // Add filter info to Note Statement page
      where.appendChild(filter_info); 
 
+     // Add citation to citation section
+     citation_p.innerHTML = `${t.citation_text_1}${t.text_filtres}${filters4title}${t.citation_text_2} ${new Date().toLocaleDateString(lang,  {year: "numeric", month: "long", day: "numeric"})}${t.citation_text_3} ${t.misajour.split(': ')[1].trim()}; ${filteredLetters.length.toString()} ${t.citation_text_4}`;
+    
     } else {
-       //Record choices 
+       
+      //Record choices 
     finalChoices['selection'] = selectedAll;
+      
+    // Add filters info to Note Statement page: all letters
+    let p = document.createElement('p');
+    p.innerHTML = `<strong>${t.txt_all}</strong>`;
+    filter_info.appendChild(p);
+    where.appendChild(filter_info);
+
+    // Add citation to citation section
+    citation_p.innerHTML = `${t.citation_text_1}${t.text_filtres} ${t.txt_all}${t.citation_text_2} ${new Date().toLocaleDateString(lang,  {year: "numeric", month: "long", day: "numeric"})}${t.citation_text_3} ${t.misajour.split(': ')[1].trim()}; ${filteredLetters.length.toString()} ${t.citation_text_4}`;
+
     }
 
 // Run transformation
@@ -332,16 +370,17 @@ if (filter.value !== selectedAll){
       //console.log(tocEl)
      }
      )
-     // Send recorder choices to storage.
+     // Send recorded choices to storage.
       fetch('/.netlify/functions/logChoices', {
         method: 'POST',
         body: JSON.stringify(finalChoices)
       });
-        // Print
-        setTimeout(() => window.print(), 7000);
+        
         };
       }
     };
+        // Print
+        setTimeout(() => window.print(), 10000);
 
  // Go back to page and reset filters
      document.getElementById("tenor-gif-embed").style.display="none";  
@@ -567,7 +606,12 @@ $: if (research === 'ready') {
   </div> 
   <div id="noteStment">
     <p style="text-align: center; margin-top: 5rem; font-weight: normal">{t.noteStment}</p>
+    <p>{t.generated_pdf_date} {new Date().toLocaleDateString(lang,  {year: "numeric", month: "long", day: "numeric"})}</p>
   </div>
+  <div id="citation">
+    <p style="font-weight: bold;">{t.citation_header}</p>
+  </div>
+
    <div id="toc">
     <h3 style="text-align: center; margin: 3rem">{t.pdf_table_cont}</h3>
     <nav id="my-toc-content" style="text-align: left;">

@@ -3,28 +3,40 @@ title: "À propos de cette édition"
 
 ---
 
-L'édition critique numérique bilingue de la correspondance en français de Jean Calvin pendant la période d'établissement de son ministère à Genève (1538-1554), se présente sous forme d'infrastructure dynamique de recherche. Elle comprend plusieurs niveaux d'analyse –transcription des sources primaires, modernisation du français, annotations, et traduction en espagnol–. Elle vise également à fournir de nouvelles perspectives sur Calvin, sa doctrine, et son contexte historique, tout en explorant les implications et les possibilités offertes par l'automatisation à travers des outils algorithmiques<sup><a name="n1" href="#note1">1</a></sup> dans le domaine des humanités numériques, notamment dans l'analyse du geste éditorial.
+*Lettres de Calvin* présente une édition critique numérique bilingue de la correspondance en français de Jean Calvin pendant la période de 1538 à 1554. L'édition se présente comme une infrastructure dynamique de recherche qui permet l'exploration des lettres françaises de Jean Calvin, ainsi que de leur traduction espagnole. L'édition se concentre sur les lettres écrites par Calvin en laissant ouverte la possibilité d'ajouter plus tard les lettres de correspondants qui ont été conservées. À ce jour, l’édition donne accès à 27 lettres sur les 120 lettres que comprend le corpus établi.
 
-Les sources principales comprennent le premier volume de l'édition de l'historien Jules Bonnet parue en 1854 (Bonnet 1854), qui se trouve sur Gallica, et les manuscrits originaux ou des copies anciennes disponibles, dont une grande partie est conservée à la bibliothèque de Genève. 
+Les sources principales comprennent le premier volume de l'édition de l'historien Jules Bonnet parue en 1854 (Calvin 1854), les manuscrits originaux et les copies anciennes disponibles. L'édition Bonnet, qui constitue l'édition de référence du projet, se trouve sur Gallica, la plateforme numérique de la Bibliothèque nationale de France (BnF). Par ailleurs, une grande partie des sources manuscrites est conservée à la Bibliothèque de Genève —soit 97 des 113 sources manuscrites qui composent le corpus. 
 
-L'échange épistolaire de Jean Calvin est présenté en tant que correspondance passive, c'est-à-dire qu'elle présente Calvin comme seul correspondant sans les réponses de ses interlocuteurs. Malgré l’ampleur de la correspondance que Calvin a entretenue avec plusieurs personnes pendant des longues périodes, la plupart de ses échanges réciproques ont été perdus au fil des années. On retrouve très peu de missives destinées à Calvin. Ce qui justifie le choix de se concentrer sur les lettres écrites par Calvin en laissant ouverte la possibilité d'ajouter plus tard les épîtres de correspondants qui ont été sauvegardées par l'histoire.
+Cette édition numérique permet plusieurs niveaux de consultation et d'analyse pour chaque lettre, notamment l'exploration et la comparaison des quatre états principaux du texte&nbsp;: 
+- les facsimilés des sources primaires (manuscrites et imprimées)&nbsp;;
+- les facsimilés et la version texte de l'édition Bonnet —encore dans le français du XVI<sup>e</sup> siècle&nbsp;;
+- une version modernisée et annotée accompagnée d'une version en mode comparateur montrant les modifications apportées à la version Bonnet&nbsp;;
+- une traduction espagnole. 
 
-Cette édition critique numérique de la correspondance française du réformateur Jean Calvin a été développée grâce à l'intégration de diverses technologies numériques et l'usage de processus semi-automatisés pour le traitement éditorial et l'analyse de certains aspects du corpus. L'infrastructure constitue un outil dynamique et pédagogique de recherche sur la figure historique et sur la période d'établissement du ministère de Jean Calvin à Genève. La réception de sa pensée et de sa doctrine par les lecteurs contemporains est l'un des aspects visés<sup><a name="n2" href="#note2">2</a></sup>.
+Une autre interface comparative permet l'exploration des documents anciens et l'étude des pratiques de transcription au moyen de la transcription diplomatique d'une sélection de manuscrits autographes<sup><a name="n1" href="#note1">1</a></sup>. Cette transcription peut aussi être comparée avec les facsimilés des sources et avec la version texte de l'édition Bonnet.
 
-Le projet propose également une étude des processus éditoriaux et de la composition de l'œuvre, du rôle du contexte historique et culturel de l'auteur-éditeur, des dynamiques entre traduction, annotation, et visualisation des textes dans un environnement numérique. L'aspect de mise à disposition des sources anciennes dans un cadre numérique en collaboration avec les institutions de conservation et en fournissant la transcription favorise la diffusion des connaissances et l'accessibilité aux documents historiques.
+L'édition numérique offre également une exploration dynamique et transversale du corpus de lettres par le biais de plusieurs index dynamiques et de visualisations. Les visualisations de la frise chronologique et de la carte interactive du réseau de la correspondance constituent l'index chronologique et l'index de lieux respectivement. L'édition propose aussi un index des personnes, un index thématique, un index des catégories, une recherche plein texte et la génération de recueils PDF selon les critères choisis. Le système de filtres de cette dernière fonctionnalité, basé sur les index dynamiques de l'édition, permet le filtrage transversal des lettres.
 
-Cette nouvelle manière de présenter la correspondance française de Jean Calvin jette une lumière nouvelle sur le personnage historique, les dynamiques politiques et sociales de son époque, ainsi que leur impact sur sa pensée et sa doctrine — et réciproquement. Elle invite aussi à réfléchir à la manière dont les technologies numériques soutiennent, interrogent et transforment les pratiques éditoriales et la transmission du savoir.
+Par le biais de ces possibilités d'exploration du corpus, le projet propose une étude des processus éditoriaux et de la composition de l'œuvre, du rôle du contexte historique et culturel de l'auteur-éditeur, et des dynamiques entre traduction, annotation et visualisation des textes dans un environnement numérique. La mise à disposition numérique des sources anciennes, réalisée avec les institutions de conservation et accompagnée de transcriptions, favorise la diffusion des connaissances et l’accessibilité des documents historiques. Cette infrastructure constitue ainsi un outil dynamique et pédagogique de recherche sur la figure historique du réformateur et sur son ministère. L'étude de la réception de sa pensée et de sa doctrine par les lecteurs contemporains<sup><a name="n2" href="#note2">2</a></sup> est l'un des aspects visés.
+
+Cette édition critique numérique bilingue de la correspondance française du réformateur Jean Calvin a été développée en intégrant diverses technologies numériques et des processus semi-automatisés pour le traitement éditorial et l'analyse de certains aspects du corpus<sup><a name="n3" href="#note3">3</a></sup>, toujours sous la supervision humaine. L'édition invite aussi à réfléchir à la manière dont les technologies numériques soutiennent, interrogent et transforment les pratiques éditoriales et la transmission du savoir.
 
 ____
 
-Ce projet d’édition des lettres de Calvin constitue le sujet de thèse de doctorat de Yanet Hernández Pedraza, candidate au doctorat en Littérature option Humanités numériques, à l’Université de Montréal. Il prolonge les recherches amorcées dans son mémoire de master soutenu à l’Université de Franche-Comté. Le projet est dirigé conjointement par Michael E. Sinatra (Université de Montréal) et Dario Brancato (Université Concordia).
+### Projet et financement
 
-### Notes
+Ce projet d’édition des lettres de Calvin constitue le sujet de thèse de doctorat de Yanet Hernández Pedraza, candidate au doctorat en Littérature option Humanités numériques, à l’Université de Montréal. Il prolonge les recherches amorcées dans son mémoire de master soutenu à l’Université de Franche-Comté. 
 
-<p><sup><a name="note1" href="#n1">1</a></sup> Par exemple : l'encodage en XML-TEI des variants linguistiques du français (version diplomatique et version modernisée), la reconnaissance d'entités nommées, la génération d'index et la mise en ligne ( réutilisation des données dans plusieurs pages de l'édition)</p>
+Le projet a été possible grâce au soutien financier du Groupe de recherche sur les éditions critiques en contexte numérique (GREN) et du Fonds de recherche du Québec, ainsi que des Études supérieures et postdoctorales (ESP) de l'Université de Montréal. Il est dirigé conjointement par Michael E. Sinatra (Université de Montréal) et Dario Brancato (Université Concordia).  
 
-<p><sup><a name="note2" href="#n2">2</a></sup> La génération de versions PDF du recueil des lettres d'après différents critères basés sur les index de l'édition numérique permettent d'analyser les intérêts des lecteurs contemporains concernant Calvin, sa doctrine et son contexte historique. (Cette fonctionnalité est encore en cours de développement.)</p>
+## Notes
 
-### Référence 
+<p><sup><a name="note1" href="#n1">1</a></sup> De la main de Calvin.</p>
 
-Bonnet, Jules, éd. 1854. Lettres de Jean Calvin : lettres françaises. T. 1 / recueillies pour la première fois et publ. d’après les ms. originaux par Jules Bonnet. Paris: Librarie de Ch. Meyrueis et compagnie. https://gallica.bnf.fr/ark:/12148/bpt6k209248w.
+<p><sup><a name="note2" href="#n2">2</a></sup> La génération de recueils PDF selon différents critères fondés sur les index de l'édition numérique permet d'analyser les intérêts des lecteurs contemporains concernant Calvin, sa doctrine et son contexte historique.</p>
+
+<p><sup><a name="note3" href="#n3">3</a></sup> Par exemple : l'encodage en XML-TEI des variantes linguistiques du français (version diplomatique et version modernisée), la reconnaissance d'entités nommées, la génération d'index et la mise en ligne (réutilisation des données dans plusieurs pages de l'édition).</p>
+
+## Référence 
+
+Calvin, Jean. *Lettres de Jean Calvin : lettres françaises. T. 1 / recueillies pour la première fois et publ. d’après les ms. originaux par Jules Bonnet*. Édité par Jules Bonnet. 1 vol. *Lettres de Jean Calvin*. Librarie de Ch. Meyrueis et compagnie, 1854. https://gallica.bnf.fr/ark:/12148/bpt6k209248w.

@@ -3,7 +3,7 @@
         <fileDesc>
             <titleStmt>
                 <title>Lettre à Monsieur de Fallais</title> 
-                <editor role="Modernisation et encodage">Yanet Hernández Pedraza (Candidate au doctorat en littérature option humanités numériques - UdeM)</editor>
+                <editor role="Modernisation et encodage">Yanet Hernández Pedraza</editor>
             </titleStmt>
             <publicationStmt>
                 <publisher>TEI Consortium</publisher>
@@ -12,8 +12,8 @@
                         under a Creative Commons Attribution-ShareAlike
                         3.0 Unported License</licence>
                 </availability>
-            </publicationStmt>
-            
+            <date when="2026">2026</date>
+         </publicationStmt>
             <sourceDesc>
                 <bibl>
                     <title>Lettres de Jean Calvin : lettres françaises. T. 1 / recueillies pour la
@@ -52,7 +52,7 @@
                     </facsimile>
                 </msDesc>
                 <notesStmt>
-                    <note>Les notes proviennent de l'édition de Jules Bonnet de 1854 sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
+                    <note>Les notes proviennent de l'édition de Jules Bonnet de 1854 sauf indication contraire. Les notes appelées "éditoriales" (en vert) ainsi que les notes des phrases latines ont été produites par l'auteure de ce projet : Yanet Hernández Pedraza.</note>
                 </notesStmt>
             </sourceDesc>
         </fileDesc>
