@@ -1,4 +1,4 @@
-cff-version: 1.1.0
+cff-version: 1.4
 message: "If you use this software, please cite it as below."
 authors:
 - family-names: Hernández Pedraza
@@ -13,4 +13,5 @@ keywords:
   - "http://onto.nerc.ac.uk/vocab/visualisation"
   - "http://onto.nerc.ac.uk/vocab/deployment"
 version: v1.4
-date-released: 2026-09-10
+date-released: 2026-09-17
+doi: https://doi.org/10.5281/zenodo.21925258
