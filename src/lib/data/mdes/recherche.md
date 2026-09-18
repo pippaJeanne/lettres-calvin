@@ -131,26 +131,26 @@ Esta es una lista más detallada de los datos:
 
 ### Citas recomendadas:
 
-- ***Cartas de Calvino*:** Calvino, Juan. _Cartas de Calvino_. Editado por Yanet Hernández Pedraza. Université de Montréal, 2025. Edición digital. [https://lettres-calvin.netlify.app/es](https://lettres-calvin.netlify.app/es).
+- ***Cartas de Calvino*:** Calvino, Juan. _Cartas de Calvino_. Editado por Yanet Hernández Pedraza. Universidad de Montreal, 2025. Edición digital. [https://lettres-calvin.netlify.app/es](https://lettres-calvin.netlify.app/es).
 - **Repositorios de GitHub:**
 	- Hernández Pedraza, Y. (2026). *Lettres de Calvin* (versión v1.4) [software].
 	- Hernández Pedraza, Y. (2026). *Process Docs* (versión v1.0.4) [conjunto de datos].
 - **Versiones archivadas en Zenodo:**
-	- Hernández Pedraza, Yanet. _Lettres de Calvin_. V. 1.4. Zenodo, archivado el 17 de septiembre de 2026. [https://doi.org/10.5281/zenodo.21925258](https://doi.org/10.5281/zenodo.21925258).
-	- Hernández Pedraza, Yanet. « Process Docs ». Proceso editorial. V. 1.0.4. Zenodo, 17 de septiembre de 2026. [https://doi.org/10.5281/zenodo.22073100](https://doi.org/10.5281/zenodo.22073100).
+	- Hernández Pedraza, Yanet. _Lettres de Calvin_. V. 1.4. Zenodo, archivado el 18 de septiembre de 2026. [https://doi.org/10.5281/zenodo.22822414](https://doi.org/10.5281/zenodo.22822414).
+	- Hernández Pedraza, Yanet. « Process Docs ». Proceso editorial. V. 1.0.4. Zenodo, 18 de septiembre de 2026. [https://doi.org/10.5281/zenodo.22826915](https://doi.org/10.5281/zenodo.22826915).
 
 ### Créditos
 
-Este proyecto forma parte de la investigación doctoral de Yanet Hernández Pedraza, realizada en la Université de Montréal.
+Este proyecto forma parte de la investigación doctoral de Yanet Hernández Pedraza, realizada en la Universidad de Montreal.
 
 **Autora del proyecto:** Yanet Hernández Pedraza  
-**Codirectores de investigación:** Michael E. Sinatra (Université de Montréal) y Dario Brancato (Universidad Concordia)  
-**Institución académica:** Université de Montréal  
-**Financiación:** Groupe de recherche sur les éditions critiques en contexte numérique (GREN), Fonds de recherche du Québec y Études supérieures et postdoctorales (ESP) de la Université de Montréal.
+**Codirectores de investigación:** Michael E. Sinatra (Universidad de Montreal) y Dario Brancato (Universidad Concordia)  
+**Institución académica:** Universidad de Montreal  
+**Financiación:** *Groupe de recherche sur les éditions critiques en contexte numérique (GREN)*, *Fonds de recherche du Québec* y *Études supérieures et postdoctorales (ESP)* de la Universidad de Montreal.
 
 ----
 
-### Notes
+### Notas
 
 <p><sup><a name="note1" href="#n1">1</a></sup>Calvin, <em>Lettres de Jean Calvin : lettres françaises.</em></p>
 <p><sup><a name="note2" href="#n2">2</a></sup>Véase Stadler et al., « Towards a Model for Encoding Correspondence in the TEI ».</p>

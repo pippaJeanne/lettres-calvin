@@ -81,7 +81,7 @@ export const fr_es = {
         citation_text_3: ", de <em>Lettres de Calvin</em>, Édition critique numérique, données publiées le",
         citation_text_4: "lettres. Université de Montréal.",
         pdf_avis: "Ce PDF est un recueil de lettres généré à partir des filtres appliqués dans la présente édition numérique. L'édition numérique est en constante évolution et mise à jour. La génération d'un autre PDF avec les mêmes filtres peut ne pas aboutir au même contenu.",
-        misajour: "Dernière mise à jour : 17 septembre 2026"
+        misajour: "Dernière mise à jour : 18 septembre 2026"
     },
     es: {
         site_title: "Cartas de Calvino",
@@ -165,6 +165,6 @@ export const fr_es = {
         citation_text_3: ", de <em>Cartas de Calvino</em>, Edición crítica digital, datos publicados el",
         citation_text_4: "cartas. Université de Montréal.",
         pdf_avis: "Este PDF es una colección de cartas generada a partir de los filtros aplicados en la presente edición digital. La edición digital se encuentra en constante desarrollo y actualización. La generación de otro PDF con los mismos filtros puede no resultar en el mismo contenido.",
-        misajour: "Última actualización : 17 de septiembre de 2026"
+        misajour: "Última actualización : 18 de septiembre de 2026"
     }
 }

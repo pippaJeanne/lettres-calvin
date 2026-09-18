@@ -128,13 +128,13 @@ Voici une liste plus détaillée des données&nbsp;:
 
 ### Citations recommandées&nbsp;:
 
-- ***Lettres de Calvin*&nbsp;:** Calvin, Jean. _Lettres de Calvin_. Édité par Yanet Hernández Pedraza. Université de Montréal, 2025. Édition numérique. [https://lettres-calvin.netlify.app](https://lettres-calvin.netlify.app).
+- ***Lettres de Calvin*&nbsp;:** Calvin, Jean. _Lettres de Calvin_. Édité par Yanet Hernández Pedraza. Université de Montréal, 2025. Édition numérique. [https://lettres-calvin.netlify.app/fr](https://lettres-calvin.netlify.app/fr).
 - **Dépôts GitHub&nbsp;:**
 	- Hernández Pedraza, Y. (2026). Lettres de Calvin (Version v1.4) [Computer software]
 	- Hernández Pedraza, Y. (2026). Process Docs (Version v1.0.4) [Data set]
 - **Versions archivées sur Zenodo&nbsp;:**
-	- Hernández Pedraza, Yanet. _Lettres de Calvin_. V. 1.4. Zenodo, archivé le 17 septembre 2026. [https://doi.org/10.5281/zenodo.21925258](https://doi.org/10.5281/zenodo.21925258).
-	- Hernández Pedraza, Yanet. « Process Docs ». Processus éditorial. V. 1.0.4. Zenodo, 17 septembre 2026. [https://doi.org/10.5281/zenodo.22073100](https://doi.org/10.5281/zenodo.22073100).
+	- Hernández Pedraza, Yanet. _Lettres de Calvin_. V. 1.4. Zenodo, archivé le 17 septembre 2026. [https://doi.org/10.5281/zenodo.22822414](https://doi.org/10.5281/zenodo.22822414).
+	- Hernández Pedraza, Yanet. « Process Docs ». Processus éditorial. V. 1.0.4. Zenodo, 17 septembre 2026. [https://doi.org/10.5281/zenodo.22826915](https://doi.org/10.5281/zenodo.22826915).
 
 ### Crédits
 
