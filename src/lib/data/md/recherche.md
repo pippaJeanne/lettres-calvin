@@ -133,8 +133,8 @@ Voici une liste plus détaillée des données&nbsp;:
 	- Hernández Pedraza, Y. (2026). Lettres de Calvin (Version v1.4) [Computer software]
 	- Hernández Pedraza, Y. (2026). Process Docs (Version v1.0.4) [Data set]
 - **Versions archivées sur Zenodo&nbsp;:**
-	- Hernández Pedraza, Yanet. _Lettres de Calvin_. V. 1.4. Zenodo, archivé le 17 septembre 2026. [https://doi.org/10.5281/zenodo.22822414](https://doi.org/10.5281/zenodo.22822414).
-	- Hernández Pedraza, Yanet. « Process Docs ». Processus éditorial. V. 1.0.4. Zenodo, 17 septembre 2026. [https://doi.org/10.5281/zenodo.22826915](https://doi.org/10.5281/zenodo.22826915).
+	- Hernández Pedraza, Yanet. _Lettres de Calvin_. V. 1.4. Zenodo, archivé le 18 septembre 2026. [https://doi.org/10.5281/zenodo.22822414](https://doi.org/10.5281/zenodo.22822414).
+	- Hernández Pedraza, Yanet. « Process Docs ». Processus éditorial. V. 1.0.4. Zenodo, 18 septembre 2026. [https://doi.org/10.5281/zenodo.22826915](https://doi.org/10.5281/zenodo.22826915).
 
 ### Crédits
 
